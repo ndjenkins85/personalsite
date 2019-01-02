@@ -1,0 +1,84 @@
+version: '3.4'
+
+volumes:
+  db-data:
+
+x-volumes:
+  &code-volumes
+  - '.:/code'
+x-volumes:
+  &postgres-volumes
+  - 'db-data:/var/lib/postgresql/data'
+
+x-environment: &dev-environment
+  ? 'windir'
+  ? 'postgres=docker'
+  ? 'redis=docker'
+  ? 'VERBOSE=1'
+x-environment: &postgres-environment
+  ? 'POSTGRES_USER=postgres'
+  ? 'POSTGRES_PASSWORD=shihad'
+  ? 'POSTGRES_DB=personal'
+x-environment: &dev-ta-environment
+  ? 'windir'
+  ? 'postgres=docker'
+  ? 'redis=docker'
+  ? 'VERBOSE=1'
+  ? 'localfiles=1'
+  ? 'ignore_secrets=1'
+
+x-service: &dev-service
+  depends_on:
+    - db
+    - mq
+  volumes: *code-volumes
+  networks:
+    - net
+x-service: &dev-ta-service
+  <<: *dev-service
+  build:
+    context: .
+    dockerfile: ta_dockerfile
+  image: ta:latest
+
+services:
+  # Postgres database
+  # Accessible from localhost:5432
+  db:
+    container_name: evolvedanalytics-db
+    ports:
+      - '5432:5432'
+    image: postgres:latest
+    volumes: *postgres-volumes
+    environment:
+      <<: *postgres-environment
+    networks:
+      - net
+
+  # Redis message queue
+  mq:
+    container_name: evolvedanalytics-mq
+    expose:
+      - '6379'
+    image: redis:latest
+    networks:
+      - net
+
+  # Celery workers for Evolved Analytics
+  celery:
+    <<: *dev-service
+    container_name: evolvedanalytics-celery
+    expose:
+      - '5002'
+      - '6379'
+    build:
+      context: .
+      dockerfile: celery_dockerfile
+    image: celery:latest
+    environment:
+      <<: *dev-environment
+
+networks:
+  # Allows addressing other containers by container_name
+  net:
+    # No options required
