@@ -20,6 +20,21 @@ docker push registry.heroku.com/nickjenkins/web
 heroku container:release web -a nickjenkins
 
 
+Google SEO
+http://flask.pocoo.org/snippets/108/
+
+
+# TODOs
+Google site analytics for SEO connect
+Github for code, versioning
+
+RSS
+Disqus
+
+Getting started scripts
+Code highlighting https://highlightjs.org/usage/
+CONTENT!
+
 
 
 www.nickjenkins.com.au

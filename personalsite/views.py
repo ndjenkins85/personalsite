@@ -1,5 +1,5 @@
 # coding: utf-8
-from flask import Flask, g, flash, render_template, redirect, url_for, request, jsonify, session, make_response, abort
+from flask import Flask, g, flash, render_template, redirect, url_for, request, jsonify, session, make_response, abort, current_app
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from werkzeug import secure_filename
 
@@ -10,7 +10,7 @@ import requests
 import pandas as pd
 
 from pytz import timezone as tzoffset
-from datetime import timezone
+from datetime import timezone, timedelta
 from datetime import datetime as dt
 
 from personalsite import app, file_service
@@ -28,6 +28,36 @@ login_manager.login_view = "login"
 @app.route('/')
 def home():
     return render_template('index.html')
+
+
+@app.route('/resume')
+def resume():
+    return render_template('resume.html')
+
+
+@app.route('/article_test')
+def article_test():
+    return render_template('article.html')
+
+
+
+# a route for generating sitemap.xml
+@app.route('/sitemap.xml', methods=['GET'])
+def sitemap():
+      """Generate sitemap.xml. Makes a list of urls and date modified."""
+      pages = []
+      ten_days_ago = (dt.now() - timedelta(days=10)).date().isoformat()
+      # static pages
+      for rule in current_app.url_map.iter_rules():
+          if "GET" in rule.methods and len(rule.arguments)==0 and rule.rule.replace("/","") not in app.config["SITEMAP_EXCLUDES"]:
+              pages.append(
+                           [rule.rule, ten_days_ago]
+                           )
+      sitemap_xml = render_template('sitemap_template.xml', pages=pages, siteurl=app.config["SITEURL"])
+      response= make_response(sitemap_xml)
+      response.headers["Content-Type"] = "application/xml"        
+      return response
+
 
 
 @app.route('/login')

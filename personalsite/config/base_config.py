@@ -31,3 +31,6 @@ class BaseConfig(object):
     DROPZONE_MAX_FILES = 1
     DROPZONE_REDIRECT_VIEW = "dropzoneredirect"
     ALLOWED_EXTENSIONS = set(['csv', 'xlsx'])
+
+    SITEMAP_EXCLUDES = ["dropzoneredirect", "login", "logout", "version"]
+    SITEURL = "https://www.nickjenkins.com.au"

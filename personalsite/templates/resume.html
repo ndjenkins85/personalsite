@@ -1,0 +1,198 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="noprint">
+    <div class="row my-2">
+      <div class="col-sm-10">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Resume</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col-sm-2">
+        <button type="button" class="btn btn-outline-primary" role="button" onclick="window.print();">Print</button>
+      </div>
+    </div>
+  </div>
+  <div class="row my-2">
+    <div class="col-sm-8">
+      <div class="shadow-sm p-2 bg-white rounded">
+        <h4><small class="text-muted">Summary</small></h4>
+        <p>I am an Australian Data Scientist that works with you and your data to help solve your business problems. I describe success in data science as a combination of technique, communication and data management. I champion and develop these skills in myself and colleagues. 
+        </p>
+
+        <p>
+        I am in my last semester of a Masters of Computer Science from Georgia Tech, where I am maintaining a 4.0 GPA. My major is Machine Learning which has included deep study of statistics, deep learning, AI, big data and algorithms. At Evolve Research, we have utilized these techniques and others such as secure website and API development, dashboard and docker solutions on Azure. A primary focus in my role is NLP technologies, such as LSTM neural networks for sentiment scoring and entity detection, and mixed approaches for chatbot and AI routines.
+        </p>
+
+        <p>
+        My exceptional skill in communication sets me apart from my analytical peers. I regularly write and publish technical and strategic articles. I have over 8 years experience training interns, managing work with internal clients, and presenting to external C-level stakeholders. I have experience running workshops, presentations and focus-groups, for in-person or remote participants. I graduated from The University of Melbourne with a Bachelor of Arts majoring in Psychology and Political Science, which have helped me gain international, local and personal insight into communication and working with people of diverse backgrounds. I enjoy travel greatly, and have experience working remote in Japan and Portugal, as well as learning these languages.
+        </p>
+
+        <p>
+        On the data management side, I have 8 years experience working as a quantitative analyst in the market research industry. I have practical experience on modern data governance requirements including ISO accreditation, GDPR, Australian privacy principles. Have also implemented suitable web security measures to protect data access. Experience working with clients directly on their sensitive data.
+        </p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="shadow-sm p-2 bg-white rounded">
+        <div class="row">
+          <div class="col-sm-3">
+            <img src="{{ url_for('static', filename='img/nickjenkins.jpg')}}" class="img-fluid rounded-circle" alt="Nick Jenkins">
+          </div>
+          <div class="col-sm-9">
+            <h2>Nick Jenkins</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <small class="text-muted"><em>
+              I work with you and your data to solve business problems.
+            </em></small>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <i class="fa fa-area-chart"></i>&nbsp;Data Scientist</li>
+          </div>
+          <div class="col-sm-6">
+            <i class="fa fa-exchange"></i>&nbsp;API & Web Dev</li>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <i class="fa fa-group"></i>&nbsp;Team Leader</li>
+          </div>
+          <div class="col-sm-6">
+            <i class="fa fa-commenting-o"></i>&nbsp;Writer</li>
+          </div>
+        </div>
+
+        <p></p>
+        <div class="row">
+          <div class="col-sm-6">
+            <a href="https://api.whatsapp.com/send?phone=61448329110" alt="+61 448 329 110">Whatsapp / Phone</a>
+          </div>
+          <div class="col-sm-6">
+            <a href="mailto:nick_jenkins@outlook.com" alt="nick_jenkins@outlook.com">Email</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <a href="https://www.linkedin.com/in/nick-jenkins-56a65533" target="_blank" alt="https://www.linkedin.com/in/nick-jenkins-56a65533">Linked-in</a>
+          </div>
+          <div class="col-sm-6">
+            <a href="https://www.nickjenkins.com.au" target="_blank" alt="https://www.nickjenkins.com.au">Personal Website</a>
+          </div>
+        </div>
+        <p></p>
+
+        <dl class="row">
+          <dt class="col-sm-2">Key Exp.</dt>
+          <dd class="col-sm-10">
+            <p class="text-success">
+              <strong>
+                4+ years Python
+                <br>5+ years Applied Data Science
+                <br>7+ years Client Consulting
+              </strong>
+            </p>
+          </dd>
+
+          <dt class="col-sm-2">Key Skills</dt>
+          <dd class="col-sm-10">
+              python, pandas, sklearn, tensorflow<br>
+              flask, docker, azure, heroku, git<br>
+              postgres, sql, spark, redis, celery 
+          </dd>
+        </dl>
+
+        <div class="row">
+          <div class="col">
+            <i class="fa fa-graduation-cap"></i>&nbsp;MS Computer Science, Machine Learning
+            <p class="font-weight-light">Georgia Tech (4.0 GPA) 2016-2019 (Due Spring 19)</p>
+            <i class="fa fa-graduation-cap"></i>&nbsp;BA Arts, Psychology and Political Science
+            <p class="font-weight-light">The University of Melbourne 2004-2009</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class="col">
+      <div class="shadow-sm p-2 bg-white rounded">
+        <h4>Head of Data Science – Evolve Research <small class="text-muted">Feb 2014 to Present</small></h4>
+        <p>
+        Evolve Research and Consulting is a market research consultancy based in Melbourne, Australia. Since founding in 2010 the company has grown steadily in portfolio and size, with over 50 staff at present. We provide research consultancy across many industries including telecommunications, retail, banking and insurance and human resources. Our portfolio extends from Australian blue-chip clients through to global organisations. Within The Evolved Group is 'Twist of Lime' - our web and SaaS development branch, 'Evolved Analytics' - our data analysis consultancy.
+        </p>
+        <p>
+        I joined Evolve Research in 2014 as a Research Consultant, working directly with clients on their strategic customer experience programs. By successfully delivering on several complex data projects, I showed my talent and desire to focus more in the data analysis space. I took on the head role in our internal analysis bureau, which offers support across all portfolios. 
+        </p>
+        <p>
+        As Head of Data Science at Evolve Research, I lead a team in providing data analysis and modelling consultancy. We provide end-to-end consultation: working together on briefs and recommending approaches, through to delivery via dashboards, APIs, presentations, or written reports. We work with internal research consultants to support client requests, as well as working directly with external senior level clients. We regularly work with developers from other departments, external data service providers and automated APIs for integration with our pipelines. 
+        </p>
+        <p>
+        We help specify, prototype and deliver on a range of techniques including; text analytics (NLP), chatbots, driver modelling, churn propensity modelling, segmentation, speech-to-text, robodialing/IVR, web crawling, forecasting, weighting, report automation and more. 
+        </p>
+        <p>
+        We use technologies such as python, pandas, sklearn, tensorflow, flask, docker, celery, postgres, azure, sql, github, bitbucket, javascript. Statistical software packages Q, R and Excel.
+        </p>
+        <p>
+        For more information about our capabilities, please see our website at <a href="https://evolvedanalytics.twistoflime.com.au" target="_blank">https://evolvedanalytics.twistoflime.com.au</a>
+        </p>
+        <p>
+        Alongside consultation and development, I am deeply passionate about my role in growing and supporting the careers of my colleagues. I also contribute to writing articles and blogs which help to explain technical concepts in an approachable fashion. 
+        </p>
+        <p>
+        From late 2017 till late 2018, I worked remotely from Japan and Europe for six-month periods. During this time, I attended and collaborated at several data science based meetups.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row my-2">
+    <div class="col">
+      <div class="shadow-sm p-2 bg-white rounded">
+        <h4>Research Associate – The Klein Partnership <small class="text-muted">Feb 2011 to Feb 2014</small></h4>
+        <p>
+        The Klein Partnership (TKP) is a boutique market research consultancy based in Melbourne, Australia. TKP provide quantitative and qualitative market research consultancy across a large range of industries including mining, government, retail, beverage, banking and insurance, for Australian, NZ and PNG clients.
+        </p>
+        <p>
+        Prior to joining TKP in 2014, I worked for a year in graduate Advertising roles within the marketing industry. When I identified market research as an ideal career shift, I gained experience in front-line research roles including face-to-face and phone interviewing.
+        </p>
+        <p>
+        I gained a great breadth of market research experience during my time at TKP; I worked across several qualitative and quantitative methodologies for many clients on adhoc and wave based trackers. Particular highlights during my time at TKP include;
+        <ul>
+          <li>Automating several reporting templates</li>
+          <li>Co-Presenting customer satisfaction results for a banking client in Port Moresby, PNG</li>
+          <li>Conducting focus groups, taste testings, assisted shopping’s and mystery shopping’s</li>
+          <li>Growing in analytical aptitude across a number of complex projects</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+  </div>    
+
+  <div class="row my-2">
+    <div class="col">
+      <div class="shadow-sm p-2 bg-white rounded">
+        <h4><small class="text-muted">Additional notes</small></h4>
+        <ul>
+          <li><a href="https://s3.amazonaws.com/verify.edx.org/downloads/f2db5ba4c782412c9d452fd2a6f60b5a/Certificate.pdf" target="_blank">edX Verified Certificate for Big Data (Apache Spark)</a></li>
+          <li><a href="https://s3.amazonaws.com/verify.edx.org/downloads/9aeb865f0cec4d3398807ec19d3696fc/Certificate.pdf" target="_blank">edX Verified Certificate for Introduction to Computer Science and Programming Using Python</a></li>
+          <li>Working proficiency in Portuguese, some Japanese</li>
+        </ul>
+      </div>
+    </div>
+  </div>    
+
+
+</div>
+
+{% endblock %}
