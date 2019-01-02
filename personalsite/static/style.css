@@ -109,11 +109,15 @@
   }
 
   body {
-    font-size: 10px;
+    font-size: 13px;
+  }
+
+  a {
+    font-size: 8px;
   }
 
   a[href]:after {
-    content: none;
+    content: " (" attr(alt) ")";
   }
 
   .noprint,
@@ -130,9 +134,6 @@
     display:none !important;
   }
 
-  a[href]:after {
-    content: " (" attr(alt) ")";
-  }
 }
 
 
