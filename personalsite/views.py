@@ -73,7 +73,9 @@ def articles(path):
 
     files = parse_files_and_filters(filters)
 
-    return render_template('articles.html', files=files, routes=routes, breadcrumbs=breadcrumbs)
+    disqus = (len(breadcrumbs)==5 and len(files)==1)
+
+    return render_template('articles.html', files=files, routes=routes, breadcrumbs=breadcrumbs, disqus=disqus)
 
 
 #    articles/professional/2018/01/25/data-service-productisation_building
