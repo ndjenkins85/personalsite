@@ -1,5 +1,3 @@
-# Top 5 data analysis tool fails
-
 We've compiled a list of ten occassions where our analysis tools have behaved unexpectedly. Avoid the blood, sweat, tears and swearing by learning from our experience. We mainly look at Excel, but many of the problems turn out to be deep rooted in computer science and the way our machines handle and process data.
 
 # 1 - Excel Vlookup

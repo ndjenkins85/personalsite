@@ -1,5 +1,3 @@
-# Going beyond analysis into data services
-
 Market research analysts are a specialised role within marketing. Whereas we're all concerned with marketing and business problems, analysts contribute deep domain knowledge of data, analysis techniques, and problem solving ability. 
 
 Despite this, a fair percentage of analyst workload is involved with routine common tasks. Senior analysts are constantly evaluating their processes and common tasks, looking for ways to increase efficiency. It is possible to take this approach even further into providing full data services. This article will discuss these opportunities, and how they fit into the career path of an analyst.

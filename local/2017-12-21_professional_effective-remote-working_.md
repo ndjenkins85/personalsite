@@ -1,5 +1,3 @@
-# Strategies for effective remote working
-
 Working remote is a paradigm that fundamentally changes the social and physical nature of work. In many ways it is an evolution like open office environments and hot desking. While there are some clear benefits to employers and employees, there remains some potential difficulties collaborating effectively with remote working employees. This blog post will examine some of these difficulties and suggest strategies for employees, employers and colleagues to get the most out of the experience.
 The advantages to employers come in the form of reduced overheads (office space), access to a wider talent pool, and being known for an attractive company culture. For employees, it can cut down commute times, enable travel, and facilitate periods of uninterrupted work.  
  

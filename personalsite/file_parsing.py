@@ -1,4 +1,5 @@
 import os
+from operator import itemgetter
 
 
 def get_file_details(filename):
@@ -28,12 +29,20 @@ def get_file_details(filename):
 
         url_helper = f"{major_type}/{year}/{month}/{day}/{title}"
 
+        article = open_article(filename)
+
         return {"filename": filename, "date": date, "major_type": major_type, "title": title, "tags": tags, "year": year, 
                 "month": month, "day": day, "period": period, "filename": filename, "filetype": filetype, 
-                "title_cap": title_cap, "url_helper": url_helper}
+                "title_cap": title_cap, "url_helper": url_helper, "teaser": article[0], "article": article}
 
     except:
         return None
+
+def open_article(filename):
+    with open(os.path.join("local", filename), 'r') as f:
+        article = f.readlines()
+    return article
+
 
 
 def get_all_files():
@@ -51,6 +60,8 @@ def parse_files_and_filters(filters):
                     files = [x for x in files if value in x[key]]
                 else:
                     files = [x for x in files if x[key]==value]
+
+    files = sorted(files, key=itemgetter('date'), reverse=True)
 
     return files
 
