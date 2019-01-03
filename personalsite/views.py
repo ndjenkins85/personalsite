@@ -15,6 +15,9 @@ from datetime import datetime as dt
 
 from personalsite import app, file_service
 
+from personalsite.file_parsing import get_file_details, get_all_files, parse_files_and_filters
+
+
 #from datamodels.load_azurefs import load_file_azure
 #from analysis.file_parsing.file_read import file_read
 
@@ -24,7 +27,6 @@ login_manager.login_view = "login"
 
 ##################### Basic logins and home ##########################
 
-
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -33,12 +35,6 @@ def home():
 @app.route('/resume')
 def resume():
     return render_template('resume.html')
-
-
-@app.route('/article_test')
-def article_test():
-    return render_template('article.html')
-
 
 
 # a route for generating sitemap.xml
@@ -57,6 +53,76 @@ def sitemap():
       response= make_response(sitemap_xml)
       response.headers["Content-Type"] = "application/xml"        
       return response
+
+
+@app.route('/articles/', defaults={'path': ''})
+@app.route('/articles/<path:path>')
+def articles(path):
+
+    filters = {"tags": request.args.get("tags", None)}
+
+    try:
+        page = int(request.args.get("page", "0"))
+    except:
+        page = 0
+
+    routes = ["major_type", "year", "month", "day", "title"]
+    breadcrumbs = path.split("/")
+    for ind, val in enumerate(breadcrumbs):
+        filters[routes[ind]] = val
+
+    files = parse_files_and_filters(filters)
+
+    return render_template('articles.html', files=files, routes=routes, breadcrumbs=breadcrumbs)
+
+
+#    articles/professional/2018/01/25/data-service-productisation_building
+
+
+
+# @app.route('/articles')
+# def filter_articles():
+#     filters = {"major_type": request.args.get("major_type", None), 
+#                "period": request.args.get("period", None), 
+
+#     try:
+#         page = int(page)
+#     except:
+#         page = 0
+
+
+#     files = parse_files_and_filters(filters)
+
+#     if len(files)==1:
+#         f = files[0]
+#         return redirect(url_for('get_article', major_type=f["major_type"], year=f["year"], 
+#                 month=f["month"], day=f["day"], title=f["title"]))
+#     elif len(files)==0:
+#         flash("No articles match those filters") 
+#         return redirect(url_for('home'))
+
+
+#     files = [f["filename"] for f in files]
+
+
+
+#     return render_template('articles.html', files=files)
+
+
+# @app.route('/articles/<major_type>/<year>/<month>/<day>/<title>')
+# def get_article(major_type, year, month, day, title):
+    
+#     filters = {"major_type": request.view_args.get('major_type', None), 
+#                "year": request.view_args.get('year', None), 
+#                "month": request.view_args.get('month', None), 
+#                "day": request.view_args.get('day', None), 
+#                "title": request.view_args.get('title', None)}
+
+#     files = parse_files_and_filters(filters)
+#     files = [f["filename"] for f in files]
+#     return '<br>'.join(files)
+
+
 
 
 

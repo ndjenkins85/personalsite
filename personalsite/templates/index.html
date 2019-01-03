@@ -7,9 +7,28 @@
       <div class="shadow-sm p-1 bg-white rounded">
         <h2>Nick Jenkins</h2>
         <p><a href="{{ url_for('resume') }}" class="text-decoration-none">Resume</a></p>
-        <p><a href="#" class="text-decoration-none">Professional Writing</a></p>
-        <p><a href="#" class="text-decoration-none">Personal Writing</a></p>            
-        <p><a href="#" class="text-decoration-none">Contact</a></p>
+        <p><a href="{{ url_for('articles') + 'professional' }}" class="text-decoration-none">Professional Writing</a></p>
+        <p><a href="{{ url_for('articles') + 'personal' }}" class="text-decoration-none">Personal Writing</a></p>
+        <p><a href="#" class="text-decoration-none" onclick="togglehide('contact')">Contact</a></p>
+
+        <div id="contact" style="display: none">
+          <div class="row">
+            <div class="col-sm-6">
+              <a href="https://api.whatsapp.com/send?phone=61448329110" alt="+61 448 329 110">Whatsapp / Phone</a>
+            </div>
+            <div class="col-sm-6">
+              <a href="mailto:nick_jenkins@outlook.com" alt="nick_jenkins@outlook.com">Email</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <a href="https://www.linkedin.com/in/nick-jenkins-56a65533" target="_blank" alt="https://www.linkedin.com/in/nick-jenkins-56a65533">Linked-in</a>
+            </div>
+            <div class="col-sm-6">
+              <a href="https://www.nickjenkins.com.au" target="_blank" alt="https://www.nickjenkins.com.au">Personal Website</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-lg-8">
@@ -38,4 +57,8 @@
     </div>
   </div>
 </div>
+
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+
 {% endblock %}

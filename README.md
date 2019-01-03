@@ -40,3 +40,12 @@ CONTENT!
 www.nickjenkins.com.au
 fathomless-whale-h7m0nr3r05sfqntdtuajxbkm.herokudns.com
 heroku certs:auto:enable -a nickjenkins
+
+# Articles todo
+Code highlighting
+Tags
+Link to other articles (use article text)
+Image handling
+Pagination
+Filtering
+
