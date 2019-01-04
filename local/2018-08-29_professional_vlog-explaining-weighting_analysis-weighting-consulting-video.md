@@ -1,0 +1,1 @@
+Weighting is an important – but often misunderstood – technique used to ensure research data is representative of a total population. We developed a vlog to explain the basics of weighting. Watch our video here https://www.youtube.com/watch?v=2wJaxxrv9Gw and comment.

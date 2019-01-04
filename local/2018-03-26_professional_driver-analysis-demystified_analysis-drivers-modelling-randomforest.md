@@ -1,0 +1,1 @@
+I wrote a piece for Evolved Thinking which discusses driver analysis approaches in Market Research. This is a key methodology we use to help determine which attributes are important to customers. Read more here https://evolvedthinking.evolveresearch.com.au/2018/03/26/demystifying-driver-analysis/

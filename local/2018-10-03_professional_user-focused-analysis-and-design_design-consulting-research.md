@@ -1,0 +1,1 @@
+Following a semester at Georgia Tech studying user interface design, I wrote this piece for Evolved Thinking. The aim was to communicate the learnings of the unit as well as link the lessons to our field of work. https://evolvedthinking.evolveresearch.com.au/2018/10/02/its-not-your-fault-if-youre-not-a-computer-person-why-design-matters/

@@ -1,0 +1,1 @@
+As an industry, market research is heading towards shorter surveys, embracing text data and better respondent experiences. Our internal chatbot development program is a big part in realising the future of market research. Read more about our approach and what is in store here https://evolvedthinking.evolveresearch.com.au/2018/12/06/chatbots-for-market-research/

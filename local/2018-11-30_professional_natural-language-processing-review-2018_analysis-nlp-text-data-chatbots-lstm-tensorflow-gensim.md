@@ -1,0 +1,2 @@
+Text Analytics, or Natural Language Processing (NLP) is an exciting technology with a great potential to disrupt many industries. We regularly utilise NLP in market research, with our own stack which includes sentiment analysis, clustering, classification and chatbots. Read more about it here https://evolvedthinking.evolveresearch.com.au/2018/11/01/the-future-of-text-analytics-2019-and-beyond/
+ 

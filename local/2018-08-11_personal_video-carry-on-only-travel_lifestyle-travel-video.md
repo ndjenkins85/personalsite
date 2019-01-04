@@ -1,0 +1,1 @@
+A sneaky peak inside the suitcase of a digital nomad traveler. I work remote and like to stay agile for long periods of time, so I try to maintain ‘carry-on’ sizing for travel gear. Accompaniment to the article I wrote. Watch here https://www.youtube.com/watch?v=iPqinmlEVM4	
