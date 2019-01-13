@@ -1,5 +1,7 @@
 Working remote is a paradigm that fundamentally changes the social and physical nature of work. In many ways it is an evolution like open office environments and hot desking. While there are some clear benefits to employers and employees, there remains some potential difficulties collaborating effectively with remote working employees. This blog post will examine some of these difficulties and suggest strategies for employees, employers and colleagues to get the most out of the experience.
 The advantages to employers come in the form of reduced overheads (office space), access to a wider talent pool, and being known for an attractive company culture. For employees, it can cut down commute times, enable travel, and facilitate periods of uninterrupted work.  
+
+This article was copied with permission by Evolve Research, read more related articles here: https://evolvedthinking.evolveresearch.com.au/2018/01/23/strategies-effective-remote-working/
  
 ![Remote work](https://i.imgur.com/wUEqzQz.png "Remote work")
 *Overlooking the mountains of Koyasan in Autumn while waiting for a cable-car replacement taxi*
@@ -29,3 +31,4 @@ It can really help to plan your day around what's happening in the office. That 
 
 Working remote provides benefits for employers and employees. There are some challenges to overcome with the lack of social and physical proximity, but with the right strategies, you can make it work for you and your business.  
 
+This article was copied with permission by Evolve Research, read more related articles here: https://evolvedthinking.evolveresearch.com.au/2018/01/23/strategies-effective-remote-working/

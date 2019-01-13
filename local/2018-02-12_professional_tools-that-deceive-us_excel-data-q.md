@@ -1,4 +1,6 @@
-We've compiled a list of ten occassions where our analysis tools have behaved unexpectedly. Avoid the blood, sweat, tears and swearing by learning from our experience. We mainly look at Excel, but many of the problems turn out to be deep rooted in computer science and the way our machines handle and process data.
+We've compiled a list of occassions where our analysis tools have behaved unexpectedly. Avoid the blood, sweat, tears and swearing by learning from our experience. We mainly look at Excel, but many of the problems turn out to be deep rooted in computer science and the way our machines handle and process data.
+
+This article was copied with permission by Evolve Research, read more related articles here: https://evolvedthinking.evolveresearch.com.au/
 
 # 1 - Excel Vlookup
 One of the most powerful functions in excel is being able to match and merge data from one source into another. To recap, the vlookup function takes four commands.
@@ -58,3 +60,4 @@ Conclusion
 
 Solid data analysis starts from the ground up. Having trust in the data collection, data management, aggregation and statistic testing allows us to report insights with confidence to our clients. Seeing inconsistant results or behaviour in our primary tools can be unsettling. Understanding some of the shortcomings and problems means we can adapt and continue to report with confidence.
 
+This article was copied with permission by Evolve Research, read more related articles here: https://evolvedthinking.evolveresearch.com.au/
