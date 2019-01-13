@@ -51,12 +51,14 @@
                 <div class="row">
                   <div class="col m-3">
                   {% if single %}
-                    {% for line in file["article"]%}
+                      {{file["article"]}}
+<!--                     {% for line in file["article"]%}
                     <p>{{ line }}</p>
-                    {% endfor %}
+                    {% endfor %} -->
                   {% else %}
                     {{ file["teaser"] }}
                   {% endif %}
+
                   </div>
                 </div>                  
               </div>
@@ -72,20 +74,42 @@
       <div class="shadow-sm p-2 bg-white rounded">
       <strong>Filters</strong>
 
-        <dl class="row">
-          <dt class="col-sm-5">Years</dt>
-          <dd class="col-sm-7">
-            <p>2019</p>
-            <p>2018</p>
-            <p>2017</p>
-          </dd>
-          <dt class="col-sm-5">Tags</dt>
-          <dd class="col-sm-7">
-            <p>Tech</p>
-            <p>Bikes</p>
-            <p>Crap</p>
-          </dd> 
-        </dl>       
+        <div class="row">
+          <div class="col">
+            <h6>Area:</h6>
+            <a href="{{ url_for('articles')}}professional">
+              <span class="badge badge-pill badge-success">Professional
+              </span>
+            </a>
+            <a href="{{ url_for('articles')}}personal">
+              <span class="badge badge-pill badge-success">Personal
+              </span>
+            </a>
+            <p></p>
+            <h6>Year:</h6>
+            <a href="{{ url_for('articles', year=2019)}}">
+              <span class="badge badge-pill badge-dark">2019
+              </span>
+            </a>
+            <a href="{{ url_for('articles', year=2018)}}">
+              <span class="badge badge-pill badge-dark">2018
+              </span>
+            </a>
+            <a href="{{ url_for('articles', year=2017)}}">
+              <span class="badge badge-pill badge-dark">2017
+              </span>
+            </a>
+
+            <p></p>
+            <h6>Tags:</h6>
+            {% for tag in tags %}
+              <a href="{{ url_for('articles', tags=tag[0])}}">
+                <span class="badge badge-pill badge-info">{{ tag[0] }}<span class="badge badge-pill badge-info">({{ tag[1] }})</span>
+                </span>
+              </a>
+            {% endfor %}
+          </div> 
+        </div>       
       </div>    
     </div>
     {% endif %}

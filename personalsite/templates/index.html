@@ -6,9 +6,24 @@
     <div class="col-lg-4">
       <div class="shadow-sm p-1 bg-white rounded">
         <h2>Nick Jenkins</h2>
+        <div class="row">
+          <div class="col-sm-6">
+            <i class="fa fa-area-chart"></i>&nbsp;Data Scientist</li>
+          </div>
+          <div class="col-sm-6">
+            <i class="fa fa-exchange"></i>&nbsp;API & Web Dev</li>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <i class="fa fa-group"></i>&nbsp;Team Leader</li>
+          </div>
+          <div class="col-sm-6">
+            <i class="fa fa-commenting-o"></i>&nbsp;Writer</li>
+          </div>
+        </div>
+        <p></p>
         <p><a href="{{ url_for('resume') }}" class="text-decoration-none">Resume</a></p>
-        <p><a href="{{ url_for('articles') + 'professional' }}" class="text-decoration-none">Professional Writing</a></p>
-        <p><a href="{{ url_for('articles') + 'personal' }}" class="text-decoration-none">Personal Writing</a></p>
         <p><a href="#" class="text-decoration-none" onclick="togglehide('contact')">Contact</a></p>
 
         <div id="contact" style="display: none">
@@ -29,6 +44,18 @@
             </div>
           </div>
         </div>
+        <p></p>
+
+        <p><a href="{{ url_for('articles') + 'professional' }}" class="text-decoration-none">Professional Writing</a></p>
+        <p><a href="{{ url_for('articles') + 'personal' }}" class="text-decoration-none">Personal Writing</a></p>
+        <p></p>
+        <h6>Article tags:</h6>
+        {% for tag in tags %}
+          <a href="{{ url_for('articles', tags=tag[0])}}">
+            <span class="badge badge-pill badge-info">{{ tag[0] }}<span class="badge badge-pill badge-info">({{ tag[1] }})</span>
+            </span>
+          </a>
+        {% endfor %}
       </div>
     </div>
     <div class="col-lg-8">

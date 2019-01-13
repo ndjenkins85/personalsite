@@ -1,6 +1,7 @@
 import os
 from operator import itemgetter
-
+from flask import Markup
+import markdown
 
 def get_file_details(filename):
 
@@ -31,9 +32,18 @@ def get_file_details(filename):
 
         article = open_article(filename)
 
+        teaser = article[0].replace('â€˜',"'").replace('â€™',"'")
+        article = ''.join(article).replace('â€˜',"'").replace('â€™',"'")
+
+        teaser = Markup(markdown.markdown(teaser))        
+        article = Markup(markdown.markdown(article))
+        article = article.replace("img alt", "img class=img-thumbnail alt")
+
         return {"filename": filename, "date": date, "major_type": major_type, "title": title, "tags": tags, "year": year, 
                 "month": month, "day": day, "period": period, "filename": filename, "filetype": filetype, 
-                "title_cap": title_cap, "url_helper": url_helper, "teaser": article[0], "article": article}
+                "title_cap": title_cap, "url_helper": url_helper, 
+                "teaser": teaser, "article": article}
+
 
     except:
         return None
@@ -48,6 +58,21 @@ def open_article(filename):
 def get_all_files():
     files = [get_file_details(x) for x in os.listdir("local")]
     return files
+
+
+def get_all_tags():
+    files = get_all_files()
+    tags = {}
+    for f in files:
+        for t in f["tags"]:
+            if t in tags:
+                tags[t]+=1
+            else:
+                tags[t] = 1
+
+    tags = sorted(tags.items(), key=itemgetter(1), reverse=True)
+    return tags
+
 
 
 def parse_files_and_filters(filters):

@@ -29,15 +29,17 @@ Google SEO
 http://flask.pocoo.org/snippets/108/
 
 # TODOs
-CONTENT!
-Tags - working for filters etc
-
+x CONTENT!
+x Tags - working for filters etc
+x Formatting of articles
+ - video
+ 
 Sitemap
 Related articles based on tags
 RSS
 Pagination
 Code highlighting https://highlightjs.org/usage/
-Formatting of articles
+Comment count on links
 
 ### Within Articles
 Linking of other articles
