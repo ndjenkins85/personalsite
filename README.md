@@ -1,28 +1,28 @@
 ### Conda environment
 
-conda update -n base conda --yes
-conda create -n personal
-conda activate personal
-conda install -n personal --yes --file environment/requirements_conda.txt
-pip install -r environment/requirements_noconda.txt
+conda update -n base conda --yes  
+conda create -n personal  
+conda activate personal  
+conda install -n personal --yes --file environment/requirements_conda.txt  
+pip install -r environment/requirements_noconda.txt  
 
 
 ### Local Docker
-docker build -t bluemania/personalsite .
-docker run -p 5000:5000 -e PORT=5000 --rm bluemania/personalsite
+docker build -t bluemania/personalsite .  
+docker run -p 5000:5000 -e PORT=5000 --rm bluemania/personalsite  
 
 ### Push Docker
-docker build -t bluemania/personalsite .
-heroku login
-heroku container:login
-docker tag bluemania/personalsite registry.heroku.com/nickjenkins/web
-docker push registry.heroku.com/nickjenkins/web
-heroku container:release web -a nickjenkins
+docker build -t bluemania/personalsite .  
+heroku login  
+heroku container:login  
+docker tag bluemania/personalsite registry.heroku.com/nickjenkins/web  
+docker push registry.heroku.com/nickjenkins/web  
+heroku container:release web -a nickjenkins  
 
 ### SSL
-www.nickjenkins.com.au
-fathomless-whale-h7m0nr3r05sfqntdtuajxbkm.herokudns.com
-heroku certs:auto:enable -a nickjenkins
+www.nickjenkins.com.au  
+fathomless-whale-h7m0nr3r05sfqntdtuajxbkm.herokudns.com  
+heroku certs:auto:enable -a nickjenkins  
 
 ### SEO resources
 Google SEO
