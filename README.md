@@ -1,8 +1,8 @@
 ### Conda environment
 
 conda update -n base conda --yes
-conda create personal
-activate personal
+conda create -n personal
+conda activate personal
 conda install -n personal --yes --file environment/requirements_conda.txt
 pip install -r environment/requirements_noconda.txt
 
