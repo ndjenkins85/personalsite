@@ -6,7 +6,7 @@ Porto is a city which has experienced a recent sudden boom in tourism (the secre
 
 If you haven’t been to Porto yet, I’d say there are three key points / areas to be aware of, and choose your accomodation to be close (up to 10 minutes walk) from any one of these. We’ll go through each of the areas below, and also mark further places to visit as being near these points. The points themselves are a bit busier and noisy, but besides these areas the general central area of the city is quite low stress. We enjoyed being able to walk everywhere (or hop in a cheap uber) to get around. We liked how the city had the traditional architecture feel of Italian cities, a little grubby but no worse than Paris. 
 
-![01_porto-ponte-luis-rainbow.png](https://www.nickjenkins.com.au/static/assets/hobart/01_porto-ponte-luis-rainbow.png "01_porto-ponte-luis-rainbow.png")
+![01_porto-ponte-luis-rainbow.jpg](https://www.nickjenkins.com.au/static/assets/hobart/01_porto-ponte-luis-rainbow.jpg "01_porto-ponte-luis-rainbow.jpg")
 
 ### Main areas
 First of the main areas is ‘Ponte Luis’ (PL). It is a large two-tiered bridge running across the Douro. Running along both sides of the river are promenades with restaurants, bars and port tastings. The banks of the Douro are quite steep so the second tier of the bridge connects the higher areas, and is open to foot traffic and trams. You can catch a gondola from the promenade up to the top level which is an interesting thing to do. The views here are stunning.
@@ -16,7 +16,7 @@ Second of the main areas is the shopping district around ‘Via Catarina’ (VC)
 
 Third of the areas is around the ‘Igreja do Carmo’ (IC) church. This area has a small park and street buskers. From here there are several shops, restaurants and bars. It’s a commonly visited tourist area so it can have a bit more foot traffic and noise.
 
-![02_porto-igreja-do-carmo-plaza.png](https://www.nickjenkins.com.au/static/assets/hobart/02_porto-igreja-do-carmo-plaza.png "02_porto-igreja-do-carmo-plaza.png")
+![02_porto-igreja-do-carmo-plaza.jpg](https://www.nickjenkins.com.au/static/assets/hobart/02_porto-igreja-do-carmo-plaza.jpg "02_porto-igreja-do-carmo-plaza.jpg")
 
 ### Eating out
 * Pork rolls @ Casa Guedes, VC. Juicy roast pork served on traditional damper style bread. It’s commonly ordered with soft cheese but I personally preferred it without.
@@ -28,7 +28,7 @@ Third of the areas is around the ‘Igreja do Carmo’ (IC) church. This area ha
 * Michelin stars @ DOP, PL. DOP is a treat for foodies seeking something a bit more special. The lunch special was quite reasonable although I don’t remember the cost or what we had. We just remember being quite satisfied!
 * Food court @ Ar de Rio, PL. Food court doesn’t do this place justice, as it’s a very new building with a few dozen concessions serving all types of food. It’s here you can get bridadeiros a popular soft chocolate sweet. Also a great place for drinks and charcuteries.
 
-![03_porto-food-court.png](https://www.nickjenkins.com.au/static/assets/hobart/03_porto-food-court.png "03_porto-food-court.png")
+![03_porto-food-court.jpg](https://www.nickjenkins.com.au/static/assets/hobart/03_porto-food-court.jpg "03_porto-food-court.jpg")
 
 ### Having a drink
 * Selina, IC. This place is a coworking - backpackers 2.0 type place. The drinks are good, the bar space and courtyard are really nice. Worth adding to your bar hop iternery.
@@ -40,7 +40,7 @@ Third of the areas is around the ‘Igreja do Carmo’ (IC) church. This area ha
 * Fabrica Nortica, VC. This is a much larger modern styled brewhouse which hosts live bands.
 * Various Port Houses, PL. On the southern side there are many port houses to try fortified wines. As mentioned, the food court is quite good too.
 
-![04_porto-cat-cafe.png](https://www.nickjenkins.com.au/static/assets/hobart/04_porto-cat-cafe.png "04_porto-cat-cafe.png.png")
+![04_porto-cat-cafe.jpg](https://www.nickjenkins.com.au/static/assets/hobart/04_porto-cat-cafe.jpg "04_porto-cat-cafe.jpg.jpg")
 
 ### Things to do
 
@@ -53,7 +53,7 @@ Besides wandering around the three areas above and finding your own new favourit
 * River cruises, PL. We didn’t go on a river cruise, but this is a popular activity.
 * Language classes, PL. The government runs some free language classes at a large church or old government building on the Northside of Ponte Luis. I didn’t attend these as I went to a paid class twice a week.
 
-![05_porto-promenade.png](https://www.nickjenkins.com.au/static/assets/hobart/05_porto-promenade.png "05_porto-promenade.png")
+![05_porto-promenade.jpg](https://www.nickjenkins.com.au/static/assets/hobart/05_porto-promenade.jpg "05_porto-promenade.jpg")
 
 So that’s the complete list. Did we miss anything?
 
