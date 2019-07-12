@@ -12,8 +12,8 @@ docker build -t bluemania/personalsite .
 docker run -p 5000:5000 -e PORT=5000 --rm bluemania/personalsite  
 
 ### Push Docker
-docker build -t bluemania/personalsite .  
 heroku login  
+docker build -t bluemania/personalsite .  
 heroku container:login  
 docker tag bluemania/personalsite registry.heroku.com/nickjenkins/web  
 docker push registry.heroku.com/nickjenkins/web  
