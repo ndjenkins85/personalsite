@@ -35,8 +35,8 @@ def get_file_details(filename):
         teaser = article[0].replace('â€˜',"'").replace('â€™',"'")
         article = ''.join(article).replace('â€˜',"'").replace('â€™',"'")
 
-        teaser = Markup(markdown.markdown(teaser))        
-        article = Markup(markdown.markdown(article))
+        teaser = Markup(markdown.markdown(teaser, extensions=["fenced_code"]))        
+        article = Markup(markdown.markdown(article, extensions=["fenced_code"]))
         article = article.replace("img alt", "img class=img-thumbnail alt")
 
         return {"filename": filename, "date": date, "major_type": major_type, "title": title, "tags": tags, "year": year, 
@@ -46,7 +46,7 @@ def get_file_details(filename):
 
 
     except:
-        return None
+        raise ValueError(f"Cannot parse {filename}")
 
 def open_article(filename):
     with open(os.path.join("local", filename), 'r') as f:
@@ -56,7 +56,8 @@ def open_article(filename):
 
 
 def get_all_files():
-    files = [get_file_details(x) for x in os.listdir("local")]
+    excluded = [".DS_Store"]
+    files = [get_file_details(x) for x in os.listdir("local") if x not in excluded]
     return files
 
 
@@ -64,11 +65,14 @@ def get_all_tags():
     files = get_all_files()
     tags = {}
     for f in files:
+        if not f["tags"]:
+            raise ValueError(f"Tags not parsed correctly for {f}")
         for t in f["tags"]:
-            if t in tags:
-                tags[t]+=1
-            else:
-                tags[t] = 1
+                if t in tags:
+                    tags[t]+=1
+                else:
+                    tags[t] = 1
+
 
     tags = sorted(tags.items(), key=itemgetter(1), reverse=True)
     return tags
