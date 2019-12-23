@@ -49,7 +49,6 @@ def get_file_details(filename):
             "title_cap": title_cap, "url_helper": url_helper, 
             "teaser": teaser, "article": article}
 
-
 def open_article(filename):
     with open(os.path.join("local", filename), 'r') as f:
         article = f.readlines()
@@ -68,7 +67,6 @@ def get_all_tags():
         assert file is not None, f"{files}"
         for t in file.get("tags"):
             tags[t]+=1
-
     tags = sorted(tags.items(), key=itemgetter(1), reverse=True)
     return tags
 

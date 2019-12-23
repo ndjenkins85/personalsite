@@ -47,8 +47,7 @@
         <p></p>
 
         <p><a href="{{ url_for('articles') + 'professional' }}" class="text-decoration-none">Professional Writing</a></p>
-        <p><a href="{{ url_for('articles') + 'personal' }}" class="text-decoration-none">Personal Writing</a></p>
-        <p></p>      
+        <p><a href="{{ url_for('articles') + 'personal' }}" class="text-decoration-none">Personal Writing</a></p>  
         <h6>Article tags:</h6>
         {% for tag in tags %}
           <a href="{{ url_for('articles', tags=tag[0])}}">
@@ -76,8 +75,14 @@
           <div class="carousel-item">
               <img src="{{ url_for('static', filename='img/carousel_5.jpeg') }}" class="d-block w-100 imagefade" alt="...">
           </div>
-          <div class="carousel-item active">
+          <div class="carousel-item">
               <img src="{{ url_for('static', filename='img/carousel_6.jpeg') }}" class="d-block w-100 imagefade" alt="...">
+          </div>
+          <div class="carousel-item active">
+              <img src="{{ url_for('static', filename='img/carousel_7.jpeg') }}" class="d-block w-100 imagefade" alt="...">
+          </div>
+          <div class="carousel-item">
+              <img src="{{ url_for('static', filename='img/carousel_8.jpeg') }}" class="d-block w-100 imagefade" alt="...">
           </div>
         </div>
       </div>
