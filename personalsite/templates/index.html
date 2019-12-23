@@ -48,9 +48,7 @@
 
         <p><a href="{{ url_for('articles') + 'professional' }}" class="text-decoration-none">Professional Writing</a></p>
         <p><a href="{{ url_for('articles') + 'personal' }}" class="text-decoration-none">Personal Writing</a></p>
-        <p></p>
-        <h6>I <i class="fa fa-heart"></i> the sharing economy:</h6>
-          <div class="airbnb-embed-frame" data-user-id="10475480" data-review-count="21" data-view="review_button" data-eb="1560646551_HP1IpUNa72lNLGLA" data-eu="jcADN74eMIBKjQYCVkUb59S/43bOlD/YtQj2Dv7bq1U4wkQlu9dGjNTXJa/4 7H+V+TchmvHi2aZcJlhIfsATauybEPiRCId2QURULwSvBrMuKNvmFtMC2jBU rmk+I1JTuKZW0oivHVr18ff6qXlai8ojnpaggtDd408YVmN0JMBm3mGtg4CU 3zbkvRdaUh3FUdmv4NV6jyxGXpFl1W/mH3GhEunTLphllPxxs5ZpxCx7w/IE +XuFSzYnagpWvnYR2KdoMI5dAlRDFV7K9rrX87BJsER9B7JNwz7tfUmCdb0C OoEZs9CG6oIc57ANaqJf6ECpIoUpNGaO02/XERZkdw== " data-trigger-source-type="badge_center" data-embed-source-type="badge_center" style="height:80px;margin:auto"><a href="https://www.airbnb.com/users/show/10475480">Reviews</a><script async="" src="https://www.airbnb.com/embeddable/airbnb_jssdk"></script></div>        
+        <p></p>      
         <h6>Article tags:</h6>
         {% for tag in tags %}
           <a href="{{ url_for('articles', tags=tag[0])}}">
