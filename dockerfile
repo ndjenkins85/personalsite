@@ -2,9 +2,9 @@ FROM python:3.6
 
 # Install requirements
 WORKDIR /code
-COPY environment/requirements_conda.txt /code/requirements_conda.txt
+COPY env/requirements_conda.txt /code/requirements_conda.txt
 RUN pip install -r requirements_conda.txt --no-cache-dir
-COPY environment/requirements_noconda.txt /code/requirements_noconda.txt
+COPY env/requirements_noconda.txt /code/requirements_noconda.txt
 RUN pip install -r requirements_noconda.txt --no-cache-dir
 COPY . /code
 
