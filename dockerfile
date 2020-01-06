@@ -6,7 +6,10 @@ COPY env/requirements_conda.txt /code/requirements_conda.txt
 RUN pip install -r requirements_conda.txt --no-cache-dir
 COPY env/requirements_noconda.txt /code/requirements_noconda.txt
 RUN pip install -r requirements_noconda.txt --no-cache-dir
+
+# Copy code
 COPY . /code
+#ADD . /code
 
 ENV FLASK_ENV="docker"
 ENV PYTHONUNBUFFERED=0

@@ -4,11 +4,8 @@ from flask_sslify import SSLify
 
 def create_app():
 	app = Flask(__name__)
-	app.config.from_object('personalsite.config.base_config.BaseConfig')
-
+	app.config.from_object('personalsite.config.config.Config')
 	return app
-
-app = Flask(__name__)
 
 app = create_app()
 CORS(app)

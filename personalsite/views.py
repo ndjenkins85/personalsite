@@ -34,7 +34,7 @@ def home():
 @app.route('/resume')
 def resume():
     return render_template('resume.html')
-
+    
 
 @app.route('/sitemap.xml', methods=['GET'])
 def sitemap():
