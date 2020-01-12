@@ -9,20 +9,20 @@ Bri and I have been living in the states six months now, and we are excited to h
 * Live music, jazz, bars
 * Late night shows i.e. Jimmy Fallon
 * Museums
-- Guggenheim
-- Planetarium
-- Fotographia
-- Tenement
-- The MET
+    * Guggenheim
+    * Planetarium
+    * Fotographia
+    * Tenement
+    * The MET
 * Broadway shows
 * Spa treatment
 * Get out of town for a hike
 * Sports matches
-- Basketball
-- Baseball
-- Football
-- Hockey
-- Soccer
+    * Basketball
+    * Baseball
+    * Football
+    * Hockey
+    * Soccer
 * Cat cafe 
 * Central Park
 * Bike rides to Brooklyn
@@ -43,21 +43,21 @@ Bri and I have been living in the states six months now, and we are excited to h
 * Washington DC
 * New Orleans
 * California
-- SF
-- Yellowstone
-- Yosemite
-- (Burning man?)
+    * SF
+    * Yellowstone
+    * Yosemite
+    * (Burning man?)
 * Georgia Atlanta
 * Las Vegas
 * Canada
-- Montreal
-- Banff
+    * Montreal
+    * Banff
 * Great snow mountains
-- Colorado
-- Seattle
+    * Colorado
+    * Seattle
 * Mexico
-- Cabo
-- Quintana Roo
+    * Cabo
+    * Quintana Roo
 
 ## Food in NYC
 
