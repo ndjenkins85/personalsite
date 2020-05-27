@@ -71,7 +71,17 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 1641,
+				"buffer_size": 1640,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "personalsite/templates/resume.html",
+			"settings":
+			{
+				"buffer_size": 11901,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -124,10 +134,14 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/nicholasjenkins/Documents/personalsite/personalsite"
+		"/Users/nicholasjenkins/Documents/personalsite/personalsite",
+		"/Users/nicholasjenkins/Documents/personalsite/personalsite/static",
+		"/Users/nicholasjenkins/Documents/personalsite/personalsite/templates"
 	],
 	"file_history":
 	[
+		"/Applications/World of Warcraft/_classic_/WTF/Account/396255466#1/SavedVariables/Auc-ScanData.lua",
+		"/Users/nicholasjenkins/Library/Jupyter/runtime/nbserver-905-open.html",
 		"/Users/nicholasjenkins/Documents/wow_auctions/utils.py",
 		"/Applications/World of Warcraft/_classic_/WTF/Account/396255466#1/SavedVariables/BeanCounter.lua",
 		"/Users/nicholasjenkins/Documents/wow_auctions/testing.py",
@@ -140,7 +154,6 @@
 		"/Users/nicholasjenkins/Documents/wow_auctions/config/general_settings.yaml",
 		"/Users/nicholasjenkins/Library/Jupyter/runtime/nbserver-4104-open.html",
 		"/Applications/World of Warcraft/_classic_/WTF/Account/396255466#1/SavedVariables/Auc-Advanced.lua.bak",
-		"/Applications/World of Warcraft/_classic_/WTF/Account/396255466#1/SavedVariables/Auc-ScanData.lua",
 		"/Applications/World of Warcraft/_classic_/WTF/Account/396255466#1/SavedVariables/WIM.lua",
 		"/Users/nicholasjenkins/Documents/wow_auctions/data/ArkInventory.lua",
 		"/Users/nicholasjenkins/Documents/wow_auctions/data/BeanCounter.lua",
@@ -238,7 +251,7 @@
 	],
 	"find":
 	{
-		"height": 42.0
+		"height": 30.0
 	},
 	"find_in_files":
 	{
@@ -252,6 +265,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"personal",
+			"utili"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -269,7 +284,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -278,15 +293,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1641,
+						"buffer_size": 1640,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								532,
+								758
 							]
 						],
 						"settings":
@@ -295,6 +310,36 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "personalsite/templates/resume.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11901,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5397,
+								5397
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2454.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
