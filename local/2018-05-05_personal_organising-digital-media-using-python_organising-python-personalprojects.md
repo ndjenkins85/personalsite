@@ -4,7 +4,8 @@ I've written this script to help collate all of the photos in one place, and to 
 
 Importantly, we do not do any deletion operations here. We only copy files (selectively) into new folders. Personally, i'm anticipating a lot more work to manually sort through the photos to detect duplicates and other junk.
 
-```  
+``` python
+
     import os  
     import hashlib  
     from tqdm import tnrange  

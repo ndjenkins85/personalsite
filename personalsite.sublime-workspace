@@ -75,15 +75,6 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "personalsite/templates/resume.html",
-			"settings":
-			{
-				"buffer_size": 11901,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
@@ -134,12 +125,15 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/nicholasjenkins/Documents/personalsite/personalsite",
-		"/Users/nicholasjenkins/Documents/personalsite/personalsite/static",
-		"/Users/nicholasjenkins/Documents/personalsite/personalsite/templates"
+		"/Users/nicholasjenkins/Documents/personalsite"
 	],
 	"file_history":
 	[
+		"/Users/nicholasjenkins/Documents/personalsite/local/2020-05-27_professional_an-updated-reading-list_study-career.md",
+		"/Users/nicholasjenkins/Documents/personalsite/personalsite/templates/resume.html",
+		"/Users/nicholasjenkins/Documents/personalsite/local/2020-01-12_personal_big-list-of-things-to-do-nyc_travel-usa-organising.md",
+		"/Users/nicholasjenkins/Documents/personalsite/.gitignore",
+		"/Users/nicholasjenkins/Documents/personalsite/personalsite.sublime-project",
 		"/Applications/World of Warcraft/_classic_/WTF/Account/396255466#1/SavedVariables/Auc-ScanData.lua",
 		"/Users/nicholasjenkins/Library/Jupyter/runtime/nbserver-905-open.html",
 		"/Users/nicholasjenkins/Documents/wow_auctions/utils.py",
@@ -197,7 +191,6 @@
 		"/Users/nicholasjenkins/Documents/personalmonies/snapshots/2020-01-10.yaml",
 		"/Applications/World of Warcraft/_classic_/WTF/Account/BLUEM/SavedVariables/Auc-ScanData.lua",
 		"/Users/nicholasjenkins/Documents/personalsite/local/2019-07-06_personal_guide-to-a-great-time-in-porto_travel-portugal.md",
-		"/Users/nicholasjenkins/Documents/personalsite/local/2020-01-12_personal_big-list-of-things-to-do-nyc_travel-usa-organising.md",
 		"/Users/nicholasjenkins/Documents/personalsite/docker-compose.yml",
 		"/Users/nicholasjenkins/Documents/personalsite/personalsite/views.py",
 		"/Users/nicholasjenkins/Documents/personalsite/dockerfile",
@@ -206,7 +199,6 @@
 		"/Users/nicholasjenkins/Documents/personalsite/personalsite/__init__.py",
 		"/Users/nicholasjenkins/Documents/personalsite/env/requirements_conda.txt",
 		"/Users/nicholasjenkins/Documents/personalsite/personalsite/config/config.yaml",
-		"/Users/nicholasjenkins/Documents/personalsite/.gitignore",
 		"/Users/nicholasjenkins/Documents/personalsite/personalsite/config/base_config.py",
 		"/Users/nicholasjenkins/Documents/personalsite/run.py",
 		"/Users/nicholasjenkins/Documents/personalsite/personalsite/file_parsing.py",
@@ -251,13 +243,15 @@
 	],
 	"find":
 	{
-		"height": 30.0
+		"height": 42.0
 	},
 	"find_in_files":
 	{
 		"height": 175.0,
 		"where_history":
 		[
+			"<current file>",
+			""
 		]
 	},
 	"find_state":
@@ -265,6 +259,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"best pra",
+			"###",
+			"- ",
 			"personal",
 			"utili"
 		],
@@ -274,6 +271,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"####",
+			"* "
 		],
 		"reverse": false,
 		"show_context": true,
@@ -284,7 +283,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -300,7 +299,7 @@
 						"selection":
 						[
 							[
-								532,
+								573,
 								758
 							]
 						],
@@ -309,37 +308,7 @@
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "personalsite/templates/resume.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11901,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5397,
-								5397
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2454.0,
+						"translation.y": 286.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
