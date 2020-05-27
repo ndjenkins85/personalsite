@@ -1,12 +1,23 @@
 Well, seems my last blog about thing I'd like to do in NYC has been blown to bits by COVID. While in lockdown, I've been going through my reading list and curating some good content that I have come across over the years.
 
-# The list
+## The list
 
-Following list is in no particular order. Starts with header, provides link, some tags, then a brief description of the content of the article.
+I have looked to group by a couple of key areas:
+
+* Management and process
+* Processes and checklists
+* Machine learning
+* Metrics
+* Text analysis
+* SQL
+* Web
+* Data quality
+
+Each specific article link starts with header, provides link, some tags, then a brief description of the content of the article.
 
 It might be cool to perform a site update to have a separate section for reading list. It would also be cool to have the tags which I currently have set up for blogs could include these tags, and be sorted alphabetically.
 
-# Management and process
+## Management and process
 
 #### 12 manager readmes
 https://hackernoon.com/12-manager-readmes-from-silicon-valleys-top-tech-companies-26588a660afe
@@ -46,7 +57,7 @@ http://gregorygundersen.com/blog/2020/01/12/why-research-blog/
 * writing, learning
 * A PhD researchers reflection on writing as a valuable method of learning
 
-# Processes and checklists
+## Processes and checklists
 
 #### The Joel test, 12 steps to better code
 https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/
@@ -66,7 +77,41 @@ https://blog.danslimmon.com/2019/07/15/do-nothing-scripting-the-key-to-gradual-a
 * process, efficiency
 * An approach to partially automate repetitive tasks and reduce working memory requirement
 
-# Text analysis
+## Machine Learning
+
+#### Rules of machine learning
+http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf
+
+* software development, process, machine learning, data analysis
+* Big guide from google about best practices for working with production machine learning pipelines
+
+#### ML vs Econometrics y(x) vs betas
+https://scholar.harvard.edu/files/sendhil/files/jep.31.2.87.pdf
+
+* data analysis, statistics, machine learning
+* Good overview of differences in approach for machine learning vs econometric analysis. Beats more important in econometrics and understanding data assumptions
+
+## Metrics
+
+#### Optipedia
+https://www.optimizely.com/optimization-glossary/
+
+* metrics
+* Great repository of different metric concepts and processes in web A/B testing
+
+#### Why not accuracy?
+https://stats.stackexchange.com/questions/312780/why-is-accuracy-not-the-best-measure-for-assessing-classification-models
+
+* metrics, data analytics
+* Great answer to why we eschew accuracy for other measures
+
+#### Why you should summarise your data with the geometric mean
+https://medium.com/@JLMC/understanding-three-simple-statistics-for-data-visualizations-2619dbb3677a
+
+* data analysis, metrics
+* Discussion of using other methods to reduce your data into an average. Would appear to work well for highly imbalanced or skewed data
+
+## Text analysis
 
 #### The absolute minimum software developers should know about Unicode
 https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/
@@ -92,39 +137,7 @@ https://amitness.com/2020/05/self-supervised-learning-nlp/
 * text data, data analysis
 * Overview of more advanced concepts in machine learning for text data in text pre-processing
 
-# ML, metrics
-
-#### Rules of machine learning
-http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf
-
-* software development, process, machine learning, data analysis
-* Big guide from google about best practices for working with production machine learning pipelines
-
-#### ML vs Econometrics y(x) vs betas
-https://scholar.harvard.edu/files/sendhil/files/jep.31.2.87.pdf
-
-* data analysis, statistics, machine learning
-* Good overview of differences in approach for machine learning vs econometric analysis. Beats more important in econometrics and understanding data assumptions
-
-#### Optipedia
-https://www.optimizely.com/optimization-glossary/
-
-* metrics
-* Great repository of different metric concepts and processes in web A/B testing
-
-#### Why not accuracy?
-https://stats.stackexchange.com/questions/312780/why-is-accuracy-not-the-best-measure-for-assessing-classification-models
-
-* metrics, data analytics
-* Great answer to why we eschew accuracy for other measures
-
-#### Why you should summarise your data with the geometric mean
-https://medium.com/@JLMC/understanding-three-simple-statistics-for-data-visualizations-2619dbb3677a
-
-* data analysis, metrics
-* Discussion of using other methods to reduce your data into an average. Would appear to work well for highly imbalanced or skewed data
-
-# SQL
+## SQL
 
 #### PostgresSQL exercises
 https://pgexercises.com/
@@ -138,7 +151,7 @@ https://mystery.knightlab.com/walkthrough.html
 * SQL, learning
 * Interactive game using SQL, can complete in browser or with downloaded database
 
-# Web
+## Web
 
 #### Why do we need flask, celery, redis?
 https://news.ycombinator.com/item?id=22901856
@@ -146,7 +159,7 @@ https://news.ycombinator.com/item?id=22901856
 * Software development
 * Link and comment section is good. Explains the concepts of the three technologies and how the process is similar to ordering take out food
 
-# Data quality
+## Data quality
 
 #### Starting a data quality checklist
 https://medium.com/@TWB_BI/starting-a-data-quality-checklist-2d500e97ab5c
