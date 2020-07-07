@@ -129,6 +129,14 @@
 	],
 	"file_history":
 	[
+		"/Users/nicholasjenkins/Google Drive/Work/CV and Interviewing/200529_interviewing_fb.txt",
+		"/Users/nicholasjenkins/Documents/personalsite/local/2018-05-05_personal_organising-digital-media-using-python_organising-python-personalprojects.md",
+		"/Users/nicholasjenkins/Documents/personalsite/local/2015-07-04_professional_apache-spark-course-reflections_analysis-spark.md",
+		"/Users/nicholasjenkins/Documents/personalsite/local/2015-08-08_professional_categorizing-text-data-planning_text-analysis.md",
+		"/Users/nicholasjenkins/Documents/personalsite/local/2015-07-19_professional_automatic-coding-of-text-data_text-analysis.md",
+		"/Users/nicholasjenkins/Documents/personalsite/local/2015-07-02_professional_when-to-automate_automation-text-analysis.md",
+		"/Users/nicholasjenkins/Documents/personalsite/local/2015-07-03_professional_a-new-programmers-reading-list_study-career.md",
+		"/Users/nicholasjenkins/Documents/personalsite/local/2015-08-08_professional_automatic-coding-of-text-data_text-analysis.md",
 		"/Users/nicholasjenkins/Documents/personalsite/local/2020-05-27_professional_an-updated-reading-list_study-career.md",
 		"/Users/nicholasjenkins/Documents/personalsite/personalsite/templates/resume.html",
 		"/Users/nicholasjenkins/Documents/personalsite/local/2020-01-12_personal_big-list-of-things-to-do-nyc_travel-usa-organising.md",
@@ -243,7 +251,7 @@
 	],
 	"find":
 	{
-		"height": 42.0
+		"height": 30.0
 	},
 	"find_in_files":
 	{
@@ -299,8 +307,8 @@
 						"selection":
 						[
 							[
-								573,
-								758
+								1500,
+								1500
 							]
 						],
 						"settings":
@@ -308,7 +316,7 @@
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 286.0,
+						"translation.y": 756.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -398,7 +406,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 343.0,
+	"side_bar_width": 271.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
