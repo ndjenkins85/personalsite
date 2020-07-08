@@ -6,7 +6,7 @@ Ultimately the first version was a success - the program was completed and it he
 
 There are a few distinct phases of the project which are reflected in the graph
 
-![Holdings](https://www.nickjenkins.com.au/static/assets/wow_auctions/holdings.jpg "holdings.jpg")
+![Holdings](https://www.nickjenkins.com.au/static/assets/wow_auctions/holdings.png "holdings.jpg")
 
 ##### Mid-April MVP
 
@@ -36,7 +36,7 @@ The past two weeks are more reflective of the initial Mid-April to Mid-May perio
 
 On the performance improvement side, I was not satisfied with the herb buying policy as I found it too conservative which limited supply. I realized that by basing market price on my auction history, I was unintentionally biasing the market price towards my own actions as opposed to a more real price. 
 
-I considered changing the program to define market price as auctions that existed in one snapshot, but not the next (if they were not due to expire). Alternatively, I decided it was easier and robust to use more general data from ['Booty Bay Gazette'](https://www.bootybaygazette.com/) on auction values. To absorb the information in an API-like form, I needed to experiment with creating WoW addons with lua, so that I could scrape the BBG information in-game, and save it to my own addon file so that the auction program could read this market price information. I created a ['wow_addon github'](https://github.com/bluemania/wow_addon) specifically for this sub-project.  
+I considered changing the program to define market price as auctions that existed in one snapshot, but not the next (if they were not due to expire). Alternatively, I decided it was easier and robust to use more general data from [Booty Bay Gazette](https://www.bootybaygazette.com/) on auction values. To absorb the information in an API-like form, I needed to experiment with creating WoW addons with lua, so that I could scrape the BBG information in-game, and save it to my own addon file so that the auction program could read this market price information. I created a [wow_addon github](https://github.com/bluemania/wow_addon) specifically for this sub-project.  
 
 ## On to improving software development expertise
 
