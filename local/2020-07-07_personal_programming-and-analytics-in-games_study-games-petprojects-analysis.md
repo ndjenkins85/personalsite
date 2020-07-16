@@ -1,6 +1,6 @@
 I have always been a keen video game player. Since moving to a new country, and especially during COVID times, video games have become a choice way to spend free time. I enjoy complex games with a lot of opportunity to analyse and optimise - no great surprise that I made a career of these skills! 
 
-https://github.com/bluemania/wow_auctions
+[Check out the github here](https://github.com/bluemania/wow_auctions)
 
 Recently I started playing World of Warcraft: Classic (WoW) upon it's release late 2019. It is a highly social game where players group to fight monsters and loot gold and items.
 
