@@ -9,7 +9,6 @@ pip install -r env/requirements_noconda.txt
 
 ```
 
-
 ### Local Docker
 ``` bash
 docker build -t bluemania/personalsite .
