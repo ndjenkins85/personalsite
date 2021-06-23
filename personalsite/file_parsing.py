@@ -49,6 +49,7 @@ def get_file_details(filename):
             "title_cap": title_cap, "url_helper": url_helper, 
             "teaser": teaser, "article": article}
 
+
 def open_article(filename):
     with open(os.path.join("local", filename), 'r') as f:
         article = f.readlines()
@@ -56,7 +57,7 @@ def open_article(filename):
 
 
 def get_all_files():
-    exclude_list = ['.DS_Store']
+    exclude_list = ['.DS_Store', '.wh..wh..opq']
     return [get_file_details(x) for x in os.listdir("local") if x not in exclude_list]
 
 
