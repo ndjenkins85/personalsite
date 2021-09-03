@@ -1,0 +1,98 @@
+[tool.poetry]
+name = "my_project"
+version = "0"
+description = "Personal python project quick starter example."
+license = "MIT"
+authors = ["Nick Jenkins"]
+readme = "README.md"
+homepage = "https://www.nickjenkins.com.au/"
+repository = "https://github.com/ndjenkins85/ndj_cookie/"
+documentation = "https://ndjenkins85.github.io/ndj_cookie/"
+keywords = [
+    "quick_start",
+    "best_practice",
+    "python_packaging",
+    ]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Documentation",
+    "Topic :: Documentation :: Sphinx",
+    "Topic :: Education :: Testing",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities",
+]
+include = ["LICENSE", "README.md"]
+
+[tool.poetry.dependencies]
+python = ">=3.7.1,<4"
+pip = "^21.1.2"
+sphinx = {version = "^4", optional = true}
+
+[tool.poetry.dev-dependencies]
+autoflake = "^1.4"
+black = "^21.7b0"
+m2r2 = "^0.3.1"
+mypy = "^0.910"
+nox = "^2021.6.12"
+pytest = "^6.2.4"
+pytest-cov = "^2.12.1"
+pre-commit = "^2.14.0"
+sphinx-rtd-theme = "^0.5.2"
+sphinx-autodoc-typehints = "^1.12.0"
+
+[tool.poetry.extras]
+docs = ["sphinx"]
+
+[tool.poetry.scripts]
+my_project = 'my_project.utils:start'
+
+[tool.poetry-version-plugin]
+source = "init"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+known_local_folder = ["my_project"]
+skip_glob = [
+    "my_project/__init__.py",
+    ]
+
+[tool.mypy]
+python_version = 3.8
+
+[[tool.mypy.overrides]]
+module = [
+    'sphinx_rtd_theme',
+    'nox.*',
+    'pytest',
+    ]
+ignore_missing_imports = true
+
+[tool.coverage.run]
+parallel = true
+source = [
+    "my_project",
+    "tests",
+    "noxfile.py",
+    "docs/conf.py"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "@overload",
+    'if __name__ == "__main__":',
+    "if TYPE_CHECKING:",
+]
