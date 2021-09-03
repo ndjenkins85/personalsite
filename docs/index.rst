@@ -4,6 +4,5 @@
 
    license
    reference
-   tools
 
 .. mdinclude:: ../README.md
