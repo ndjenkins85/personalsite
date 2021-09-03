@@ -26,8 +26,8 @@ file = "data.txt"
 data = []
 with open(file, 'r') as f:
     data = f.readlines()
-    
-data = [json.loads(d) for d in data]    
+
+data = [json.loads(d) for d in data]
 
 ```
 
@@ -39,8 +39,8 @@ all_cast = []
 for movie in data:
     for actor in movie["cast"]:
         all_cast.append(actor)
-        
-all_cast = list(set(all_cast))  
+
+all_cast = list(set(all_cast))
 len(all_cast)
 
 ```
@@ -53,12 +53,12 @@ cast_associations = defaultdict(set)
 
 for m in tnrange(len(data)):
     movie = data[m]
-    
+
     for c1 in movie["cast"]:
         for c2 in movie["cast"]:
             cast_associations[c1].add(c2) # Add both ways
             cast_associations[c2].add(c1)
-            
+
 # Remove self from cast associations to speed things up
 for cast in cast_associations:
     cast_associations[cast].remove(cast)
@@ -95,13 +95,13 @@ def bfs_connected_component(graph, start):
         while queue:
            # pop shallowest node (first node) from queue
             node = queue.pop(0)
-            
+
             explored.append(node)
             neighbours = graph[node]
 
             # Consider adding a set->list operation every 10,000 iterations or so to speed up search process
-            
-            
+
+
             # add neighbours of node to queue
             for neighbour in neighbours:
                 if neighbour not in visited:

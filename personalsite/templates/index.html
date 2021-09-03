@@ -47,7 +47,7 @@
         <p></p>
 
         <p><a href="{{ url_for('articles') + 'professional' }}" class="text-decoration-none">Professional Writing</a></p>
-        <p><a href="{{ url_for('articles') + 'personal' }}" class="text-decoration-none">Personal Writing</a></p>  
+        <p><a href="{{ url_for('articles') + 'personal' }}" class="text-decoration-none">Personal Writing</a></p>
         <h6>Article tags:</h6>
         {% for tag in tags %}
           <a href="{{ url_for('articles', tags=tag[0])}}">

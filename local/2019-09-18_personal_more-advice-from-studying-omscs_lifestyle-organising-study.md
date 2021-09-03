@@ -33,4 +33,4 @@ Another key skill for this course which was a bit unexpected was the focus on wr
 
 If you’re new to the program, be very careful in setting up your email and forwarding correctly, and checking your junk mail. The most important thing is registering for classes as soon as possible and having your research done ahead of time. While you may have a plan about how you’d like your course structure to be, it is not always possible. Be prepared with plan B and plan C along the way. It’s virtually impossible to get into graduate algorithms unless it is your last or second last class.
 
-If you’re not sure what classes to take, anything touched by Prof David Joyner is usually very good. He is very responsive and positive on the forums and sets expectations clearly with the students. Courses created by him are some of the best quality in the course. 
+If you’re not sure what classes to take, anything touched by Prof David Joyner is usually very good. He is very responsive and positive on the forums and sets expectations clearly with the students. Courses created by him are some of the best quality in the course.

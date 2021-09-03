@@ -34,14 +34,14 @@ I believe the approach will really start to shine when two further improvements 
 
 To create multiple class coding, we will split the sentences by punctuation, ‘and’, etc. At this point I will need to research a suggested list or method of splitting the sentences. My hope is that many part-sentences will be segmented into very uninteresting (but homogenous) segments. I have ideas how to piece the information back together which I will express shortly.
 
-The process of identifying a cluster is currently onerous. We need metrics that help to express what the cluster is about. Ideas include; 
+The process of identifying a cluster is currently onerous. We need metrics that help to express what the cluster is about. Ideas include;
 
-* Segment size 
-* Inertia 
-* Set of most central sentences 
-* Set of random sentences 
-* Most numerous words used in cluster 
-* Neighbouring clusters 
+* Segment size
+* Inertia
+* Set of most central sentences
+* Set of random sentences
+* Most numerous words used in cluster
+* Neighbouring clusters
 * Markov chain sentence generator (Not for this project, but eventually!)
 
 The metrics will be very useful in quickly adding qualitative labels against predicted clusters. Moreover, it will mean we can radically increase the number of clusters to n=300, and, clusters with poor inertia we can attempt to recluster.
@@ -56,7 +56,7 @@ Sentiment analysis will have to come later into the piece. It will be very usefu
 
 The clustering algorithm used could be improved greatly as well, but this will likely not be explored this side of the proposal.
 
-Kmeans appears to break down on my laptop and the office ‘beast’ as of 25k cases. MinibatchKmeans could be the way to go, or could potentially use amazon services and Apache Spark to create a distributed clustering. The problem isnt so much with the raw data size (100-200mb) but the memory requirements to cluster. 
+Kmeans appears to break down on my laptop and the office ‘beast’ as of 25k cases. MinibatchKmeans could be the way to go, or could potentially use amazon services and Apache Spark to create a distributed clustering. The problem isnt so much with the raw data size (100-200mb) but the memory requirements to cluster.
 
 ![Machine learning map](http://1.bp.blogspot.com/-ME24ePzpzIM/UQLWTwurfXI/AAAAAAAAANw/W3EETIroA80/s1600/drop_shadows_background.png "Machine learning map")
 

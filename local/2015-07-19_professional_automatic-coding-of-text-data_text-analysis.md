@@ -30,7 +30,7 @@ This became a usability mandate of 80% precision, with as high an accuracy as po
 
 It turned out that by combining the results of the 27 different models led to MUCH better results. Simple rules were used to determine, from the 0-1 probability, if a response belonged in a given code frame. Certain codes needed to be treated a special way, either because their models were not as strong or they were an 'other' category.
 
-Rules were something like, 
+Rules were something like,
 if x>0.6, True
 else if x>0.3 AND max(all_other_x)<0.3, True
 
@@ -56,11 +56,11 @@ So far I have tried the following steps;
 * Analyse the size of the clusters
 * Review a random selection of 10 verbatim responses
 
-Appears to work quite well. 
+Appears to work quite well.
 
-There is more improvement that can be done, specifically I would want to try finding 5 of the most 'stereotypical' verbatim responses for a given cluster. 
+There is more improvement that can be done, specifically I would want to try finding 5 of the most 'stereotypical' verbatim responses for a given cluster.
 
-This might include 2 of the 'most central', and 3 from some distance away from the center (to get a slightly broader sense of the space). 
+This might include 2 of the 'most central', and 3 from some distance away from the center (to get a slightly broader sense of the space).
 
 If we stuck with the pure center we might end up with results such as 'Good service', 'Good Service', 'Good service'; which isn't bad but not very descriptive of the space either.
 

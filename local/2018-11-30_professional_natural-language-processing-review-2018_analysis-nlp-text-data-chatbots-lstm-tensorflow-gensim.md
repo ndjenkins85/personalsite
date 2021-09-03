@@ -46,4 +46,3 @@ These techniques have seen us achieve some fantastic results for predicting cust
 What remains is to reflect on the problem domain of Natural Language Processing in relation to other domains. There's something rather beautiful in the fact it's taking so long for research to 'crack' language - it gives us as humans something to hang onto as we blaze forth into the future towards increasingly powerful AI applications. Natural Language Processing appears to be one of the last dominos that will fall along the way to creation of a General AI. As we've discussed in this article, the best we can do for the moment is to coerce our human expression and experience into a rough structure.
 
 This article was copied with permission by Evolve Research, read more related articles here: https://evolvedthinking.evolveresearch.com.au/2018/11/01/the-future-of-text-analytics-2019-and-beyond/
- 

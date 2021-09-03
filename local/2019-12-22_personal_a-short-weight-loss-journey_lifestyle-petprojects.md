@@ -1,11 +1,11 @@
-It’s fair to say that the first half of the year was a lot of fun. While not a problem according to BMI, I was starting to feel a little bit overweight. Over the years I have crept up to 94kg, since being around 82kg at 18 years old. I had developed some habits over the years such as having pizza after basketball and poor diet while studying for exams. 
+It’s fair to say that the first half of the year was a lot of fun. While not a problem according to BMI, I was starting to feel a little bit overweight. Over the years I have crept up to 94kg, since being around 82kg at 18 years old. I had developed some habits over the years such as having pizza after basketball and poor diet while studying for exams.
 
 With the upcoming move to the US, and hearing about their portion sizes and generally poor diet, I embarked on my first ever diet. My goal was to get down to 88kg, and I was not particularly rushed for timing. In the end it didn’t take too long, and as of October 26th I reached target (4 months after setting the goal). More importantly I wanted to build some tools for myself which would enable me to do this again in the future if I need. I wanted to share what strategies worked for me. In no particular order each of these things contributed:
 
 **Disregard exercise, only focus on diet.** While I’m an active person, I never looked to increase exercise as a method of reducing weight. Calories burned from exercise is actually incredibly small. Focusing on food intake is the only way to make a meaningful long term impact.
 
 **Fasting every day.** I developed this useful habit in my work-life over the past few years which turned out to be beneficial during this dieting period. I usually skip breakfast, opting for a milk coffee or two before heading for an early lunch before noon. This had the added benefit of avoiding lunch queues so I could get on with the work day faster. This habit meant reducing an entire meal.
- 
+
 **Drink more water, no sodas, less alcohol.** Calories through drinking is a silent enemy of the dieter and one to be aware. I used to have a soda every day or two, but I cut this out. I would get a lot of calories from drinking beer, so I switched some drinks for vodka soda, or moderated a bit more. At dinners, taking the focus away from drinks and back onto enjoying the food (and experience) is a good habit.
 
 **Smaller portion sizes.** Along with the above, small portion sizes are the way to go. Part of that is being vigilant about when you are filling and when you are full (and never eating beyond full). It’s perfectly acceptable to leave food on your plate. The faster you can have the plate cleared the less tempted you will be to graze.

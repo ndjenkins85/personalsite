@@ -165,7 +165,7 @@ https://news.ycombinator.com/item?id=22901856
 https://medium.com/@TWB_BI/starting-a-data-quality-checklist-2d500e97ab5c
 
 * data analysis, data cleaning
-* Another good checklist guide of what to look for and request when working with new data sources 
+* Another good checklist guide of what to look for and request when working with new data sources
 
 #### Quartz guide to bad data
 https://qz.com/572338/the-quartz-guide-to-bad-data/

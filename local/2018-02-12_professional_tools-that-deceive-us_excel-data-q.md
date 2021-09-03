@@ -4,7 +4,7 @@ This article was copied with permission by Evolve Research, read more related ar
 
 # 1 - Excel Vlookup
 One of the most powerful functions in excel is being able to match and merge data from one source into another. To recap, the vlookup function takes four commands.
-*  Which bit of data item am I looking for? (data item from a single cell) 
+*  Which bit of data item am I looking for? (data item from a single cell)
 *  In which data 'area' (a 2 dimensional array of rows and columns) do I focus on? (Note, the function only looks up the data item from the first column)
 *  If I find the data item, which column offset should I return?
 *  Do I have to match exactly or generally? (Always exactly, use False)
@@ -41,13 +41,13 @@ Tip: If you want to delete rows of data in an excel workbook with filters, try s
 
 # 4 - Excel hidden information
 
-There are all kinds of ways to hide data in Excel files such as hiding tabs. Many data analysis downstream processes may look for the first sheet of an excel file; and you may not realise that the process is using the first sheet if it's hidden. There are other ways of hiding data such as with formatting. When cleaning sample files from unknown sources, start with removing all formats and checking for hidden tabs. 
+There are all kinds of ways to hide data in Excel files such as hiding tabs. Many data analysis downstream processes may look for the first sheet of an excel file; and you may not realise that the process is using the first sheet if it's hidden. There are other ways of hiding data such as with formatting. When cleaning sample files from unknown sources, start with removing all formats and checking for hidden tabs.
 
 # 5 - Quirks with Q and statistical analysis
 
-Q is a data analysis program which specialises in survey data, crosstabulation and statistical testing. We use it widely at Evolve Research as part of our insights generation and replicable research process. Q works best with SPSS data files, but when using alternative sources such as CSV or Excel data we should pay close attention to how the data is being interpreted in Q.  
+Q is a data analysis program which specialises in survey data, crosstabulation and statistical testing. We use it widely at Evolve Research as part of our insights generation and replicable research process. Q works best with SPSS data files, but when using alternative sources such as CSV or Excel data we should pay close attention to how the data is being interpreted in Q.
 
-Inspecting market research data in Excel we have one sheet of data. This may be rows for respondents and columns for questions asked, with each cell containing a single value. SPSS files can actually contain two types of information per cell; the cell value and the cell label. A label may be 'Strongly Agree - 10' and the associated value of 10, reflecting the way information was presented in surveying.  
+Inspecting market research data in Excel we have one sheet of data. This may be rows for respondents and columns for questions asked, with each cell containing a single value. SPSS files can actually contain two types of information per cell; the cell value and the cell label. A label may be 'Strongly Agree - 10' and the associated value of 10, reflecting the way information was presented in surveying.
 
 When loading Excel or CSV information, be careful that the data you are loading is intended to be treated numerically or as text. Q may interpret columns of data as 'labels', and apply a 'value' to each label in the order it entered the data file. This can be disasterous, as you may have a label of 'Strongly Agree - 10', interpreted as a value of 3!
 

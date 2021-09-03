@@ -14,14 +14,14 @@ Tips:
 * On the way in or out, check out the upstairs area of the cable car station for an excellent view.
 
 ### Accommodation
-There is an association which connects and organises temple stays for guests, you can find it here http://eng.shukubo.net/. You can also email directly here to discuss with an agent reservations@shukubo.net, to arrange dates. The temple stays can be expensive, but do consider making it a special part of your trip. When my partner and I stayed it cost 14,000 yen per night per person (about $150 AUD each per night). Depending on the accommodation the meals may be served in room or a communal hall. The gardens are a key attraction of temples, with well managed Japanese gardens.  
+There is an association which connects and organises temple stays for guests, you can find it here http://eng.shukubo.net/. You can also email directly here to discuss with an agent reservations@shukubo.net, to arrange dates. The temple stays can be expensive, but do consider making it a special part of your trip. When my partner and I stayed it cost 14,000 yen per night per person (about $150 AUD each per night). Depending on the accommodation the meals may be served in room or a communal hall. The gardens are a key attraction of temples, with well managed Japanese gardens.
 
 ![ryokan-garden](https://www.nickjenkins.com.au/static/assets/koyasan/04_koyasan_ryokan-garden.jpg "ryokan-garden")
 ![ryokan-garden2](https://www.nickjenkins.com.au/static/assets/koyasan/05_koyasan_ryokan-garden2.jpg "ryokan-garden2")
 ![ryokan-garden3](https://www.nickjenkins.com.au/static/assets/koyasan/06_koyasan_ryokan-garden3.jpg "ryokan-garden3")
 
 ### The monks and staff
-The temple stays are a win-win for guests and the temples. It gives guests a sense of their way of life and traditions. It provides the temple with money in order to carry out their philanthropic work. While most residents of the temples are monks, many may be full time staff to assist guests such as checking in and out, preparing meals and cleaning. Do not be surprised however to see some of the monks driving down the street or texting each other on mobile phones! They may be pious but unlike western religions there is no particular aversion to technology. As mentioned, guests are encouraged to experience the traditional elements of the experience.  
+The temple stays are a win-win for guests and the temples. It gives guests a sense of their way of life and traditions. It provides the temple with money in order to carry out their philanthropic work. While most residents of the temples are monks, many may be full time staff to assist guests such as checking in and out, preparing meals and cleaning. Do not be surprised however to see some of the monks driving down the street or texting each other on mobile phones! They may be pious but unlike western religions there is no particular aversion to technology. As mentioned, guests are encouraged to experience the traditional elements of the experience.
 
 ![ryokan-relaxing](https://www.nickjenkins.com.au/static/assets/koyasan/10_koyasan_ryokan-relaxing.jpg)
 ![ryokan-dressup](https://www.nickjenkins.com.au/static/assets/koyasan/11_koyasan_ryokan-dressup.jpg " ")
@@ -33,13 +33,13 @@ Tips:
 * Do get up early for the meditations, it's a great way to relax and start the day. At the end of the day, a shared onsen will do the same.
 
 ### The food
-Your stay usually will include breakfast and dinner of vegetarian haute cuisine (Shojin Ryori). The food is immaculately prepared and is a feast of sensations. Some items will be served hot, cold, crispy, soft, pasty or wet. Each of the tastes is catered for including bitter, sweet, sour, salty and 'umami'. There is not a lot of choice in the way of cafes or restaurants in town. There is a single convenience store 'family mart' which if you continue down that road leads to a nice walk that re-joins the other major road. 
+Your stay usually will include breakfast and dinner of vegetarian haute cuisine (Shojin Ryori). The food is immaculately prepared and is a feast of sensations. Some items will be served hot, cold, crispy, soft, pasty or wet. Each of the tastes is catered for including bitter, sweet, sour, salty and 'umami'. There is not a lot of choice in the way of cafes or restaurants in town. There is a single convenience store 'family mart' which if you continue down that road leads to a nice walk that re-joins the other major road.
 
 ![ryokan-interior](https://www.nickjenkins.com.au/static/assets/koyasan/07_koyasan_ryokan-interior.jpg " ")
 ![ryokan-room-meal](https://www.nickjenkins.com.au/static/assets/koyasan/08_koyasan_ryokan-room-meal.jpg " ")
 ![ryokan-meal-closeup](https://www.nickjenkins.com.au/static/assets/koyasan/09_koyasan_ryokan-meal-closeup.jpg " ")
 
-### Walks 
+### Walks
 In Koyasan you are spoiled for choice for walks. This is one of the main reasons to consider staying for two nights, so that you get at least one full day of walks in. The main graveyard and temple is the main walk to consider. In addition, the main red gate daimon is a good distance and has great views of the valley. On my first trip to Koyasan I completed a hike out of Koyasan towards the train lines which first fed us up the mountain. It took around five to six hours, and included some river side walks, crossing over a golf course, and a few vending machines along the way to keep me going. On the second visit, we did a much more reasonable two hour walk around the back of the temple.
 
 ![views](https://www.nickjenkins.com.au/static/assets/koyasan/13_koyasan_views.jpg " ")

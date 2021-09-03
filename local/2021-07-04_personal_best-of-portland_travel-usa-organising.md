@@ -7,7 +7,7 @@ Portland is a liberal city with strong LGBT communities and political activism. 
 We’ve put together a list of our ‘best of’ for Portland centered around four topics;
 
 - Pearl district
-- Boise / Mississippi 
+- Boise / Mississippi
 - Other parts of Portland
 - Daytrips
 
@@ -21,13 +21,13 @@ Take a Nike Bike up the first section then walk up to the large international ro
 
 In Pearl District you can find some great food and drink basically anywhere on 21st or 23rd streets. A couple of our favourites include:
 
-- Goose Hollow Inn - Best Ruben sandwich I’ve ever had, a must visit! 
+- Goose Hollow Inn - Best Ruben sandwich I’ve ever had, a must visit!
 - Phil's Meat Market & Delicatessen. They do a daily bento box BBQ for a good price with top quality meat.
 - Stepping stone cafe. A low key diner good for a big breakfast and brunch.
 - McMenamins Blue moon. Tidy pub with good beers, games and sports.
 - Portland City Grill. A reasonably good restaurant and cocktail bar, with some of the best views over the city and Mt Hood. Book for sunset!
 
-# Boise / Mississippi 
+# Boise / Mississippi
 
 Mississippi Ave is well regarded for a reason; several breweries, great food, food trucks, nice community and neighbourhood atmosphere.
 
@@ -51,7 +51,7 @@ Rocky Butte in the east is a good target for a bike ride with 360 views across t
 Food and restaurants:
 
 - Mad Greek Deli also in the east. Sports nut bar with good Greek fare, although not as good as Melbourne’s Greek food ;)
-- Stammtisch in the east. Nice German restaurant. 
+- Stammtisch in the east. Nice German restaurant.
 - Keeper Co Coffee south east. We spent way too much money here over the 4 weeks we spent in Woodstock, very nice coffee!
 - Otto’s, another great butcher in south east. They are famous for great sausages. They had a daily BBQ. Pick up some of their jerky!
 
