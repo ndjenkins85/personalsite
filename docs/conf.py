@@ -23,9 +23,9 @@ from pathlib import Path
 
 import sphinx_rtd_theme  # noqa: F401
 
-from my_project import __version__
+from personalsite import __version__
 
-project = "my_project"
+project = "personalsite"
 author = "Nick Jenkins"
 copyright = open(Path("..", "LICENSE")).read()
 version = __version__

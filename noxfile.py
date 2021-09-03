@@ -23,9 +23,9 @@ from typing import Any
 import nox
 from nox.sessions import Session
 
-locations = "my_project", "tests", "noxfile.py", "docs/conf.py"
+locations = "personalsite", "tests", "noxfile.py", "docs/conf.py"
 nox.options.sessions = "mypy", "lint", "tests"
-package = "my_project"
+package = "personalsite"
 
 
 def install_with_constraints(session: Session, *args: str, **kwargs: Any) -> None:

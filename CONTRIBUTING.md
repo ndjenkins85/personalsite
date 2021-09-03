@@ -1,8 +1,6 @@
 # Contributing
 
-This is a personal project open to contributors.
-
-Best place to start is with the issues, either raising questions or contributing to discussion.
+This is a personal project for my personal website and not open to contributors.
 
 # Codeowners
 
@@ -36,7 +34,7 @@ We have Github actions which will:
 The process for performing a release is as follows:
 
 - [ ] Merge all feature branches into dev branch
-- [ ] On local dev branch, increment the project version by updating `my_project.__init__.py`
+- [ ] On local dev branch, increment the project version by updating `personalsite.__init__.py`
 - [ ] Ensure the project README is current
 - [ ] Commit changes, and use `git tag` to tag the commit
 - [ ] Push to Github using `git push origin master --tags`
