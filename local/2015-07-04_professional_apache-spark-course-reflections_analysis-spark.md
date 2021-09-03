@@ -2,7 +2,7 @@ While performing some github repository cleaning in May 2020, I found a collecti
 
 # First post - A for Apache Spark.
 
-10 minutes ago I opened a bottle of wine to celebrate finishing the edX course "BerkeleyX: CS100.1x Introduction to Big Data with Apache Spark". 
+10 minutes ago I opened a bottle of wine to celebrate finishing the edX course "BerkeleyX: CS100.1x Introduction to Big Data with Apache Spark".
 
 I wanted to write up my reflections on the course; why I took it, and what I learnt from it.
 
@@ -52,7 +52,7 @@ On the path to improving my data analysis abilities, I undertook the task of lea
 
 ```
 
-### The course was great for exposure to 
+### The course was great for exposure to
 
 * Analysis of distributed data sets.
 * regex in text analysis
@@ -66,9 +66,9 @@ On the path to improving my data analysis abilities, I undertook the task of lea
 * Understanding the action functions outside of (lambda a,b: a+b) was essential. As my tutor Brendan put it, 'a' is the total, 'b' is what we want to add or times it by as all the elements are actioned. This makes statements like (lambda a,b: a+(1/b)) possible.
 
 ### Where to from here?
-I finished the course with an A and what I feel that translates to is exposure and basic understanding of the concepts. 
+I finished the course with an A and what I feel that translates to is exposure and basic understanding of the concepts.
 To really become expert in this area, I would need to work with distributed data sets professionally alongside other experts.
-The introduction to regex and groupByKey will be invaluable and something I will build on in the next year as I get more exposure to SQL and NLP. 
+The introduction to regex and groupByKey will be invaluable and something I will build on in the next year as I get more exposure to SQL and NLP.
 
 Top 10 movies I would apparently watch!
 

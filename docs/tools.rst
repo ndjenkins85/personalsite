@@ -3,8 +3,8 @@ Tools
 
 SSL
 
-fathomless-whale-h7m0nr3r05sfqntdtuajxbkm.herokudns.com  
-heroku certs:auto:enable -a nickjenkins  
+fathomless-whale-h7m0nr3r05sfqntdtuajxbkm.herokudns.com
+heroku certs:auto:enable -a nickjenkins
 
 SEO resources
 

@@ -10,7 +10,7 @@ There are a few distinct phases of the project which are reflected in the graph
 
 ##### Mid-April MVP
 
-Mid-April was when the first MVP version of the program came online. One of the first challenges was to maintain a record of gold, inventory, inventory value, across characters, over time. The mere ability to record and plot this was a major milestone for the project, as it became a way to objectively measure gold making improvements over time. 
+Mid-April was when the first MVP version of the program came online. One of the first challenges was to maintain a record of gold, inventory, inventory value, across characters, over time. The mere ability to record and plot this was a major milestone for the project, as it became a way to objectively measure gold making improvements over time.
 
 ##### Mid-April - Mid-May execution
 
@@ -32,11 +32,11 @@ As work projects began to finish up, and noticing that my in-game gold reserves 
 
 ## Recent developments
 
-The past two weeks are more reflective of the initial Mid-April to Mid-May period, where the engine is doing a lot of work. This is also where I've began to think about performance improvements and software development practices. 
+The past two weeks are more reflective of the initial Mid-April to Mid-May period, where the engine is doing a lot of work. This is also where I've began to think about performance improvements and software development practices.
 
-On the performance improvement side, I was not satisfied with the herb buying policy as I found it too conservative which limited supply. I realized that by basing market price on my auction history, I was unintentionally biasing the market price towards my own actions as opposed to a more real price. 
+On the performance improvement side, I was not satisfied with the herb buying policy as I found it too conservative which limited supply. I realized that by basing market price on my auction history, I was unintentionally biasing the market price towards my own actions as opposed to a more real price.
 
-I considered changing the program to define market price as auctions that existed in one snapshot, but not the next (if they were not due to expire). Alternatively, I decided it was easier and robust to use more general data from [Booty Bay Gazette](https://www.bootybaygazette.com/) on auction values. To absorb the information in an API-like form, I needed to experiment with creating WoW addons with lua, so that I could scrape the BBG information in-game, and save it to my own addon file so that the auction program could read this market price information. I created a [wow_addon github](https://github.com/bluemania/wow_addon) specifically for this sub-project.  
+I considered changing the program to define market price as auctions that existed in one snapshot, but not the next (if they were not due to expire). Alternatively, I decided it was easier and robust to use more general data from [Booty Bay Gazette](https://www.bootybaygazette.com/) on auction values. To absorb the information in an API-like form, I needed to experiment with creating WoW addons with lua, so that I could scrape the BBG information in-game, and save it to my own addon file so that the auction program could read this market price information. I created a [wow_addon github](https://github.com/bluemania/wow_addon) specifically for this sub-project.
 
 ## On to improving software development expertise
 
@@ -54,4 +54,3 @@ In my other post I discussed some tools and methods to increase my software deve
 I spent some time over past few days looking to implement CLI + Packaging + Dependency management; ideally this would use Click + setuptools + Poetry, but I am not quite understanding how these will fit together at this stage. I thought it would be best to implement CLI and dependency management that I am familiar with, and move on to other topics.
 
 Today I'm looking to (finally) learn good logging habits, then I might work on cleaning up the script configurations.
-

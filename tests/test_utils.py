@@ -20,7 +20,6 @@
 
 """Tests for utils.py."""
 import pytest
-
 from my_project import utils
 
 

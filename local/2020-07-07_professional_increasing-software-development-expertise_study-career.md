@@ -42,7 +42,7 @@ Heading into the second half of 2020, one of my professional goals is to improve
 
 ## How I will improve expertise
 
-The best way to improve expertise in these areas is with practice. Ideally I would have work situations where I can focus on implementing one new skill at a time. 
+The best way to improve expertise in these areas is with practice. Ideally I would have work situations where I can focus on implementing one new skill at a time.
 
 When work is quiet, I will instead focus on learning these skills and applying them to my personal projects. There are a few personal projects I have been hacking around with recently including:
 

@@ -25,7 +25,7 @@ Bri and I have been living in the states six months now, and we are excited to h
     * Football
     * Hockey
     * Soccer
-* Cat cafe 
+* Cat cafe
 * Central Park
 * Bike rides to Brooklyn
 
@@ -40,7 +40,7 @@ Bri and I have been living in the states six months now, and we are excited to h
 
 * Six flags NJ
 * Atlantic City NJ
-* Grand Canyon 
+* Grand Canyon
 * Dallas / Austin
 * Washington DC
 * New Orleans
@@ -95,10 +95,10 @@ Bri and I have been living in the states six months now, and we are excited to h
 * Nordstrom flagship
 * Starbucks reverse
 * Nutella
-* M&M store 
+* M&M store
 * Dyson store
-* Allbirds 
-* Showfields 
+* Allbirds
+* Showfields
 * Nintendo store
 * Whole foods
 * Oculus shopping center

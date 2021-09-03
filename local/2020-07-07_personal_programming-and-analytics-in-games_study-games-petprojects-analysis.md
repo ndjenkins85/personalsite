@@ -1,4 +1,4 @@
-I have always been a keen video game player. Since moving to a new country, and especially during COVID times, video games have become a choice way to spend free time. I enjoy complex games with a lot of opportunity to analyse and optimise - no great surprise that I made a career of these skills! 
+I have always been a keen video game player. Since moving to a new country, and especially during COVID times, video games have become a choice way to spend free time. I enjoy complex games with a lot of opportunity to analyse and optimise - no great surprise that I made a career of these skills!
 
 [Check out the github here](https://github.com/bluemania/wow_auctions)
 
@@ -39,7 +39,7 @@ On the flipside we would want a potion selling policy. This would make some simi
 
 ### Staying within the games rules and limits
 
-We are bound by the game's terms of service for what we can and cannot do as part of this system. For instance, we can not automate any mouse or keystrokes. 
+We are bound by the game's terms of service for what we can and cannot do as part of this system. For instance, we can not automate any mouse or keystrokes.
 
 WoW has an addons system for allowing users to customise their game experience. These include in-game auction tools that can collect data and allow users to set prices. These addons can only load information into the game at character login, and write information at character logout (or reload).
 
