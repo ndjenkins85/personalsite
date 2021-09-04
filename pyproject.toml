@@ -79,6 +79,8 @@ python_version = 3.8
 
 [[tool.mypy.overrides]]
 module = [
+    'flask_cors',
+    'flask_sslify',
     'sphinx_rtd_theme',
     'nox.*',
     'pytest',

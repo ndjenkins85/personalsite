@@ -119,7 +119,7 @@ def mypy(session: Session) -> None:
     """Type-check using mypy."""
     args = session.posargs or locations
 
-    install_with_constraints_nohash(session, "mypy")
+    install_with_constraints_nohash(session, "mypy", "types-Flask")
     session.run("mypy", "--install-types", "--non-interactive", *args)
 
 
