@@ -44,5 +44,6 @@ sslify = SSLify(app)
 # Git tagging is required in addition to these changes
 # See CONTRIBUTING.md for more info
 
-__version__ = "0.1.1"  # Add infrastructure tooling
+__version__ = "0.2.0"  # Nox tests passing
+# "0.1.1"  # Add infrastructure tooling
 # "0.1.0"  # Initial commit
