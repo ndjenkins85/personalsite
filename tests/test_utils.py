@@ -1,3 +1,4 @@
+"""Tests for utils.py."""
 # Copyright © 2021 by Nick Jenkins. All rights reserved
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -18,9 +19,7 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 # DEALINGS IN THE SOFTWARE.
 
-"""Tests for utils.py."""
-# import pytest
-
 
 def test_fail() -> None:
     """It tests nothing useful."""
+    pass

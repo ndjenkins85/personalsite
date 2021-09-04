@@ -91,7 +91,7 @@ def lint(session: Session) -> None:
         "flake8-builtins",
         "flake8-docstrings",
         "flake8-eradicate",
-        "flake8-import-order",
+        "flake8-isort",
         "darglint",
     )
     session.run("flake8", *args)
@@ -119,7 +119,7 @@ def mypy(session: Session) -> None:
     """Type-check using mypy."""
     args = session.posargs or locations
 
-    install_with_constraints_nohash(session, "mypy")
+    install_with_constraints_nohash(session, "mypy", "types-Flask")
     session.run("mypy", "--install-types", "--non-interactive", *args)
 
 

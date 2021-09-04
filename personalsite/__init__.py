@@ -23,8 +23,12 @@ from flask_cors import CORS
 from flask_sslify import SSLify
 
 
-def create_app():
-    """Creates the primary Flask app with config."""
+def create_app() -> Flask:
+    """Creates the primary Flask app with config.
+
+    Returns:
+        Flask: returns flask app.
+    """
     app = Flask(__name__)
     app.config.from_object("personalsite.config.config.Config")
     return app
@@ -40,5 +44,6 @@ sslify = SSLify(app)
 # Git tagging is required in addition to these changes
 # See CONTRIBUTING.md for more info
 
-__version__ = "0.1.1"  # Add infrastructure tooling
+__version__ = "0.2.0"  # Nox tests passing
+# "0.1.1"  # Add infrastructure tooling
 # "0.1.0"  # Initial commit

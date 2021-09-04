@@ -4,7 +4,7 @@ select = ANN,B,B9,BLK,C,D,DAR,E,F,I,S,W
 ignore = D104,E203,E501,W503,E712,B301,S101,S322
 
 application-import-names = personalsite
-per-file-ignores = tests/*:S101, noxfile.py:DAR101
+per-file-ignores = tests/*:S101, noxfile.py:DAR101, personalsite/config/config.py:S105
 
 docstring-convention = google
 import-order-style = google
