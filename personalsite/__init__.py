@@ -40,4 +40,5 @@ import personalsite.views
 # Git tagging is required in addition to these changes
 # See CONTRIBUTING.md for more info
 
-__version__ = "0.1.0"  # Initial commit
+__version__ = "0.1.1"  # Add infrastructure tooling
+# "0.1.0"  # Initial commit

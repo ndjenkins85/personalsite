@@ -1,8 +1,7 @@
 on:
   push:
     branches:
-      - main
-  issues:
+      - master
 
 name: Create Default Labels
 jobs:
