@@ -6,8 +6,14 @@ Reference
     :backlinks: none
 
 
-my_project.utils
-----------------
+personalsite.file_parsing
+-------------------------
 
-.. automodule:: my_project.utils
+.. automodule:: personalsite.file_parsing
+   :members:
+
+personalsite.views
+------------------
+
+.. automodule:: personalsite.views
    :members:
