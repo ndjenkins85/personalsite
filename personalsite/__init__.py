@@ -24,6 +24,7 @@ from flask_sslify import SSLify
 
 
 def create_app():
+    """Creates the primary Flask app with config."""
     app = Flask(__name__)
     app.config.from_object("personalsite.config.config.Config")
     return app

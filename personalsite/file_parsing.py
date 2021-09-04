@@ -27,10 +27,9 @@ from flask import Markup
 
 
 def get_file_details(filename):
-    """
-    To debug issues with 'None', remove the try except here to get info on why crashed
-    """
+    """Parses a markdown article into python dictionary."""
 
+    # To debug issues with 'None', remove the try except here to get info on why crashed
     assert len(filename.split(".")) == 2, f"{filename} needs 1x . character (md)"
     details, filetype = filename.split(".")
 
@@ -86,17 +85,19 @@ def get_file_details(filename):
 
 
 def open_article(filename):
+    """Loads plain text article into memory."""
     with open(os.path.join("local", filename), "r") as f:
-        article = f.readlines()
-    return article
+        return f.readlines()
 
 
 def get_all_files():
+    """Gets list of valid markdown articles."""
     exclude_list = [".DS_Store", ".wh..wh..opq"]
     return [get_file_details(x) for x in os.listdir("local") if x not in exclude_list]
 
 
 def get_all_tags():
+    """Creates sorted container of article filter tags."""
     files = get_all_files()
     tags = defaultdict(int)
     for file in files:
@@ -108,6 +109,7 @@ def get_all_tags():
 
 
 def parse_files_and_filters(filters):
+    """Loads all articles into memory then filters to subset of articles."""
     files = get_all_files()
 
     for key, value in filters.items():
