@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.1
+                0.2.0
               </div>
             
           
@@ -174,39 +174,90 @@
 </div>
 <div class="section" id="module-personalsite.file_parsing">
 <span id="personalsite-file-parsing"></span><h2>personalsite.file_parsing<a class="headerlink" href="#module-personalsite.file_parsing" title="Permalink to this headline">¶</a></h2>
+<p>Responsible for loading, validating, and filtering article text.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="personalsite.file_parsing.get_all_files">
 <span class="sig-prename descclassname"><span class="pre">personalsite.file_parsing.</span></span><span class="sig-name descname"><span class="pre">get_all_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.file_parsing.get_all_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets list of valid markdown articles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of parsed articles.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[Dict[str, Any]]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="personalsite.file_parsing.get_all_tags">
 <span class="sig-prename descclassname"><span class="pre">personalsite.file_parsing.</span></span><span class="sig-name descname"><span class="pre">get_all_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.file_parsing.get_all_tags" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates sorted container of article filter tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Returns collection of tags</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[Tuple[str, int]]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="personalsite.file_parsing.get_file_details">
 <span class="sig-prename descclassname"><span class="pre">personalsite.file_parsing.</span></span><span class="sig-name descname"><span class="pre">get_file_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.file_parsing.get_file_details" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parses a markdown article into python dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – article filename</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Parsed article elements</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, Any]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="personalsite.file_parsing.open_article">
 <span class="sig-prename descclassname"><span class="pre">personalsite.file_parsing.</span></span><span class="sig-name descname"><span class="pre">open_article</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.file_parsing.open_article" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads plain text article into memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – article filename</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>raw article text</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="personalsite.file_parsing.parse_files_and_filters">
 <span class="sig-prename descclassname"><span class="pre">personalsite.file_parsing.</span></span><span class="sig-name descname"><span class="pre">parse_files_and_filters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.file_parsing.parse_files_and_filters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads all articles into memory then filters to subset of articles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filters</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Collection of filters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of articles post-filters</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict[str, Any]]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
 <div class="section" id="module-personalsite.views">
 <span id="personalsite-views"></span><h2>personalsite.views<a class="headerlink" href="#module-personalsite.views" title="Permalink to this headline">¶</a></h2>
+<p>Flask routes for personal site webserver.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="personalsite.views.articles">
 <span class="sig-prename descclassname"><span class="pre">personalsite.views.</span></span><span class="sig-name descname"><span class="pre">articles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.views.articles" title="Permalink to this definition">¶</a></dt>
@@ -215,30 +266,73 @@
 Parses the full url <cite>path</cite> into a list of filters.</p>
 <p>Displays article summaries when more than one article filtered.
 Displays article full text when only one article selected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – additional string URL path</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>rendered article pages</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="personalsite.views.get_master_details">
 <span class="sig-prename descclassname"><span class="pre">personalsite.views.</span></span><span class="sig-name descname"><span class="pre">get_master_details</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.views.get_master_details" title="Permalink to this definition">¶</a></dt>
 <dd><p>General calculation tools for use in Jinja pages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>collection of functions</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Dict[Any, Any]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="personalsite.views.home">
 <span class="sig-prename descclassname"><span class="pre">personalsite.views.</span></span><span class="sig-name descname"><span class="pre">home</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.views.home" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flask route to display home page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>rendered home page as text</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="personalsite.views.resume">
 <span class="sig-prename descclassname"><span class="pre">personalsite.views.</span></span><span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.views.resume" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flask route to display resume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>rendered resume page</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="personalsite.views.sitemap">
 <span class="sig-prename descclassname"><span class="pre">personalsite.views.</span></span><span class="sig-name descname"><span class="pre">sitemap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.views.sitemap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate sitemap.xml. Makes a list of urls and date modified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>rendered sitemap.xml</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
