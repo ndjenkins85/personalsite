@@ -71,6 +71,7 @@ line-length = 120
 profile = "black"
 known_local_folder = ["personalsite"]
 skip_glob = [
+    "personalsite/__init__.py",
     "personalsite/views.py",
     ]
 
