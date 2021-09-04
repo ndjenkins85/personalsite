@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Personal site &mdash; personalsite  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> personalsite
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">personalsite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Personal site</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound">
+</div>
+<div class="section" id="personal-site">
+<h1>Personal site<a class="headerlink" href="#personal-site" title="Permalink to this headline">¶</a></h1>
+<p>This is the repo which generates my personal website.
+It uses docker for hosting on Heroku.
+The site is open to public, and intended for colleagues, friends, family and recruiters.</p>
+<p>The site uses flask framework to serve markdown blog posts according to my custom scripts.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#instructions-for-users">Instructions for users</a></p></li>
+<li><p><a class="reference external" href="#instructions-for-developers">Instructions for developers</a></p>
+<ul>
+<li><p><a class="reference external" href="#dependency-and-virtual-environment-management-library-development-and-build-with-poetry">Dependency and virtual environment management, library development and build with poetry</a></p></li>
+<li><p><a class="reference external" href="#code-quality-testing-and-generating-documentation-with-nox">Code quality, testing, and generating documentation with Nox</a></p></li>
+<li><p><a class="reference external" href="#code-formatting-with-pre-commit">Code formatting with Pre-commit</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#running-the-webserver">Running the webserver</a></p></li>
+<li><p><a class="reference external" href="#contributors">Contributors</a></p></li>
+</ul>
+<div class="section" id="id1">
+<h2>Instructions for users<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Users interested in seeing the website can visit <a class="reference external" href="https://www.nickjenkins.com.au">on heroku here</a>.</p>
+</div>
+<div class="section" id="id2">
+<h2>Instructions for developers<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>The following are the setup instructions for developers looking to improve this project.
+For information on current contributors and guidelines see the <a class="reference external" href="#contributors">contributors</a> section.
+Follow each step here and ensure tests are working.</p>
+<div class="section" id="id4">
+<h3>Dependency and virtual environment management, library development and build with poetry<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Ensure you have and installation of Poetry 1.2.0a1 or above, along with poetry-version-plugin.</p>
+<p>Make sure you deactivate any existing virtual environments (i.e. conda).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry install
+</pre></div>
+</div>
+<p>You may need to point poetry to the correct python interpreter using the following command.
+In another terminal and in conda, run <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry env use /path/to/python3
+</pre></div>
+</div>
+<p>Library can be built using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry build
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Code quality, testing, and generating documentation with Nox<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Nox is a python task automation tool similar to Tox, Makefiles or scripts.</p>
+<p>The following command can be used to run mypy, lint, and tests.
+It is recommended to run these before pushing code, as this is run with Github Actions.
+Some checks such as black are run more frequently with <a class="reference external" href="#installing-pre-commit">pre-commit</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry run nox
+</pre></div>
+</div>
+<p>Local Sphinx documentation can be generated with the following command.
+Documentation publishing using Github Actions to Github pages is enabled by default.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry run nox -s docs
+</pre></div>
+</div>
+<p>All other task automations commands can be optionally run locally with below command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry run nox -s black safety pytype typeguard coverage xdoctest autoflake
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Code formatting with Pre-commit<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>On first time use of the repository, pre-commit will need to be installed locally.
+You can use the following command to install and run pre-commit over all files.
+See .pre-commit-config.yaml for checks in use.
+Intention is to have lightweight checks that automatically make code changes.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit run --all-files
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>Running the webserver<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="local-webserver">
+<h3>Local webserver<a class="headerlink" href="#local-webserver" title="Permalink to this headline">¶</a></h3>
+<p>After following above instructions to use poetry environment, view website locally with following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python run.py
+...
+ * Serving Flask app <span class="s1">&#39;personalsite&#39;</span> <span class="o">(</span>lazy loading<span class="o">)</span>
+ * Environment: production
+   WARNING: This is a development server. Do not use it <span class="k">in</span> a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
+</pre></div>
+</div>
+<p>Visit <a class="reference external" href="http://127.0.0.1:5000">localhost</a> on browser.</p>
+</div>
+<div class="section" id="containerized-webserver">
+<h3>Containerized webserver<a class="headerlink" href="#containerized-webserver" title="Permalink to this headline">¶</a></h3>
+<p>The webserver can also be run as docker container using following commands.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build -t bluemania/personalsite .
+docker run -p <span class="m">5000</span>:5000 -e <span class="nv">PORT</span><span class="o">=</span><span class="m">5000</span> --rm bluemania/personalsite
+</pre></div>
+</div>
+<p>And the following command to stop.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker stop <span class="k">$(</span>docker ps -a -q<span class="k">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="publish-to-heroku">
+<h3>Publish to Heroku<a class="headerlink" href="#publish-to-heroku" title="Permalink to this headline">¶</a></h3>
+<p>The following commands are used to push the containerized webserver to Heroku.
+These steps currently need to be performed in local development environment.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>heroku login
+docker build -t bluemania/personalsite .
+heroku container:login
+docker tag bluemania/personalsite registry.heroku.com/nickjenkins/web
+docker push registry.heroku.com/nickjenkins/web
+heroku container:release web -a nickjenkins
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>Contributors<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.nickjenkins.com.au">Nick Jenkins</a> - Data Scientist, API &amp; Web dev, Team lead, Writer</p></li>
+</ul>
+<p>See <a class="reference external" href="CONTRIBUTING.md">CONTRIBUTING.md</a> in Github repo for specific instructions on contributing to project.</p>
+<p>Usage rights governed by <a class="reference external" href="LICENSE">LICENSE</a>  in Github repo or page footer.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="license.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright © 2021 by Nick Jenkins. All rights reserved
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the &#34;Software&#34;),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &#34;AS IS&#34;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
