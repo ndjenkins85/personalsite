@@ -22,15 +22,17 @@ from datetime import datetime as dt
 from datetime import timedelta, timezone
 
 # coding: utf-8
-from flask import Flask, current_app, make_response, render_template, request
+from flask import current_app, make_response, render_template, request
 from pytz import timezone as tzoffset
 
 from personalsite import app
-from personalsite.file_parsing import get_all_files, get_all_tags, get_file_details, parse_files_and_filters
+from personalsite.file_parsing import get_all_files, get_all_tags, parse_files_and_filters
 
 
 @app.context_processor
 def get_master_details():
+    """General calculation tools for use in Jinja pages."""
+
     def deci(myfloat):
         return "{:.1%}".format(myfloat)
 
@@ -49,11 +51,13 @@ def get_master_details():
 
 @app.route("/")
 def home():
+    """Flask route to display home page."""
     return render_template("index.html", tags=get_all_tags())
 
 
 @app.route("/resume")
 def resume():
+    """Flask route to display resume."""
     return render_template("resume.html")
 
 
@@ -84,6 +88,15 @@ def sitemap():
 @app.route("/articles/", defaults={"path": ""})
 @app.route("/articles/<path:path>")
 def articles(path):
+    """Flask route for articles parsing and display.
+
+    Loads all available articles into memory.
+    Parses the full url `path` into a list of filters.
+
+    Displays article summaries when more than one article filtered.
+    Displays article full text when only one article selected.
+    """
+    routes = ["major_type", "year", "month", "day", "title"]
 
     filters = {}
     filters["tags"] = request.args.get("tags", None)
@@ -94,11 +107,10 @@ def articles(path):
         filters["major_type"] = request.args.get("major_type")
 
     try:
-        page = int(request.args.get("page", "0"))
+        int(request.args.get("page", "0"))
     except:
-        page = 0
+        pass
 
-    routes = ["major_type", "year", "month", "day", "title"]
     breadcrumbs = path.split("/")
     for ind, val in enumerate(breadcrumbs):
         filters[routes[ind]] = val

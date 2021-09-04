@@ -24,6 +24,7 @@ from flask_sslify import SSLify
 
 
 def create_app():
+    """Creates the primary Flask app with config."""
     app = Flask(__name__)
     app.config.from_object("personalsite.config.config.Config")
     return app
@@ -33,7 +34,6 @@ app = create_app()
 CORS(app)
 sslify = SSLify(app)
 
-import personalsite.views
 
 # Program version and changelog. __version__ is used in setup.py
 # Poetry attaches to this version via poetry-version-plugin

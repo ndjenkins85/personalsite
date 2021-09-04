@@ -20,6 +20,8 @@
 
 
 class Config:
+    """Config used in Flask and docker."""
+
     DOCKER_INTERNAL_URI = "host.docker.internal"
 
     DEBUG = True
