@@ -1,3 +1,5 @@
+"""Responsible for loading, validating, and filtering article text."""
+
 # Copyright © 2021 by Nick Jenkins. All rights reserved
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -21,27 +23,34 @@
 import os
 from collections import defaultdict
 from operator import itemgetter
+from pathlib import Path
+from typing import Any, Dict, Generator, List, Tuple
 
 import markdown
 from flask import Markup
 
 
-def get_file_details(filename):
-    """Parses a markdown article into python dictionary."""
+def get_file_details(filename: str) -> Dict[str, Any]:
+    """Parses a markdown article into python dictionary.
 
+    Args:
+        filename (str): article filename
+
+    Returns:
+        Dict[str, Any]: Parsed article elements
+    """
     # To debug issues with 'None', remove the try except here to get info on why crashed
     assert len(filename.split(".")) == 2, f"{filename} needs 1x . character (md)"
     details, filetype = filename.split(".")
 
     assert len(details.split("_")) == 4, f"{filename} needs 3x '_' for date, type, title, tags"
-    date, major_type, title, tags = details.split("_")
+    date, major_type, title, tag_text = details.split("_")
 
     title_cap = title.replace("-", " ").capitalize()
 
-    if tags:
-        tags = tags.split("-")
-    else:
-        tags = []
+    tags: List[str] = []
+    if tag_text:
+        tags = tag_text.split("-")
 
     year, month, day = date.split("-")
 
@@ -52,18 +61,18 @@ def get_file_details(filename):
     elif month in ["09", "10", "11", "12"]:
         period = f"{year}_late"
     else:
-        period = None
+        period = ""
 
     url_helper = f"{major_type}/{year}/{month}/{day}/{title}"
 
     article = open_article(filename)
 
     teaser = article[0].replace("â€˜", "'").replace("â€™", "'")
-    article = "".join(article).replace("â€˜", "'").replace("â€™", "'")
-
     teaser = Markup(markdown.markdown(teaser))
-    article = Markup(markdown.markdown(article))
-    article = article.replace("img alt", "img class=img-thumbnail alt")
+
+    joined_article = "".join(article).replace("â€˜", "'").replace("â€™", "'")
+    joined_article = Markup(markdown.markdown(joined_article))
+    joined_article = joined_article.replace("img alt", "img class=img-thumbnail alt")
 
     return {
         "filename": filename,
@@ -80,36 +89,60 @@ def get_file_details(filename):
         "title_cap": title_cap,
         "url_helper": url_helper,
         "teaser": teaser,
-        "article": article,
+        "article": joined_article,
     }
 
 
-def open_article(filename):
-    """Loads plain text article into memory."""
-    with open(os.path.join("local", filename), "r") as f:
+def open_article(filename: str) -> List[str]:
+    """Loads plain text article into memory.
+
+    Args:
+        filename (str): article filename
+
+    Returns:
+        str: raw article text
+    """
+    input_path = Path("local", filename)
+    with open(input_path, "r") as f:
         return f.readlines()
 
 
-def get_all_files():
-    """Gets list of valid markdown articles."""
-    exclude_list = [".DS_Store", ".wh..wh..opq"]
+def get_all_files() -> List[Dict[str, Any]]:
+    """Gets list of valid markdown articles.
+
+    Returns:
+        List[Dict[str, Any]]: List of parsed articles.
+    """
+    exclude_list: List[str] = [".DS_Store", ".wh..wh..opq"]
+    future_use: Generator[Path, None, None] = Path("local").rglob("*.md")
+    future_use
     return [get_file_details(x) for x in os.listdir("local") if x not in exclude_list]
 
 
-def get_all_tags():
-    """Creates sorted container of article filter tags."""
+def get_all_tags() -> List[Tuple[str, int]]:
+    """Creates sorted container of article filter tags.
+
+    Returns:
+        List[Tuple[str, int]]: Returns collection of tags
+    """
     files = get_all_files()
-    tags = defaultdict(int)
+    tags: Dict[str, int] = defaultdict(int)
     for file in files:
-        assert file is not None, f"{files}"
-        for t in file.get("tags"):
+        for t in file.get("tags", []):
             tags[t] += 1
-    tags = sorted(tags.items(), key=itemgetter(1), reverse=True)
-    return tags
+    new_tags = sorted(tags.items(), key=itemgetter(1), reverse=True)
+    return new_tags
 
 
-def parse_files_and_filters(filters):
-    """Loads all articles into memory then filters to subset of articles."""
+def parse_files_and_filters(filters: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Loads all articles into memory then filters to subset of articles.
+
+    Args:
+        filters (Dict[str, Any]): Collection of filters.
+
+    Returns:
+        List[Dict[str, Any]]: List of articles post-filters
+    """
     files = get_all_files()
 
     for key, value in filters.items():

@@ -1,3 +1,4 @@
+"""Configurations for use across personal project."""
 # Copyright © 2021 by Nick Jenkins. All rights reserved
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -27,8 +28,8 @@ class Config:
     DEBUG = True
     VERBOSE = True
 
-    SECRET_KEY = "my_precious"
-    SECURITY_PASSWORD_SALT = "my_precious_two"
+    SECRET_KEY = "my_precious"  # pragma: noqa
+    SECURITY_PASSWORD_SALT = "my_precious_two"  # pragma: noqa
 
     SITEMAP_EXCLUDES = ["dropzoneredirect", "login", "logout", "version"]
     SITEURL = "https://www.nickjenkins.com.au"

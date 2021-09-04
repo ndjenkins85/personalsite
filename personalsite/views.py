@@ -1,3 +1,4 @@
+"""Flask routes for personal site webserver."""
 # Copyright © 2021 by Nick Jenkins. All rights reserved
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -20,6 +21,7 @@
 
 from datetime import datetime as dt
 from datetime import timedelta, timezone
+from typing import Any, Dict
 
 # coding: utf-8
 from flask import current_app, make_response, render_template, request
@@ -30,40 +32,62 @@ from personalsite.file_parsing import get_all_files, get_all_tags, parse_files_a
 
 
 @app.context_processor
-def get_master_details():
-    """General calculation tools for use in Jinja pages."""
+def get_master_details() -> Dict[Any, Any]:
+    """General calculation tools for use in Jinja pages.
 
-    def deci(myfloat):
+    Returns:
+        Dict[Any, Any]: collection of functions
+    """
+
+    def deci(myfloat: float) -> str:
         return "{:.1%}".format(myfloat)
 
-    def inti(d):
+    def inti(d: Any) -> int:
         return int(d)
 
-    def utc_to_local(time=None, offset_str=None):
-        try:
-            adjusted = time.replace(tzinfo=timezone.utc).astimezone(tz=tzoffset(offset_str))
-            return adjusted.strftime("%Y-%m-%d at %H:%M:%S")
-        except:
-            return None
+    def utc_to_local(time: Any, offset_str: Any) -> Any:
+        """Converts universal time to local.
+
+        Args:
+            time (Any): time variable
+            offset_str (Any): offset string
+
+        Returns:
+            Any: adjusted time
+        """
+        adjusted = time.replace(tzinfo=timezone.utc).astimezone(tz=tzoffset(offset_str))
+        return adjusted.strftime("%Y-%m-%d at %H:%M:%S")
 
     return dict(deci=deci, inti=inti, utc_to_local=utc_to_local)
 
 
 @app.route("/")
-def home():
-    """Flask route to display home page."""
+def home() -> str:
+    """Flask route to display home page.
+
+    Returns:
+        str: rendered home page as text
+    """
     return render_template("index.html", tags=get_all_tags())
 
 
 @app.route("/resume")
-def resume():
-    """Flask route to display resume."""
+def resume() -> str:
+    """Flask route to display resume.
+
+    Returns:
+        str: rendered resume page
+    """
     return render_template("resume.html")
 
 
 @app.route("/sitemap.xml", methods=["GET"])
-def sitemap():
-    """Generate sitemap.xml. Makes a list of urls and date modified."""
+def sitemap() -> Any:
+    """Generate sitemap.xml. Makes a list of urls and date modified.
+
+    Returns:
+        Any: rendered sitemap.xml
+    """
     pages = []
     ten_days_ago = (dt.now() - timedelta(days=10)).date().isoformat()
     # static pages
@@ -87,7 +111,7 @@ def sitemap():
 
 @app.route("/articles/", defaults={"path": ""})
 @app.route("/articles/<path:path>")
-def articles(path):
+def articles(path: str) -> str:
     """Flask route for articles parsing and display.
 
     Loads all available articles into memory.
@@ -95,6 +119,12 @@ def articles(path):
 
     Displays article summaries when more than one article filtered.
     Displays article full text when only one article selected.
+
+    Args:
+        path (str): additional string URL path
+
+    Returns:
+        str: rendered article pages
     """
     routes = ["major_type", "year", "month", "day", "title"]
 
@@ -105,11 +135,6 @@ def articles(path):
 
     if request.args.get("major_type", None):
         filters["major_type"] = request.args.get("major_type")
-
-    try:
-        int(request.args.get("page", "0"))
-    except:
-        pass
 
     breadcrumbs = path.split("/")
     for ind, val in enumerate(breadcrumbs):
