@@ -22,11 +22,11 @@ from datetime import datetime as dt
 from datetime import timedelta, timezone
 
 # coding: utf-8
-from flask import Flask, current_app, make_response, render_template, request
+from flask import current_app, make_response, render_template, request
 from pytz import timezone as tzoffset
 
 from personalsite import app
-from personalsite.file_parsing import get_all_files, get_all_tags, get_file_details, parse_files_and_filters
+from personalsite.file_parsing import get_all_files, get_all_tags, parse_files_and_filters
 
 
 @app.context_processor
@@ -94,9 +94,9 @@ def articles(path):
         filters["major_type"] = request.args.get("major_type")
 
     try:
-        page = int(request.args.get("page", "0"))
+        int(request.args.get("page", "0"))
     except:
-        page = 0
+        pass
 
     routes = ["major_type", "year", "month", "day", "title"]
     breadcrumbs = path.split("/")

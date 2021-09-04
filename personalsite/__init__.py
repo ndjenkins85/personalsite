@@ -33,7 +33,6 @@ app = create_app()
 CORS(app)
 sslify = SSLify(app)
 
-import personalsite.views
 
 # Program version and changelog. __version__ is used in setup.py
 # Poetry attaches to this version via poetry-version-plugin
