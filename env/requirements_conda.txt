@@ -1,6 +1,0 @@
-Flask==1.0.2
-Flask-Cors==3.0.4
-itsdangerous==0.24
-markdown==3.0.1
-pyOpenSSL==18.0.0
-pytz==2018.9
