@@ -13,3 +13,5 @@ The quick-start includes the following features:
 * Linting, type checking, and tests with minimum of tool config files and close nox and pyproject.toml integration - to standardize code and minimize clutter
 * Tools for release management including tagging and versioning process, Github actions for release notes, test-pypi and release actions - to simplify the code release process
 * Warmed up project example with logging, imports, pytest, argparse CLI, poetry scripts, docstrings - to template good code practices
+
+The above quick-start has been helpful to update this personal website and use best practices.
