@@ -61,7 +61,8 @@ personalsite = 'run:app'
 source = "init"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+# Should be the same as `$POETRY_VERSION` in dockerfile
+requires = ["poetry-core>=1.2.0a2"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
