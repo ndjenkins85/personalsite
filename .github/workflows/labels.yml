@@ -3,7 +3,7 @@ on:
     branches:
       - master
 
-name: Create Default Labels
+name: Labels
 jobs:
   labels:
     name: DefaultLabelsActions
