@@ -14,4 +14,4 @@ The quick-start includes the following features:
 * Tools for release management including tagging and versioning process, Github actions for release notes, test-pypi and release actions - to simplify the code release process
 * Warmed up project example with logging, imports, pytest, argparse CLI, poetry scripts, docstrings - to template good code practices
 
-The above quick-start has been helpful to use best practices in updating this personal website.
+The above quick-start has been helpful to use best practices in updating this personal website and restarting a Japanese language app (Otsukare).
