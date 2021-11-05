@@ -6,9 +6,10 @@ services:
             dockerfile: ./dockerfile           # `dockerfile`: Name of Dockerfile to build from
         image: personalsite                   # `image`: Name of Docker image
         ports:                                 # `ports`: Port mapping <User Computer Port>:<Internal port within Docker>
-            - 5000:5000
-        working_dir: /                         # `working_dir`: Set initial working directory when container starts up
+            - 8080:8080
+        working_dir: /workspace                         # `working_dir`: Set initial working directory when container starts up
         volumes:                               # `volumes`: Determine how files will be linked between host machine 
-            - .:/                              #    and Docker container file systerm
-        command: gunicorn -b 0.0.0.0:$PORT -k gevent --worker-connections 1000 --timeout 120 personalsite:app
-                                               # `command` determines what will run when you start up a Docker container      
+            - .local:/local                              #    and Docker container file systerm
+            - .personalsite:/personalsite
+        command: gunicorn -b 0.0.0.0:8080 -k gevent --worker-connections 1000 --timeout 120 personalsite:app
+                                               # `command` determines what will run when you start up a Docker container
