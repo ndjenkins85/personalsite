@@ -255,15 +255,19 @@ Intention is to have lightweight checks that automatically make code changes.</p
 </div>
 <div class="section" id="containerized-webserver">
 <h3>Containerized webserver<a class="headerlink" href="#containerized-webserver" title="Permalink to this headline">¶</a></h3>
-<p>The webserver can also be run as docker container using following commands.</p>
+<p>Webserver can be started using docker-compose or Dockerfile. The Heroku publishing via github actions uses Dockerfile.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose build
+docker-compose up
+docker-compose down
+</pre></div>
+</div>
+<p>Alternatively run from Dockerfile:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build -t bluemania/personalsite .
 docker run -p <span class="m">5000</span>:5000 -e <span class="nv">PORT</span><span class="o">=</span><span class="m">5000</span> --rm bluemania/personalsite
+docker stop <span class="k">$(</span>docker ps -a -q<span class="k">)</span>
 </pre></div>
 </div>
-<p>And the following command to stop.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker stop <span class="k">$(</span>docker ps -a -q<span class="k">)</span>
-</pre></div>
-</div>
+<p>Visit <a class="reference external" href="http://0.0.0.0:5000">localhost</a> on browser.</p>
 </div>
 <div class="section" id="publish-to-heroku">
 <h3>Publish to Heroku<a class="headerlink" href="#publish-to-heroku" title="Permalink to this headline">¶</a></h3>
@@ -279,8 +283,8 @@ heroku container:release web -a nickjenkins
 </div>
 </div>
 </div>
-<div class="section" id="id8">
-<h2>Contributors<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h2>Contributors<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.nickjenkins.com.au">Nick Jenkins</a> - Data Scientist, API &amp; Web dev, Team lead, Writer</p></li>
 </ul>
