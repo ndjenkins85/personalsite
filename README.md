@@ -103,19 +103,23 @@ Visit [localhost](http://127.0.0.1:5000) on browser.
 
 ### Containerized webserver
 
-The webserver can also be run as docker container using following commands.
+Webserver can be started using docker-compose or Dockerfile. The Heroku publishing via github actions uses Dockerfile.
+
+``` bash
+docker-compose build
+docker-compose up
+docker-compose down
+```
+
+Alternatively run from Dockerfile:
 
 ``` bash
 docker build -t bluemania/personalsite .
 docker run -p 5000:5000 -e PORT=5000 --rm bluemania/personalsite
-
-```
-
-And the following command to stop.
-
-```bash
 docker stop $(docker ps -a -q)
 ```
+
+Visit [localhost](http://0.0.0.0:5000) on browser.
 
 ### Publish to Heroku
 

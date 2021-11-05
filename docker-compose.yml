@@ -7,9 +7,9 @@ services:
     build: .
     image: personalsite
     ports:
-      - 8080:8080
+      - 5000:5000
     working_dir: /
     volumes:
       - ./local:/local
       - ./personalsite:/personalsite
-    command: gunicorn -b 0.0.0.0:8080 -k gevent --worker-connections 1000 --timeout 120 personalsite:app
+    command: gunicorn -b 0.0.0.0:5000 -k gevent --worker-connections 1000 --timeout 120 personalsite:app
