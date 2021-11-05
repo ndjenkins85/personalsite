@@ -1,8 +1,15 @@
+# Used stackoverflow to help diagose folder structure under volumes
+# https://stackoverflow.com/questions/38546755/docker-compose-keep-container-running
+# can use `docker exec -i -t personalsite_web_server_1 bash` to investigate
 version: '3'
 services:
-  web:
+  web_server:
     build: .
+    image: personalsite
     ports:
-      - "5000:5000"
+      - 8080:8080
+    working_dir: /
     volumes:
-      - .:/app
+      - ./local:/local
+      - ./personalsite:/personalsite
+    command: gunicorn -b 0.0.0.0:8080 -k gevent --worker-connections 1000 --timeout 120 personalsite:app
