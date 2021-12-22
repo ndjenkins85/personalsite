@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "personalsite"
-version = "0"
+version = "0.2.1"
 description = "My personal webpage."
 license = "MIT"
 authors = ["Nick Jenkins"]
@@ -61,9 +61,8 @@ personalsite = 'run:app'
 source = "init"
 
 [build-system]
-# Should ideally be the same as `$POETRY_VERSION` in dockerfile
-# But currently no pip installable alpha
-requires = ["poetry>=1.2.0a2"]
+# Keep poetry version same as in github actions and Dockerfile
+requires = ["setuptools", "poetry>=1.1.9"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
