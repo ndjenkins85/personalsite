@@ -6,7 +6,7 @@ Ultimately the first version was a success - the program was completed and it he
 
 There are a few distinct phases of the project which are reflected in the graph
 
-![Holdings](https://www.nickjenkins.com.au/static/assets/wow_auctions/holdings.png "holdings.jpg")
+![Holdings](https://www.ndjenkins.com/static/assets/wow_auctions/holdings.png "holdings.jpg")
 
 ##### Mid-April MVP
 
@@ -49,7 +49,7 @@ While I am waiting to be onboarded onto my next work project, I'm looking to imp
 - [X] Basic dependency management using virtualenv
 - [X] Documentation updates
 
-In my other post I discussed some tools and methods to increase my software development expertise -  https://www.nickjenkins.com.au/articles/professional/2020/07/07/increasing-software-development-expertise
+In my other post I discussed some tools and methods to increase my software development expertise -  https://www.ndjenkins.com/articles/professional/2020/07/07/increasing-software-development-expertise
 
 I spent some time over past few days looking to implement CLI + Packaging + Dependency management; ideally this would use Click + setuptools + Poetry, but I am not quite understanding how these will fit together at this stage. I thought it would be best to implement CLI and dependency management that I am familiar with, and move on to other topics.
 

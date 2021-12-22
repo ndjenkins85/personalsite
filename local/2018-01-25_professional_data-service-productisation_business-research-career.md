@@ -7,7 +7,7 @@ Despite this, a fair percentage of analyst workload is involved with routine com
 
 When first starting out as a junior analyst, your main motivation is (or should be) fear. Fear?! Yes, fear of getting it wrong. The myriad of steps and transformations between raw data outputs and report should be keeping you up at night. At least, that's the way it was for me! Seeing firsthand the results of incorrectly reported data, to your professional status, to that of your colleagues and company, can be gut wrenching.
 
-[There could be entire series written on various learnings, mistakes and analysis peculiarities](https://www.nickjenkins.com.au/articles/professional/2018/02/12/tools-that-deceive-us "Tools that deceive us") *(did you know that loading CSV files in Microsoft Excel then saving them could corrupt certain data formats?)*. There will be mistakes, learn from them.
+[There could be entire series written on various learnings, mistakes and analysis peculiarities](https://www.ndjenkins.com/articles/professional/2018/02/12/tools-that-deceive-us "Tools that deceive us") *(did you know that loading CSV files in Microsoft Excel then saving them could corrupt certain data formats?)*. There will be mistakes, learn from them.
 
 After several years as an analyst, making fewer mistakes, you may start learning about advanced market research topics. Techniques such as weighting, statistical testing, driver analysis, maybe even some speciality analysis such as choice modelling. When provided analysis briefs, you start to help filling in the gaps (did you want weighting with that?).
 

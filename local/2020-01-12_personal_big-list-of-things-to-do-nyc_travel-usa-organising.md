@@ -1,6 +1,6 @@
 Bri and I have been living in the states six months now, and we are excited to have family and friends come visit in 2020. We’ve been growing a personal list of things we like doing or want to do while living in NYC. If you're planning on a visit, let us know if you like the look of any of these!
 
-![01_nyc_google_maps.png](https://www.nickjenkins.com.au/static/assets/nyc/google_maps.png "01_nyc_google_maps")
+![01_nyc_google_maps.png](https://www.ndjenkins.com/static/assets/nyc/google_maps.png "01_nyc_google_maps")
 
 ## Fun Weekend Activities
 

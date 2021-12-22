@@ -10,18 +10,18 @@ All this being said, computer software has come a long way since early days of t
 
 Good design starts with understanding the user. We conducted desk research using n=640 online user reviews of Skype, and saw a massive and statistically significant drop in satisfaction with the software of 4.3 stars to 1.3 stars over the period of 2011-2012 to 2017-2018. From text comments the primary issues were accounts issues, user interface, and navigation problems. Further to this we conducted surveys to examine why the interface was poor. Armed with this information, we set out to perform a redesign. For reference, the latest Skype interface for video chat looks like the following.
 
-![skype](https://www.nickjenkins.com.au/static/assets/design/01_skype.png "skype")
+![skype](https://www.ndjenkins.com/static/assets/design/01_skype.png "skype")
 The interface has unfortunately mistaken simplicity and lack of clutter for usability. Key functionality such as screen sharing, chat and seeing who is online is obscured and not easily discovered by users.
 
 Have a look at the interface and think about how many buttons might result in a menu popup. We counted 5 different menu icons, placed in disparate and unstructured portions of the screen.
 
-![skype-butons](https://www.nickjenkins.com.au/static/assets/design/02_skype-butons.png "skype-butons")
+![skype-butons](https://www.ndjenkins.com/static/assets/design/02_skype-butons.png "skype-butons")
 An important principle of user design is to recognise what is happening in the environment when a user is using the software. Using Google Maps while driving has a much higher cognitive load than when relaxing on the couch. We should think about the Skype user rushing to organise a meeting with local and remote colleagues, juggling a coffee. Let's help them out! We can do this by transferring some of their cognitive load onto the system itself. Labels, good grouping, and using well-trodden consistent design principles provide a big benefit for users.
 
 Contrast the above the design with the following proposed redesign.
 
-![skype-redesign](https://www.nickjenkins.com.au/static/assets/design/03_skype-redesign.png "skype-redesign")
-![skype-redesign2](https://www.nickjenkins.com.au/static/assets/design/04_skype-redesign2.png "skype-redesign2")
+![skype-redesign](https://www.ndjenkins.com/static/assets/design/03_skype-redesign.png "skype-redesign")
+![skype-redesign2](https://www.ndjenkins.com/static/assets/design/04_skype-redesign2.png "skype-redesign2")
 What do you think? Would you feel more comfortable managing your meetings with this software? Has Skype lost the plot? What software frustrates you? At Evolve Research, we take user centric design seriously. We believe it is a core part of our offering which has seen clients come back time and again for help designing online dashboard and technology solutions. Please speak with us to see how we can help you combine insightful research with usable technology.
 
 This article was copied with permission by Evolve Research, read more related articles here: https://evolvedthinking.evolveresearch.com.au/2018/10/02/its-not-your-fault-if-youre-not-a-computer-person-why-design-matters/

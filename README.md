@@ -16,7 +16,7 @@ The site uses flask framework to serve markdown blog posts according to my custo
 
 ## Instructions for users
 
-Users interested in seeing the website can visit [on heroku here](https://www.nickjenkins.com.au).
+Users interested in seeing the website can visit [on heroku here](https://www.ndjenkins.com).
 
 ## Instructions for developers
 
@@ -138,7 +138,7 @@ heroku container:release web -a nickjenkins
 
 ## Contributors
 
-* [Nick Jenkins](https://www.nickjenkins.com.au) - Data Scientist, API & Web dev, Team lead, Writer
+* [Nick Jenkins](https://www.ndjenkins.com) - Data Scientist, API & Web dev, Team lead, Writer
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) in Github repo for specific instructions on contributing to project.
 

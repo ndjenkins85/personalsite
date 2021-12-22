@@ -1,1 +1,1 @@
-A fun video we took to capture the key parts of our six months working and studing remote in Europe. <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/ff50oIG1EPQ?origin=https://www.nickjenkins.com.au/" frameborder="0"></iframe>
+A fun video we took to capture the key parts of our six months working and studing remote in Europe. <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/ff50oIG1EPQ?origin=https://www.ndjenkins.com/" frameborder="0"></iframe>
