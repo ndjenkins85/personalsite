@@ -26,7 +26,7 @@ RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/inst
 WORKDIR $PYSETUP_PATH
 COPY poetry.lock pyproject.toml ./
 
-RUN poetry install --without dev
+RUN poetry install --no-dev
 
 COPY . /app
 WORKDIR /app
