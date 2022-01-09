@@ -1,16 +1,13 @@
 The following is a list of key projects I have worked along with business impact during my time as a data science consultant. This may be useful as a supplement to reviewing my resume and to highlight the depth and breadth of my consulting experience.
 
 - BCG feature store ‘Lighthouse’ - Stakeholder engagement and team leadership to develop a scalable high frequency data and feature store
-- Payroll contract pricing - B2B contract pricing, data issues, ML, client training
-    - Stakeholder engagement
+- Payroll contract pricing - B2B contract pricing, data issues, ML, client training - **Stakeholder engagement**
 - Wholesaler pricing - $1b promo spend optimised. B2B, promotion effectiveness, RRP
 - BCG risk and best practice ring-fence - Stakeholder engagement to assess project risk and ensure high quality deliverables
-- Survey data predictive value - New revenue streams, use case and launch recommendation, rigorous ML based framework
-    - Survey data expertise and sophisticated ML solution
+- Survey data predictive value - New revenue streams, use case and launch recommendation, rigorous ML based framework - **Survey data expertise and sophisticated ML solution**
 - COVID employment recovery research
 - Consumer goods - Order replenishment
-- High end fashion retailer - $30m personalization pilot, sales lift, offers and migration, many new techs and frameworks
-    - Product analytics and big data
+- High end fashion retailer - $30m personalization pilot, sales lift, offers and migration, many new techs and frameworks - **Product analytics and big data**
 - Chatbot for survey engagement - New business capability and revenue streams, multi-disciplinary; advanced ML and python infrastructure
 - Text analytics capability - New business capability and revenue streams, advanced ML and sales
 - Government infrastructure end-user research - Measuring end-user satisfaction with large scale infrastructure project affecting all Australians
