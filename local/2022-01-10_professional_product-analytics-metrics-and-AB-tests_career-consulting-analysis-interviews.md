@@ -15,7 +15,7 @@ I found many useful resources when collating this information, most notably; [Tr
 When creating metrics, good metrics tend to have these three characteristics;
 
 - Simple - Easy to discuss and calculate
-- Clear - Unambiguous
+- Clear - Unambiguous with simple english
 - Actionable - Can be effected
 
 When discussing metrics, it is important to have a good understanding of who the audience or end-user is.
