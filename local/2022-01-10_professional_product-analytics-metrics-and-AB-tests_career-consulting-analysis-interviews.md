@@ -1,172 +1,214 @@
-The following is a list of key projects I have worked along with business impact during my time as a data science consultant. This may be useful as a supplement to reviewing my resume and to highlight the depth and breadth of my consulting experience.
+Understanding of product analytics, metrics and A/B tests is a critical skill for data science consultants. While I have had some experience with these through [former projects](http://www.ndjenkins.com/articles/professional/2022/01/09/project-experience-and-impact), it is a skill I am actively researching and studying to prepare for future engagements.
+The following article provides an overview of these three areas.
 
-- BCG feature store ‘Lighthouse’ - Stakeholder engagement and team leadership to develop a scalable high frequency data and feature store
-- Payroll contract pricing - B2B contract pricing, data issues, ML, client training - **Stakeholder engagement**
-- Wholesaler pricing - $1b promo spend optimised. B2B, promotion effectiveness, RRP
-- BCG risk and best practice ring-fence - Stakeholder engagement to assess project risk and ensure high quality deliverables
-- Survey data predictive value - New revenue streams, use case and launch recommendation, rigorous ML based framework - **Survey data expertise and sophisticated ML solution**
-- COVID employment recovery research
-- Consumer goods - Order replenishment
-- High end fashion retailer - $30m personalization pilot, sales lift, offers and migration, many new techs and frameworks - **Product analytics and big data**
-- Chatbot for survey engagement - New business capability and revenue streams, multi-disciplinary; advanced ML and python infrastructure
-- Text analytics capability - New business capability and revenue streams, advanced ML and sales
-- Government infrastructure end-user research - Measuring end-user satisfaction with large scale infrastructure project affecting all Australians
+For Metrics, we will discuss - what are google metrics, commonly encountered technical and product metrics, understanding different audiences in a marketplace, and metric frameworks.
 
-## BCG feature store ‘Lighthouse’
-#### Stakeholder engagement and team leadership to develop a scalable high frequency data and feature store
+In the product analytics section, we will discuss the product lifecycle, including initial product ideas, opportunity sizing, experimental design, and measurement and launch decisions. We will highlight some common questions used to understand and assess product health, such as diagnosing problems, setting goals for a product, measuring success, launch or not.
 
-- Goal
-    - Worked on an internal project to make data assets readily available to case teams, to support quick turn around of time sensitive due diligence tasks, proposals, and client projects.
-- Impact
-    - We have increased the number of available datasets from ~20 to 40 in the past six months, and are seeing double digit growth in usage and billing allocation quarter over quarter.
-    - Have developed technical and documented processes to rapidly onboard junior data scientists, so they can quickly add new datasets, with standards for end user focused documentation
-    - Applied data assets to support client proposals, such as using footfall data as a proxy for store revenue
-- Challenges
-    - Lack of end user focused documentation
-    - Leading a team of four junior data scientists
-    - Needing to create the workstream from scratch, getting feedback and buy-in
-- Skills and learnings
-    - Team leadership and mentorship
-    - Project management best practices
-    - Effectively engaging with a variety of stakeholders
+For A/B tests, we will discuss experimentation broadly as it relates to statistical practices and design. We will discuss challenges to A/B tests and dealing with those challenges.
 
-## Payroll contract pricing
-#### B2B contract pricing, data issues, ML, client training
+The aim of this guide is to reinforce my own learning in these areas, and prepare for discussions with companies and clients.
+I found many useful resources when collating this information, most notably; [Trustworthy online controlled experiments by Kohavi, Tang, Xu](https://www.amazon.com/Trustworthy-Online-Controlled-Experiments-Practical/dp/1108724264), and [Data interview pro](https://www.youtube.com/c/DataInterviewPro) on Youtube.
 
-- Goal
-    - We helped a B2B payroll service provider assess ideal contract pricing to maximise profit and reduce churn.
-- Impact
-    - We produced a simple, rules based approach to empower sales team to drive towards ideal contract pricing with a minimum of iterations; the increased speed resulted in reduced internal costs due to iterations, and faster contract turn around time with customers
-    - We were able to tie this research with churn analysis to show no significant impact of initial price or price increases on churn rate, leading to increased willingness to engage in customer negotiations and increased profit.
-- Challenges
-    - Client had absorbed several smaller payroll providers, data was messy with over 50 different excel files provided, and relatively few database dumps. High security requirements and client infrastructure
-    - Difficult to define how customers being charged as payroll is variable.
-    - Remote working, limited time with west coast, east coast, Europe.
-    - Training the Nacent data science team on data ingestion, codebase and methodology.
-- Skills and learnings
-    - Managing multiple data sources and data documentation
-    - Managing codebase across whole team (myself plus two senior data scientists and lead)
-    - Working with non-technical counterparts to provide robust data science approach and convert into simple, valid, rules based approach.
+# Metrics
 
-## Wholesaler pricing
-#### $1b promo spend optimized. B2B, promotion effectiveness, RRP
+When creating metrics, good metrics tend to have these three characteristics;
 
-- Goal
-    - Worked with a B2B food distribution company to improve the effectiveness of their promotions with the goal of increasing purchase volume.
-- Impact
-    - $1b of promo spend optimized
-    - We created an analytics pipeline to attribute historic promotion impact, and used this to recommend fund reallocation towards high performing promos
-    - We provided analysis and recommendations to client for ideal recommended retail price, to optimise for multiple metrics (volume, revenue, profit), and guardrail conditions (minimum profit, competitive pricing), as well as highlighting elastic vs inelastic product sets.
-- Challenges
-    - Many categories, subcategories and SKUs, hard to generalise results
-    - Complex promotion systems, i.e. vendor, client and customer contribution,
-    - Required complex allocation system for overlapping timing windows, fill forward, cannibalisation
-- Skills and learnings
-    - Deeper insight into B2B wholesaler space and complex business rules
-    - Further opportunity to mentor two junior data scientists
-    - Started developing own frameworks around data engineering and pyspark comfort
+- Simple - Easy to discuss and calculate
+- Clear - Unambiguous
+- Actionable - Can be effected
 
-## BCG risk and best practice ring-fence
-#### Stakeholder engagement to assess project risk and ensure high quality deliverables
+When discussing metrics, it is important to have a good understanding of who the audience or end-user is.
+This is particularly important for businesses which may have multiple pillars, some examples of which are…
 
-- Goal
-    - Ensuring high quality projects and deliverables for our clients is BCG’s highest priority. I joined a ring-fence team which focused on providing project support to assess project risk and best practices, to ensure high quality outputs.
-- Impact
-    - Audited around 20 live cases across several attributes including legal, data use, teaming, infrastructure, modelling
-    - Provided first hand coaching and review of codebases with junior team members, to support busy case leadership teams
-    - Improved the auditing and onboarding process to help the ring-fence team scale and rotate new team members
-- Challenges
-    - Worked directly with busy BCG partners to explain audit process, provide guidance, and expert input on best practice
-    - Quickly absorbing current best practice standards so I could provide expertise to teams
-- Skills and learnings
-    - Developed relationships with BCG leadership
-    - Rapidly improved my python skills to provide expertise to case teams on successful python project delivery
+- Ride-share services with riders and drivers
+- Food shopping companies which have consumers, shoppers, supermarkets and advertisers
+- Digital media with consumers, creators and advertisers
 
-## Survey data predictive value
-#### New revenue streams, use case and launch recommendation, rigorous ML based framework
+Technical metrics are more related to website or app performance, often these are ‘hygiene factors’, that we expect a minimum acceptable behaviour.
+These can also form good ‘guardrail metrics’, in that we want our experiments to have no major impact on load times. Some Common technical metrics include:
 
-- Goal
-    - We worked with a political polling data vendor to assess and recommend additional revenue streams for their data.
-- Impact
-    - We were able to find additional use cases and prove efficacy through robust data science methods.
-    - After rigorous experimentation and benchmarking, we found evidence of a slight improvement in ability to predict near-term unemployment using client data and historic BLS unemployment measures. We showed the data was valuable.
-    - We provided recommendations to organisation on improvements to data collection breadth and depth and recommended ‘no launch’, with optimism of seeing better results with another year of data collection.
-- Challenges
-    - Many possible use cases; finding testable use cases (unemployment) based on third party data along with opportunity sizing
-    - Data size was relatively small, needed to consider trade off between granularity, aggregation and base validity
-    - Convinced team to employ a robust baseline to test for effects from the market research data.
-- Skills and learnings
-    - I leveraged my experience with market research data to create a robust data ingest pipeline, and to match with BLS unemployment data
-    - I used my machine learning expertise to set up experiments including strong baselines to detect the effect of adding signal from client data, using gradient boosted regression trees with time-series considerations
-    - I had opportunity to mentor a junior data scientist, and work collaboratively with a project leader. This was a great opportunity to increase personal ownership of project
+- Load time
+- Website uptime
+- num. crashes
+- num. issues
+- Storage performance
+- Buffering time
 
-## High end fashion retailer
-#### $52m personalization pilot, sales lift, offers and migration, many new techs and frameworks
+Delving into product specific metrics, we will often have an organizational ‘North Star’, or ‘overall evaluation criteria’ (OEC) metric.
+For companies like Meta this is ‘Daily active users (DAU)’.
 
-- Goal
-    - We worked with a high end fashion retailer to drive personalised offers to their customers, with a view to increase revenue via sales lift %.
-- Impact
-    - Overall the project was a great success, and we showed significant lift above clients BAU (about 25%)
-    - I contributed to the project by opportunity sizing and designing sales offers, specifically for cross-shopping recommendations. This was done through a basket analysis style recommendation model based on recent purchases. Ultimately there was no significant effect, but I learnt a lot about the product analytics lifecycle.
-    - Client showed great appreciation for training and side-by-side comparison of existing offers
-- Challenges
-    - I learnt as much as I could about personalization, BCG and client, levels of stakeholders
-    - I migrated several existing offer business logic SAS scripts to pyspark - two technologies I was unfamiliar before the case. I leveraged this to train client data science team in python and new infrastructure.
-    - Large data sets and new frameworks to learn
-- Skills and learnings
-    - I was exposed to several new technologies and frameworks and learnt; software engineering skills, SQL for data ingest, github, pyspark, AWS, airflow, SAS
-    - I quickly navigated a new work and client work environment, and had a very smooth case experience
-    - More recently I learnt that I could have used triggering (compare treatment to existing offer) to potentially increase significance!
-- Context
-    - Our client regularly provides customers with publicly available sales offers. BCG recommended a personalized marketing approach, as this would match customers segments to best offers and reduce waste
-    - As it is a high-margin business, proving sales lift % for overall test/control was our primary metric, as well as within sub-test groups.
-    - As first BCG case, worked closely with project leader and regularly requested feedback.
-    - I worked with teammates for experiment design; test groups, timing, metrics and  measurement.
+When discussing products and experiments, we usually want to dig deeper to find more tactical metrics to measure experiment impact. Some examples of common product metrics (by audience types) include:
 
-## Chatbot for survey engagement
-#### New business capability and revenue streams, multi-disciplinary; advanced ML and python infrastructure
+- Content consumers
+    - Daily / monthly active users
+        - Logging in
+        - Watching for 5 seconds
+        - (Consider cases which make sense for user activity)
+    - Retention
+        - Unsubscribes
+    - Engagement
+        - Watch time
+        - Complete streams
+        - Skips
+- Creators
+    - Paid vs free
+    - Origin region
+    - Analytics
+    - Retention
+    - Engagement activity
+- Advertisers
+    - Ads reach
+    - Personalization
+    - Click through rate (CTR)
+    - Paying customers / views
+    - Spend / view
 
-- Goal
-    - Build a market research survey chatbot to increase respondent engagement and quality of feedback while retaining guardrail metrics, and highlight the company as a key market research innovator and competitive advantage.
-- Impact
-    - We created a full chatbot solution along with metrics and guardrail metrics, including increased ‘quality’ of information as tested against explainability of overall satisfaction, quantity of text information, while maintaining survey completion rate and unsubscribe rate.
-    - The chatbot solution used NLP based models (keywords, sentiment, classification), state machines, and a docker based API to serve chatbot requests to users
-- Challenges
-    - Hard to identify metrics and quantify improvement
-    - Technology challenges early in career
-- Skills and learnings
-    - Learnt API, state machine frameworks
-    - Worked with junior analysts to create effective keyword based hierarchies
+Often, metrics frameworks can be a useful way to understand many parts of a product and process.
 
-## Text analytics capability
-#### New business capability and revenue streams, advanced ML and sales
+For example, when I worked in market research, we often used the ‘marketing funnel’. This allowed us to measure and understand how consumers perceived our client’s brands across many steps of engagement. Question wording would often include either more attitudinal (would you consider) vs behavioural style (did you shop within three months) questions.
 
-- Goal
-    - Open ended text responses in market research surveys a quality source of insights, however these require slow, expensive and manual review. I designed a text classification and sentiment scoring process to quickly and accurately compile insights, in a highly scalable way.
-- Impact
-    - We successfully piloted the text classification process with a client, enabling them to save $30k per year on text analytics costs
-    - We sold several projects based on this capability to other clients, with new revenues of $120k in first year, and $300k in second.
-    - We provided scalable sentiment scoring analysis to all projects as client value add.
-- Challenges
-    - Technical modelling challenges with small categories, complexity of feedback, working with unstructured data
-    - Developing a process which was transparent to accuracy, trade-offs, and value
-- Skills and learnings
-    - Learnt strong python and machine learning fundamentals, advanced text analytics techniques
-    - Worked with business owner to productise and sell the innovation to clients
+Marketing funnel:
 
-## Government infrastructure end-user research
-#### Measuring end-user satisfaction with large scale infrastructure project affecting all Australians
+- Top of mind awareness (open ended)
+- Prompted awareness
+- Consideration
+- Ever purchase / trial
+- Recent purchase
+- Ever recommend
 
-- Goal
-    - Assist the client in understanding customer satisfaction with their service and root cause issues across segments
-- Impact
-    - We surveyed millions of Australian consumers on their infrastructure satisfaction and several points in lifecycle including installation, 3 months, and 6 months into usage.
-    - Used robust data science approach to estimate root cause of customer satisfaction, across several segments
-- Challenges
-    - Large amount of data and weighting requirements
-    - Creating automated data ingestion and analysis processes to support early week reporting
-    - Creating infrastructure to handle hundreds of linear regressions and random forest based feature importance
-- Skills and learnings
-    - Python and pandas
-    - Ability to break down data and analytical problems into executable code
-    - Project mangagement
+This is similar to the ‘Growth metrics’ funnel framework (AARRR)
+
+Growth metrics AARRR:
+
+- Acquisition - awareness and sign up
+- Activation - engagement and use of product
+- Retention - re-use of product
+- Referral - shares with others
+- Revenue - increased customer LTV
+
+Other frameworks include more of an ‘input and output’ setup, such as click through rate, and fraud detection.
+
+# Product analytics
+
+Product analytics helps us drive improvement in products by experimentation.
+The book mentioned above ([Trustworthy online controlled experiments by Kohavi, Tang, Xu](https://www.amazon.com/Trustworthy-Online-Controlled-Experiments-Practical/dp/1108724264)) goes into detailed discussion of why organisations should consider a product analytics strategy and implementation steps.
+For this section we will primarily focus on the role of a data science consultant interacting with the product analytics process.
+
+The product analytics lifecycle includes four key stages:
+
+- Initial product ideas
+- Opportunity sizing
+- Experiment design
+- Measurement and launch decisions
+
+Often data scientists will be required to make assessments of a product. These may include diagnosing a problem, measuring success, setting goals for a product, and launching or not.
+The following section will discuss some strategies for framing, exploring and executing on these tasks.
+
+Diagnosing a problem. I have had first hand experience with diagnosing problems on a [government infrastructure end-user research](http://www.ndjenkins.com/articles/professional/2022/01/09/project-experience-and-impact) project. The following is a recommended framework and discussion items.
+
+- Clarify the expected function and goal of the product
+    - Discuss and confirm high level goals of product i.e. Help people connect, find communities, grow their business
+    - Confirm own understanding of product, discuss with team
+    - Understand the audience(s) and how they use the product
+- Diagnose the metric
+    - Clarify how metric is measured. i.e. is the ‘start time’ when order is submitted or payment processes?
+    - Changes to the metric usually involve a timing component, has the change been sudden or stable?
+    - Is there internal business issues that have affected the product?
+        - Own team or other teams
+        - Technical: Bugs, data source, data collection, missing values
+    - Have there been external pressures that have affected the product?
+        - Political, special events, natural disasters,
+        - Industry trends, competitors, partners changes (iOS releases, TVs)
+        - Customer backlash and boycott
+- Other product / feature by same company?
+    - Is it possible another test is not guardrailed against our metric?
+    - Are other products seeing similar change?
+    - Is there evidence of cannibalization
+- Segment by user demographics, behavioural features, (and attitudes)
+    - Age groups, mosaic,
+    - Geography, language
+    - Frequent or high CLTV customers
+    - Premium service customers
+    - Platform (mobile vs web)
+- Decompose the metric
+    - Sometimes it can be helpful to break down the metric into components to open up further analysis.
+        - i.e. Daily active users = existing users + new users + resurrected users - churned users
+- Summarise overall approach
+    - Weight towards the most reasonable causes
+    - Propose how to fix
+
+Measuring success and setting goals for a project can usually reuse much of the above framework and thinking.
+Questions may take the form of How to measure success of a product? How would you measure the health of Mentions? How would you set the goals for (whatsapp, instagram, messenger).
+A framework to help with these sorts of questions includes:
+
+- Confirm understanding
+    - Discuss and confirm high level goals of product i.e. Help people connect, find communities, grow their business
+    - Understand the audience(s) and how they use the product
+- High level metric buckets
+    - Consider high level metrics, and which you’ll focus on for discussion
+        - i.e. Engagement, Retention, Monetization
+- User actions that support metric
+    - How often and long using product
+    - Interaction as follows, likes, shares
+    - Consider multi-sided (i.e creator uploads)
+- Success metrics, guardrails
+    - Average watch time per user
+    - Average # videos watched per session
+    - Likes comments subscribe, consider as a funnel
+- Guardrails
+    - Churn
+    - Reports
+    - Diversity of content
+- Evaluate trade offs
+
+Often data scientists will help product teams assess if we will launch a product or not.
+While at Boston Consulting Group, many projects involved launch / no launch decisions, through an initial pilot, or through a series of shorter experiments such as in [personalization](http://www.ndjenkins.com/articles/professional/2022/01/09/project-experience-and-impact).
+We may be asked to assess how to test a product idea or launch feature? Or how would you set up an experiment to understand the change in instagram stories. How would you decide to launch or not if engagement within a specific cohort decreased?
+
+- Clarify function and goal
+    - Discuss and confirm high level goals of product i.e. Help people connect, find communities, grow their business
+    - Understand the audience(s) and how they use the product
+- Define metrics
+    - 2 success metrics, i.e daily active users, number of bookings
+    - 1 guardrail metrics, should not degrade
+- Experiments
+    - How to design
+    - How to split users
+    - How long to run
+        - Statistical power and expected sample size
+- Recommendation based on experiment results
+    - Link results to the goal and business metrics
+    - Conflicting results
+    - Short term vs long term
+- Restate and ensure recommendation is clear
+
+# A/B Tests
+
+While not a full guide to A/B tests and experimentation, the following are some important considerations to design.
+
+- What units (customers, businesses, groups)
+    - 50/50 control, test. Paired?
+    - By days of week, by geography, at random? Stratified?
+- How long to run the test
+- Determine sample size through statistical power
+    - Type II error and correctly rejecting null hypothesis
+    - Significance level i.e. 95%
+    - Minimum detectable effect - Smallest difference that matters in practice
+
+Some challenges may come up depending on the business context, some examples of which include:
+
+- Multiple testing problem
+    - Using multiple test correction to avoid spurious p-value significance
+- Novelty and primacy effect
+    - Change aversion (primacy effect)
+    - i.e. after a week it goes back to normal.
+    - An option is to run only with first time users, or compare first time users
+- Interference between groups
+    - i.e. when its not possible to do split randomly (network effects, two sided market)
+    - Network effects > experiment > two sided market
+- Options to deal with challenges
+    - Geobased randomisation
+    - Time based randomisation
+
+In summary, metrics, product analytics frameworks and A/B tests are great discussions to have to be an effective data scientist and provide impact to companies and clients. It is an area I am keen to continue growing in expertise.
