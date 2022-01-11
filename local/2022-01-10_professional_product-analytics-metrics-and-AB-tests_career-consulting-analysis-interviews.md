@@ -1,6 +1,8 @@
 Understanding of product analytics, metrics and A/B tests is a critical skill for data science consultants. While I have had some experience with these through [former projects](http://www.ndjenkins.com/articles/professional/2022/01/09/project-experience-and-impact), it is a skill I am actively researching and studying to prepare for future engagements.
 The following article provides an overview of these three areas.
 
+#### This article is summarized by a one-page reference document which can be [found here](/static/assets/product/20220111_NDJ_product_analytics_reference.pdf "20220111_NDJ_product_analytics_reference.pdf").
+
 For Metrics, we will discuss - what are google metrics, commonly encountered technical and product metrics, understanding different audiences in a marketplace, and metric frameworks.
 
 In the product analytics section, we will discuss the product lifecycle, including initial product ideas, opportunity sizing, experimental design, and measurement and launch decisions. We will highlight some common questions used to understand and assess product health, such as diagnosing problems, setting goals for a product, measuring success, launch or not.
