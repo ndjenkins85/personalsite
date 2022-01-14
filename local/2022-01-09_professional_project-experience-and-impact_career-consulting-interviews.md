@@ -43,12 +43,12 @@ List of projects with synopsis and key topics.
 
 Development of a scalable, high frequency data and feature store for BCG case teams.
 
-The goal of the project was to enable BCG case teams to quickly access curated third-party data sources. I contributed to this goal by:
+The goal of the project is to enable BCG case teams to quickly access curated third-party data sources to empower their cases. We have had several case teams use the data to high effect. I contributed to this goal by:
 
 - Increasing available datasets from 20 to 40 during tenure
 - Established the 'integration' squad to accelerate dataset availability and quality
 - Led and mentored seven data scientists to implement integrations
-- Proved value of Lighthouse to support BCG proposals, such as using footfall data as a proxy for store revenue
+- Proved value of Lighthouse to support BCG proposals. Designed ML based approach including random forest regressors to use third party data (footfall, credit card spend, search) as a proxy for store revenue
 
 - XFN teaming
     - Eight XFN partners; leadership, legal, procurement, vendors, infrastructure, BCG partners, case teams, within-squad.
@@ -67,7 +67,7 @@ The goal of the project was to enable BCG case teams to quickly access curated t
 
 Assess contract pricing for new and existing customers to determine churn impact and reduce pricing cycles.
 
-The goal of the project was to help a B2B payroll service provider assess ideal contract pricing to maximise profit and reduce churn. I contributed impact to this project by:
+The goal of the project was to help a B2B payroll service provider assess ideal contract pricing to maximise profit and reduce churn. We demonstrated the factors relating to final contract pricing, which increased contract turn around time. We also showed that customers were not very price sensitive, which gave client confidence in approaching negotiations. I contributed impact to this project by:
 
 - Providing a robust analytical pricing recommendation, using ML and explainable AI principles. This empowered the sales team to drive towards ideal contract pricing with a minimum of iterations; the increased speed resulted in reduced internal costs due to iterations, and faster contract turn around time with customers
 - Combined pricing research with churn analysis to show impact of price changes on churn rate. This lead to increased willingness to engage in customer pricing negotiations.
@@ -139,7 +139,7 @@ Stakeholder engagement to assess project risk and ensure high quality deliverabl
 
 Demonstrate survey data value as an employment rate leading indicator.
 
-The aim of this project was to work with a political polling data vendor to assess and recommend additional revenue streams for their data. I contributed to the project in the following ways:
+The aim of this project was to work with a political polling data vendor to assess and recommend additional revenue streams for their data. We were successful in demonstrating a valuable use case (unemployment forecasting). I contributed to the project in the following ways:
 
 - We proved the value of the survery data as a weak, leading indicator of regional unemployment.
 - I contributed to the project by advocating for strong statistical controls including time based train/test and strong baseline models for comparison.
