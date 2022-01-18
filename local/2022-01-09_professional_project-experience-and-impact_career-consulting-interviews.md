@@ -12,7 +12,7 @@ List of projects with synopsis and key topics.
     - XFN teaming, pricing, data management, infra, ML, client training, pilot
 - **Wholesaler pricing**
     - Promo effect attribution and optimization for over $1 billion annual spend
-    - promotions, pricing, big data, infra, ML, pilot
+    - promotions, pricing, big data, ML, pilot
 - **BCG risk and best practice ring-fence**
     - Stakeholder engagement to assess project risk and ensure high quality deliverables
     - infra, workstream development
@@ -43,78 +43,83 @@ List of projects with synopsis and key topics.
 
 Development of a scalable, high frequency data and feature store for BCG case teams.
 
-The goal of the project is to enable BCG case teams to quickly access curated third-party data sources to empower their cases. We have had several case teams use the data to high effect. I contributed to this goal by:
+Lighthouse empowers BCG case teams to access curated, third-party data sources. We have had several case teams use the data to high effect. I have contributed to the goals of the project by:
 
-- Increasing available datasets from 20 to 40 during tenure
-- Established the 'integration' squad to accelerate dataset availability and quality
-- Led and mentored seven data scientists to implement integrations
-- Proved value of Lighthouse to support BCG proposals. Designed ML based approach including random forest regressors to use third party data (footfall, credit card spend, search) as a proxy for store revenue
+- Doubling the number of available assets from 20 to 40
+- Established a team of 'integration' specialists to increase dataset availability and quality
+- Led and mentored seven data scientists to perform integration duties
+- Proved value of Lighthouse data to support several BCG proposals and case teams. Including a multivariate model to bring together many datasets to estimate client revenue.
 
 - XFN teaming
-    - Eight XFN partners; leadership, legal, procurement, vendors, infrastructure, BCG partners, case teams, within-squad.
-    - Quickly established respect and trust in working relationships, set expectations clearly, was clear about asks for input, setup of dedicated weekly progress and content meetings. Looked to understand XFN perspectives and motivations, and find win-win solutions.
+    - Worked with nine XFN partners. These included external providers such as vendors, contractors and clients. It included 'internal clients' such as leadership, case teams, partners. We also worked with legal, procurement, other Lighthouse squads and analytics support.
+    - I established respect and trust in these working relationships. We would work to understand each other's objectives, and set our expectations. I worked with teams to seek input, setup dedicated meetings and drive progress.
 - Leadership
     - First dedicated leadership role at BCG
-    - I led four junior data scientists at any one time, and seven overall. Created onboarding, checklists and process documents to set expectations with the team. Setup weekly feedback and content sessions. Provide support to unblock, and enable the team to take ownership of tasks.
+    - I led four junior data scientists at any one time, and seven total. Created onboarding, checklists and process documents to set expectations with the team. Setup weekly feedback and content sessions. Provide support to unblock, and enable the team to take ownership of tasks.
 - Workstream development
     - Scope and processes for integrations not well defined
-    - Pulled together all resources and knowledge to draft 'best practices' guidelines for new data integrations. I seeked feedback and input from XFN partners. Executed first few integrations which care to meet standards and make adjustments.
+    - I collated existing knowledge and resources. This led to draft 'best practices' guidelines for new data integrations. I requested feedback and input from XFN partners. We executed early integrations with attention to our guidelines and opportunities to improve.
 - PMO
     - Many new integration projects in backlog (up to 40 projects)
-    - Utilized Jira to set up kanban style project tracking, established clear guidelines for project status and work items required. I seeked feedback from leadership and XFN partners on integration readiness and priorities. Discussed with team members project allocations and prioritization.
+    - We tracked all project details in Jira using a Kanban style project lifecycle. I established clear expectations for team to report project status and inputs required. I requested feedback from leadership and XFN partners on integration readiness and priorities. Discussed with team members project allocations and priorities.
 
 ### Payroll contract pricing
 
-Assess contract pricing for new and existing customers to determine churn impact and reduce pricing cycles.
+Analysis of customer contract pricing to determine churn impact and reduce pricing cycles.
 
-The goal of the project was to help a B2B payroll service provider assess ideal contract pricing to maximise profit and reduce churn. We demonstrated the factors relating to final contract pricing, which increased contract turn around time. We also showed that customers were not very price sensitive, which gave client confidence in approaching negotiations. I contributed impact to this project by:
+We helped a payroll provider assess pricing to maximise profit and reduce churn. We analyzed which factors are important to determining contract pricing. This insight resulted in fewer pricing cycles, speeding up the contract process. Our results also indicated that customers were not very price sensitive. This gave the client confidence in approaching customer pricing negotiations and improved profitability. I contributed impact to this project by:
 
-- Providing a robust analytical pricing recommendation, using ML and explainable AI principles. This empowered the sales team to drive towards ideal contract pricing with a minimum of iterations; the increased speed resulted in reduced internal costs due to iterations, and faster contract turn around time with customers
-- Combined pricing research with churn analysis to show impact of price changes on churn rate. This lead to increased willingness to engage in customer pricing negotiations.
-- Demonstrating technical project leadership and finding alignment with fellow data scientists. This enabled us to provide a high quality python codebase with version control, configurability, and documentation.
+- Providing a robust analytical pricing recommendation, using ML and explainable AI principles. This included searching over 2000 possible features to determine the most important 15.
+- Worked with team to integrate pricing and churn models to show impact of price changes on churn rate.
+- Lead the data management, coding and infrastructure solution for the project. This enabled us to deliver quality codebase with version control, configurability, and documentation.
 
 - XFN teaming
-    - Several XFN partners; Non-technical PMs and lead, technical collegues and lead, BCG partners, client DS team, client strategy team.
-    - Looked to understand XFN perspectives and motivations. Needed to convince non-technical stakeholders to trust in data science process, and that results are not immediate. Supported their requirements by designing codebase to support configuration in relevant areas. I regularly contributed to daily check-in and check-outs to drive work to completion, align with team, and collaborate on next steps. There were additional challenges by working fully remote and not meeting, this was partly overcome by allowing additional team time for social meetings.
+    - Worked with several XFN partners. This included strategy focused client, BCG consultants and partners. Also included technical DS clients, DS team and DS lead.
+    - Looked to understand XFN perspectives and motivations. We needed to prove the data science process to non-technical stakeholders. We did this by being transparent about the setup process, and when initial results are ready. We supported their use-cases by designing a configurable codebase for fast analytics turnaround.
 - Pricing
-    - Difficult to assess client pricing and profitability due to variability in charge rates, bonus payments, pay periods.
+    - It was difficult to get a true picture of customer pricing and profitability. This is due to variability in charge rates, bonus payments, pay periods.
     - We created a robust data engineering pipeline to ingest, clean and analyse pricing over time.
 - Data management
-    - As the client had taken over several companies, there were over 50 different data sources provided for payroll, insurance, client information etc. Some of which was structured database tables, others as excel or reports.
-    - I implemented a data manifest process which standardized how to document information, the ingestion process, and how data was prepared for modeling.
+    - We received over 50 different data sources in a variety of formats from the client. These included features such as payroll, insurance, and customer information.
+    - I implemented a data manifest process to standardize knowledge capture. This helped the team to dig into different areas, and provide useful summaries. The standards informed ownership, ingest method, data dictionary, and use in models.
 - Infra
-    - Due to data sensitivities, we needed to work on client infrastructure, which included a VM and no local data transfer.
-    - I set up a standard process on the client infrastructure to ensure that we had a version control codebase, and python packaging so that we could deploy process to client infrastructure.
+    - We needed to work on client VM due to sensitive data, without ability to transfer any code or data.
+    - I set up a standard workflow to support best practice software development. This included codebase version control, environment management, and python packaging. This afforded us repeatability in our analysis and ease of deployment to client.
 - ML
-    - We needed to make the most use of available data, while providing an explainable model.
-    - I recommended a two-step approach: use a 'kitchen sink' random forest based model to find predictive ceiling and most relevant features, then utilize best features in an interpretable linear regression model. We found methods to reduce the predictive gap between models such as log variables.
+    - We needed to analyze all available client data, while providing an explainable model.
+    - I proposed a three-step approach. A random forest model to find the predictive ceiling and most relevant features. Then, use the top features in an interpretable linear regression model. We worked on feature tweaks to reduce the predictive gap, such as log transformations.
 - Client training
-    - The client was not very familiar with using pure python codebases, and the specific data preparation and modeling strategies.
-    - We held weekly update and collaboration sessions with the client to discuss results. Towards project delivery, we held daily training sessions with client data science team, including preparing the codebase into jupyter notebooks at the request of client team.
+    - The client was not used to working with python applications. There was also knowledge transfer needed for data preparation and modelling approach.
+    - We held weekly update and collaboration sessions with the client to discuss results. Towards project delivery, we held daily training sessions with client data science team. We prepared jupyter notebook tutorials to guide client DS through a familiar interface.
 - Pilot
-    - The project produced deliverables needed to prepare a segment of customers for a pilot of the updated process.
-    - We prepared analysis results as an excel simulator and recommended price change to support the process change pilot.
+    - We prepared project analysis outputs to support an upcoming pilot. We needed to prepare the client strategy and DS team to launch the pilot.
+    - We prepared an excel simulator with configurable controls. This gave the strategy team insightful tools to guide pricing decisions. As mentioned in client training, we provided deep knowledge transfer to the team.
 
 ### Wholesaler pricing
 
 Promo effect attribution and optimization for over $1 billion annual spend.
+We helped a B2B distribution company to increase sales volume. We created models to attribute promotion performance and expected secondary effects. This allowed us to identify best and worse performing promotions. This guided decision making towards effective promotions and maximizing sales volume. I contributed to this project by:
 
-*promotions, pricing, big data, infra, ML, pilot*
+- Analysis of ideal SRP - the recommended retail price issued by the B2B distribution company. Created robust, SKU and multi-level model to estimate ideal SRP and price elasticity. This enabled maximization estimates and profit share simulation
+- Helped standardize the data engineering and codebase workflow. This included version controlled code, repeatable workflows, and pyspark optimizations
+- Providing support to junior DS team members, particularly on codebase design
 
-- Goal
-    - Worked with a B2B food distribution company to improve the effectiveness of their promotions with the goal of increasing purchase volume.
-- Impact
-    - $1b of promo spend optimized
-    - We created an analytics pipeline to attribute historic promotion impact, and used this to recommend fund reallocation towards high performing promos
-    - We provided analysis and recommendations to client for ideal recommended retail price, to optimise for multiple metrics (volume, revenue, profit), and guardrail conditions (minimum profit, competitive pricing), as well as highlighting elastic vs inelastic product sets.
-- Challenges
-    - Many categories, subcategories and SKUs, hard to generalise results
-    - Complex promotion systems, i.e. vendor, client and customer contribution,
-    - Required complex allocation system for overlapping timing windows, fill forward, cannibalisation
-- Skills and learnings
-    - Deeper insight into B2B wholesaler space and complex business rules
-    - Further opportunity to mentor two junior data scientists
-    - Started developing own frameworks around data engineering and pyspark comfort
+- Promotions
+    - The promotional calendar and method was complex. Promotions had several modalities, with involvement by retailers, wholesaler and producers.
+    - Considerable work was undertaken to understand promotions. This included how they related to each other and how to define
+attribution. Beyond this, we analyized for secondary effects such as cannibalization and pull forward.
+- Pricing
+    - This project included wholesaler SRP recommendations to retailers. Increasing order volume was a primary motivation of the wholesaler.
+    - I helped show that SRP was a significant factor in order volume using GLMs. This allowed estimations of SRP elasticity per SKU and enable further volume optimizations. I created compelling reporting to highlight discussion points around guardrails and win-win outcomes.
+- Big data
+    - We were working with several hundred gigabytes of promotional and order data.
+    - We used the dataiku platform for data storage and engineering pipeline. Alongside this we used pyspark and version controlled codebase. This helped us keep the codebase modular and documentation centralized.
+- ML
+    - The SRP data had few records per SKU, and little variation over price ranges. It appeared to be challenging to pull together coherent analysis.
+    - We were able to address data problems and produce a successful model. We used SKU hierarchy to fill information from similar products (i.e. flavour variants). We created linear models with a monotonic increasing constraint for SRP. We were able to use this for elasticity estimates at SKU, sub-category, and category level.
+- Pilot
+    - We prepared project analysis outputs to support an upcoming pilot. We needed to prepare the client strategy and DS team to launch the pilot.
+    - We prepared pipelines to populate SRP and secondary effects for the upcoming pilot. The pipeline was replicatable, which would help the client team in future cycles.
 
 ### BCG risk and best practice ring-fence
 
@@ -139,7 +144,7 @@ Stakeholder engagement to assess project risk and ensure high quality deliverabl
 
 Demonstrate survey data value as an employment rate leading indicator.
 
-The aim of this project was to work with a political polling data vendor to assess and recommend additional revenue streams for their data. We were successful in demonstrating a valuable use case (unemployment forecasting). I contributed to the project in the following ways:
+The aim of this project was to work with a political polling data vendor to assess and recommend additional revenue streams for their data. We were successful in demonstrating a valuable use case (unemployment forecasting), culminating in ongoing use of the data for BCG clients. I contributed to the project in the following ways:
 
 - We proved the value of the survery data as a weak, leading indicator of regional unemployment.
 - I contributed to the project by advocating for strong statistical controls including time based train/test and strong baseline models for comparison.
