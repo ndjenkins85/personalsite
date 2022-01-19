@@ -98,6 +98,7 @@ We helped a payroll provider assess pricing to maximise profit and reduce churn.
 ### Wholesaler pricing
 
 Promo effect attribution and optimization for over $1 billion annual spend.
+
 We helped a B2B distribution company to increase sales volume. We created models to attribute promotion performance and expected secondary effects. This allowed us to identify best and worse performing promotions. This guided decision making towards effective promotions and maximizing sales volume. I contributed to this project by:
 
 - Analysis of ideal SRP - the recommended retail price issued by the B2B distribution company. Created robust, SKU and multi-level model to estimate ideal SRP and price elasticity. This enabled maximization estimates and profit share simulation
@@ -125,20 +126,22 @@ attribution. Beyond this, we analyized for secondary effects such as cannibaliza
 
 Stakeholder engagement to assess project risk and ensure high quality deliverables.
 
-*infra, workstream development, PMO*
+The team goal was to ensure that all active projects had completed a risk assessment. This was to ensure all projects were being delivered with quality standards, with no risk to BCG. During my time in this team, I helped course correct a few projects. My impact included:
 
-- Goal
-    - Ensuring high quality projects and deliverables for our clients is BCG’s highest priority. I joined a ring-fence team which focused on providing project support to assess project risk and best practices, to ensure high quality outputs.
-- Impact
-    - Audited around 20 live cases across several attributes including legal, data use, teaming, infrastructure, modelling
-    - Provided first hand coaching and review of codebases with junior team members, to support busy case leadership teams
-    - Improved the auditing and onboarding process to help the ring-fence team scale and rotate new team members
-- Challenges
-    - Worked directly with busy BCG partners to explain audit process, provide guidance, and expert input on best practice
-    - Quickly absorbing current best practice standards so I could provide expertise to teams
-- Skills and learnings
-    - Developed relationships with BCG leadership
-    - Rapidly improved my python skills to provide expertise to case teams on successful python project delivery
+- Audited 20 projects across legal, data use, teaming, infrastructure, modelling domains
+- Worked with teams to find solutions to quality issues. This included finding alternative sources for incorrect sourcing of third-party data.
+- Coaching junior project team members and codebase review
+- Improved ring-fence onboarding process to help the team scale
+
+- Infra
+    - I needed to dive into various codebases to understand them and propose improvements
+    - I spent time to learn python packaging and libraries process. This allowed me to provide guidance to case teams on best practice.
+- Workstream development
+    - The ring-fence team was self-directed
+    - I found many areas to contribute, including best-practice documentation and onboarding process.
+- PMO
+    - Much of the work included scheduling, meetings, and task tracking among team members.
+    - We utilized Jira to track projects, with custom fields to note upcoming appointments. We standardized our workflow so that it became easy to track status of many projects.
 
 ### Survey data predictive value
 
