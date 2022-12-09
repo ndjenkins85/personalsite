@@ -2,20 +2,21 @@
 {% block content %}
 
 <div class="container">
-  <div class="row m-2" comment="breadcrumb_host">
+  <!-- Breadcrumb header -->
+  <div class="row m-2">
     <div class="col">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ url_for('home') }}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{url_for('home')}}">Home</a></li>
           {% for crumb in breadcrumbs %}
             {% if not loop.last %}
               <li class="breadcrumb-item">
-              <a href="{{ url_for('articles')}}{% for i in range(loop.index) %}{{ breadcrumbs[i] }}/{% endfor %}">
-              {{ crumb }}
+              <a href="{{url_for('articles')}}{% for i in range(loop.index) %}{{breadcrumbs[i]}}/{% endfor %}">
+              {{crumb}}
               </a>
               </li>
             {% else %}
-              <li class="breadcrumb-item active" aria-current="page">{{ crumb }}</li>
+              <li class="breadcrumb-item active" aria-current="page">{{crumb}}</li>
             {% endif %}
           {% endfor %}
         </ol>
@@ -23,7 +24,8 @@
     </div>
   </div>
 
-  <div class="row m-2" comment="article/s housing">
+  <!-- Article/s housing -->
+  <div class="row m-2">
     <div class="col-sm-9">
       {% for article in articles %}
         <div class="row m-2">
@@ -31,21 +33,26 @@
             <div class="shadow-sm p-2 bg-white rounded">
               <div class="row">
                 <div class="col">
-                  <a href="{{ url_for('articles')}}{{ article['url_helper'] }}" class="text-decoration-none">
-                    <h4>{{ article["title_cap"] }} - <small class="text-muted">{{ article["date"] }}</small></h4>
+                  <a href="{{url_for('articles')}}{{article['url_helper']}}" class="text-decoration-none">
+                    <h4>{{article["title_cap"]}} - <small class="text-muted">{{article["date"]}}</small></h4>
                   </a>
                   {% for tag in article["tags"] %}
-                    {% if loop.first %}Tags: {% endif %}
+                    {% if loop.first %}
+                      Tags:
+                    {% endif %}
                     <span class="badge badge-pill badge-info">{{tag}}</span>
-                    {% if loop.last %}<br>{% endif %}
+                    {% if loop.last %}
+                      <br>
+                    {% endif %}
                   {% endfor %}
                   <div class="row">
                     <div class="col m-3">
-                    {% if single %}
-                      {{article["article"]}}
-                    {% else %}
-                      {{article["teaser"]}}
-                    {% endif %}
+                      <!-- Article text or teaser -->
+                      {% if single %}
+                        {{article["article"]}}
+                      {% else %}
+                        {{article["teaser"]}}
+                      {% endif %}
                     </div>
                   </div>
                 </div>
@@ -56,24 +63,25 @@
       {% endfor %}
     </div>
     {% if not single %}
+      <!-- Tags column -->
       <div class="col-sm-3">
         <div class="shadow-sm p-2 bg-white rounded">
           <strong>Filters</strong>
           <div class="row">
             <div class="col">
               <h6>Area:</h6>
-              <a href="{{ url_for('articles')}}professional">
+              <a href="{{url_for('articles')}}professional">
                 <span class="badge badge-pill badge-success">Professional
                 </span>
               </a>
-              <a href="{{ url_for('articles')}}personal">
+              <a href="{{url_for('articles')}}personal">
                 <span class="badge badge-pill badge-success">Personal
                 </span>
               </a>
               <p></p>
               <h6>Year:</h6>
               {% for year in tag_years() %}
-                <a href="{{ url_for('articles', year=year)}}">
+                <a href="{{url_for('articles', year=year)}}">
                   <span class="badge badge-pill badge-dark">{{year}}
                   </span>
                 </a>
@@ -81,7 +89,7 @@
               <p></p>
               <h6>Tags:</h6>
               {% for tag in tags %}
-                <a href="{{ url_for('articles', tags=tag[0])}}">
+                <a href="{{url_for('articles', tags=tag[0])}}">
                   <span class="badge badge-pill badge-info">{{tag[0]}}<span class="badge badge-pill badge-info">({{tag[1]}})</span>
                   </span>
                 </a>
@@ -93,5 +101,4 @@
     {% endif %}
   </div>
 </div>
-
 {% endblock %}
