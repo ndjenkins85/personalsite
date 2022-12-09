@@ -22,7 +22,7 @@ from flask import current_app, make_response, render_template, request
 from pytz import timezone as tzoffset
 
 from personalsite import app
-from personalsite import file_parsing
+from personalsite import article_parsing
 
 
 @app.route("/")
@@ -32,7 +32,7 @@ def home() -> str:
     Returns:
         str: rendered home page as text
     """
-    return render_template("index.html", tags=file_parsing.get_all_tags())
+    return render_template("index.html", tags=article_parsing.get_all_tags())
 
 
 @app.route("/resume")
@@ -68,9 +68,6 @@ def articles(path: str) -> str:
     if request.args.get("year", None):
         filters["year"] = request.args.get("year")
 
-    if request.args.get("major_type", None):
-        filters["major_type"] = request.args.get("major_type")
-
     # Article URL always follows this structure
     # Add filters for each part that exists in path
     routes = ["major_type", "year", "month", "day", "title"]
@@ -78,14 +75,14 @@ def articles(path: str) -> str:
     for ind, val in enumerate(breadcrumbs):
         filters[routes[ind]] = val
 
-    files = file_parsing.parse_all_articles_against_filters(filters)
+    articles = article_parsing.parse_all_articles_against_filters(filters)
     # Determines whether to display a single article or multiple summaries
-    single = len(breadcrumbs) == 5 and len(files) == 1
+    single = len(breadcrumbs) == 5 and len(articles) == 1
 
-    tags = file_parsing.get_all_tags()
+    tags = article_parsing.get_all_tags()
 
     return render_template(
-        "articles.html", files=files, routes=routes, breadcrumbs=breadcrumbs, single=single, tags=tags
+        "articles.html", articles=articles, routes=routes, breadcrumbs=breadcrumbs, single=single, tags=tags
     )
 
 
@@ -107,9 +104,9 @@ def sitemap() -> Any:
         ):
             pages.append([rule.rule, ten_days_ago])
 
-    files = file_parsing.parse_all_articles()
-    for f in files:
-        pages.append(["/articles/" + f["url_helper"], f["date"]])
+    articles = article_parsing.parse_all_articles()
+    for article in articles:
+        pages.append(["/articles/" + article["url_helper"], article["date"]])
 
     sitemap_xml = render_template("sitemap_template.xml", pages=pages, siteurl=app.config["SITEURL"])
     response = make_response(sitemap_xml)
