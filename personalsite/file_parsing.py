@@ -1,24 +1,6 @@
 """Responsible for loading, validating, and filtering article text."""
 
-# Copyright © 2021 by Nick Jenkins. All rights reserved
-#
-# Permission is hereby granted, free of charge, to any person obtaining a
-# copy of this software and associated documentation files (the "Software"),
-# to deal in the Software without restriction, including without limitation
-# the rights to use, copy, modify, merge, publish, distribute, sublicense,
-# and/or sell copies of the Software, and to permit persons to whom the
-# Software is furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-# DEALINGS IN THE SOFTWARE.
+# Copyright © 2023 by Nick Jenkins. All rights reserved
 
 import os
 from collections import defaultdict
@@ -30,7 +12,7 @@ import markdown
 from flask import Markup
 
 
-def get_file_details(filename: str) -> Dict[str, Any]:
+def parse_article(filename: str) -> Dict[str, Any]:
     """Parses a markdown article into python dictionary.
 
     Args:
@@ -65,7 +47,7 @@ def get_file_details(filename: str) -> Dict[str, Any]:
 
     url_helper = f"{major_type}/{year}/{month}/{day}/{title}"
 
-    article = open_article(filename)
+    article = Path("local", filename).open().readlines()
 
     teaser = article[0].replace("â€˜", "'").replace("â€™", "'")
     teaser = Markup(markdown.markdown(teaser))
@@ -93,48 +75,32 @@ def get_file_details(filename: str) -> Dict[str, Any]:
     }
 
 
-def open_article(filename: str) -> List[str]:
-    """Loads plain text article into memory.
-
-    Args:
-        filename (str): article filename
-
-    Returns:
-        str: raw article text
-    """
-    input_path = Path("local", filename)
-    with open(input_path, "r") as f:
-        return f.readlines()
-
-
-def get_all_files() -> List[Dict[str, Any]]:
+def parse_all_articles() -> List[Dict[str, Any]]:
     """Gets list of valid markdown articles.
 
     Returns:
         List[Dict[str, Any]]: List of parsed articles.
     """
     exclude_list: List[str] = [".DS_Store", ".wh..wh..opq"]
-    future_use: Generator[Path, None, None] = Path("local").rglob("*.md")
-    future_use
-    return [get_file_details(x) for x in os.listdir("local") if x not in exclude_list]
+    return [parse_article(x) for x in os.listdir("local") if x not in exclude_list]
 
 
 def get_all_tags() -> List[Tuple[str, int]]:
     """Creates sorted container of article filter tags.
 
     Returns:
-        List[Tuple[str, int]]: Returns collection of tags
+        List[Tuple[str, int]]: Tag counts
     """
-    files = get_all_files()
-    tags: Dict[str, int] = defaultdict(int)
-    for file in files:
-        for t in file.get("tags", []):
-            tags[t] += 1
-    new_tags = sorted(tags.items(), key=itemgetter(1), reverse=True)
-    return new_tags
+    articles = parse_all_articles()
+    tag_count: Dict[str, int] = defaultdict(int)
+    for article in articles:
+        for tag in article.get("tags", []):
+            tag_count[tag] += 1
+    tags = sorted(tag_count.items(), key=itemgetter(1), reverse=True)
+    return tags
 
 
-def parse_files_and_filters(filters: Dict[str, Any]) -> List[Dict[str, Any]]:
+def parse_all_articles_against_filters(filters: Dict[str, Any]) -> List[Dict[str, Any]]:
     """Loads all articles into memory then filters to subset of articles.
 
     Args:
@@ -143,7 +109,7 @@ def parse_files_and_filters(filters: Dict[str, Any]) -> List[Dict[str, Any]]:
     Returns:
         List[Dict[str, Any]]: List of articles post-filters
     """
-    files = get_all_files()
+    files = parse_all_articles()
 
     for key, value in filters.items():
         if files:
