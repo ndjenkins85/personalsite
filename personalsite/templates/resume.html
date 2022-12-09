@@ -2,12 +2,13 @@
 {% block content %}
 
 <div class="container">
+  <!-- Breadcrumb header -->
   <div class="noprint">
     <div class="row my-2">
       <div class="col-sm-10">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{url_for('home')}}">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Resume</li>
           </ol>
         </nav>
@@ -18,12 +19,11 @@
     </div>
   </div>
   <div class="row my-2">
-
     <div class="col-sm-4">
       <div class="shadow-sm p-2 bg-white rounded">
         <div class="row">
           <div class="col-sm-4">
-            <img src="{{ url_for('static', filename='img/nickjenkins.jpg')}}" class="img-fluid rounded-circle" alt="Nick Jenkins">
+            <img src="{{url_for('static', filename='img/nickjenkins.jpg')}}" class="img-fluid rounded-circle" alt="Nick Jenkins">
           </div>
           <div class="col-sm-8">
             <h2>Nick Jenkins</h2>
@@ -31,17 +31,14 @@
               I help organizations generate value from data.
             </small>
             <br>
-
           </div>
         </div>
-
-
         <div class="row">
           <div class="col-sm-6">
             <i class="fa fa-area-chart"></i>&nbsp;Data Scientist</li>
           </div>
           <div class="col-sm-6">
-            <i class="fa fa-exchange"></i>&nbsp;API & Web Dev</li>
+            <i class="fa fa-exchange"></i>&nbsp;Software Engineer</li>
           </div>
         </div>
         <div class="row">
@@ -49,10 +46,9 @@
             <i class="fa fa-group"></i>&nbsp;Team Leader</li>
           </div>
           <div class="col-sm-6">
-            <i class="fa fa-commenting-o"></i>&nbsp;Writer</li>
+            <i class="fa fa-commenting-o"></i>&nbsp;Technical Writer</li>
           </div>
         </div>
-
         <p></p>
         <div class="row">
           <div class="col-sm-6">
@@ -71,20 +67,19 @@
           </div>
         </div>
         <p></p>
-
         <dl class="row">
-          <dt class="col-sm-2">Key Exp.</dt>
+          <dt class="col-sm-2">Experience</dt>
           <dd class="col-sm-10">
             <p class="text-success">
               <strong>
-                7+ years Python
-                <br>8+ years Data Science
-                <br>12+ years Business Consulting
+                {{years_months("2015-09-01")}} Python
+                <br>{{years_months("2014-06-01")}} Data Science
+                <br>{{years_months("2011-02-01")}} Business Consulting
               </strong>
             </p>
           </dd>
 
-          <dt class="col-sm-2">Key Techs</dt>
+          <dt class="col-sm-2">Tech Stack</dt>
           <dd class="col-sm-10">
               python, pandas, sklearn, tensorflow<br>
               airflow, docker, github, flask<br>
@@ -96,10 +91,20 @@
         <div class="row">
           <div class="col">
             <h4><small class="text-muted">Work Experience</small></h4>
+            <i class="fa fa-group"></i>&nbsp;TikTok
+            <p class="font-weight-light">
+              Data Scientist - Trust and Safety (Transparency)<br>
+              May 2022 - current<br>
+              New York City, New York, USA<br>
+              <a href="https://www.tiktok.com/transparency" target="_blank">
+                https://www.tiktok.com/transparency
+              </a>
+            </p>
+
             <i class="fa fa-group"></i>&nbsp;The Boston Consulting Group
             <p class="font-weight-light">
               Senior Data Scientist<br>
-              July 2019 - current<br>
+              July 2019 - May 2022<br>
               New York City, New York, USA<br>
               <a href="https://www.bcg.com/" target="_blank">
                 https://www.bcg.com/
@@ -190,7 +195,8 @@
     <div class="col-sm-8">
       <div class="shadow-sm p-2 bg-white rounded">
 <p>
-I am an Australian Data Scientist working at The Boston Consulting Group in New York. I help organizations generate value from data. I consider myself a 'full-stack' data scientist.
+I am an Australian Data Scientist working for TikTok in New York. I work in the Trust and Safety pillar, focusing on Transparency reporting. We prepare material to support government requests, regulatory disclosure, media, and for the general public. Our aim is to demonstrate how we help the world safely discover, create and connect in order to build trust. I lead the data science effort to ensure reporting accuracy, repeatability, and new metric development.
+
 <ol>
   <li>Experienced in scoping and managing projects, working with stakeholders, and leading data science teams.
   </li>
@@ -199,6 +205,10 @@ I am an Australian Data Scientist working at The Boston Consulting Group in New 
   <li>Passionate about good communication and explaining complex concepts. I enjoy presenting results to c-level audiences, and writing compelling, end-user focused documentation.
   </li>
 </ol>
+</p>
+
+<p>
+<strong>Previous work experience:</strong>
 </p>
 
 <p>
