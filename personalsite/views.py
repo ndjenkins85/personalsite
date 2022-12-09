@@ -63,7 +63,7 @@ def articles(path: str) -> str:
         str: rendered article pages
     """
     # Fill filters dict with what is in the URL; params
-    filters = {}
+    filters: Dict[str, str] = {}
     filters["tags"] = request.args.get("tags", None)
     if request.args.get("year", None):
         filters["year"] = request.args.get("year")
