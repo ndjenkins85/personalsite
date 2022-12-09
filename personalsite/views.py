@@ -148,6 +148,6 @@ def get_master_details() -> Dict[Any, Any]:
     def years_months(date: str) -> str:
         """Calculates years and months since date."""
         days = (dt.now() - dt.strptime(date, "%Y-%m-%d")).days
-        return f"{days // 365} years, {(days % 365) // 30} months"
+        return f"{days // 365}y {(days % 365) // 30}m"
 
     return dict(deci=deci, inti=inti, utc_to_local=utc_to_local, tag_years=tag_years, years_months=years_months)
