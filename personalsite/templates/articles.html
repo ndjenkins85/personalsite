@@ -23,9 +23,9 @@
       </nav>
     </div>
   </div>
-
-  <!-- Article/s housing -->
+  <!-- Main page -->
   <div class="row m-2">
+    <!-- Article/s housing -->
     <div class="col-sm-9">
       {% for article in articles %}
         <div class="row m-2">
@@ -62,9 +62,13 @@
         </div>
       {% endfor %}
     </div>
-    {% if not single %}
-      <!-- Tags column -->
-      <div class="col-sm-3">
+    <!-- Tags and related column -->
+    <div class="col-sm-3">
+      {% if single %}
+        <div class="shadow-sm p-2 bg-white rounded">
+          Related articles:
+        </div>
+      {% else %}
         <div class="shadow-sm p-2 bg-white rounded">
           <strong>Filters</strong>
           <div class="row">
@@ -97,8 +101,8 @@
             </div>
           </div>
         </div>
-      </div>
-    {% endif %}
+      {% endif %}
+    </div>
   </div>
 </div>
 {% endblock %}
