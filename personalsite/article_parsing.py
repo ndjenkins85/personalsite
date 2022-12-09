@@ -12,6 +12,41 @@ import markdown
 from flask import Markup
 
 
+def _validate_filename(filename: str) -> None:
+    """Checks that a filename conforms to this project's standard for tagging."""
+    if len(filename.split(".")) != 2:
+        err = f"{filename} must contain one full stop only"
+        raise ValueError(err)
+
+    if len(filename.split(".")[0].split("_")) != 4:
+        err = f"{filename} must be separated by three underscores to deliminate date, type, title, tags"
+        raise ValueError(err)
+
+    for chunk in filename.split(".")[0].split("_"):
+        if len(chunk) == 0:
+            err = f"{filename} filepart must not be blank"
+            raise ValueError(err)
+
+    # This is to ensure title can be referenced directly in URL, and improves local file experience
+    if " " in filename:
+        err = f"{filename} must not contain spaces; use '-' between words and tags"
+        raise ValueError(err)
+
+
+def _prepare_markdown(raw: str) -> str:
+    """Takes raw markdown text and prepares html formatting."""
+    cleaned = raw
+    if len(cleaned) == 0:
+        err = "Expected article text, none passed"
+        raise ValueError(err)
+
+    cleaned = cleaned.replace("â€˜", "'").replace("â€™", "'")
+    cleaned = Markup(markdown.markdown(cleaned))
+    cleaned = cleaned.replace("img alt", "img class=img-thumbnail alt")
+
+    return cleaned
+
+
 def parse_article(filename: str) -> Dict[str, Any]:
     """Parses a markdown article into python dictionary.
 
@@ -21,57 +56,32 @@ def parse_article(filename: str) -> Dict[str, Any]:
     Returns:
         Dict[str, Any]: Parsed article elements
     """
-    # To debug issues with 'None', remove the try except here to get info on why crashed
-    assert len(filename.split(".")) == 2, f"{filename} needs 1x . character (md)"
-    details, filetype = filename.split(".")
-
-    assert len(details.split("_")) == 4, f"{filename} needs 3x '_' for date, type, title, tags"
-    date, major_type, title, tag_text = details.split("_")
-
-    title_cap = title.replace("-", " ").capitalize()
-
-    tags: List[str] = []
-    if tag_text:
-        tags = tag_text.split("-")
-
+    _validate_filename(filename)
+    date, major_type, title, tag_text = filename.split(".")[0].split("_")
     year, month, day = date.split("-")
-
-    if month in ["01", "02", "03", "04"]:
-        period = f"{year}_early"
-    elif month in ["05", "06", "07", "08"]:
-        period = f"{year}_mid"
-    elif month in ["09", "10", "11", "12"]:
-        period = f"{year}_late"
-    else:
-        period = ""
+    tags: List[str] = tag_text.split("-")
 
     url_helper = f"{major_type}/{year}/{month}/{day}/{title}"
+    title_cap = title.replace("-", " ").capitalize()
 
-    article = Path("local", filename).open().readlines()
+    article_text = Path("local", filename).open().readlines()
 
-    teaser = article[0].replace("â€˜", "'").replace("â€™", "'")
-    teaser = Markup(markdown.markdown(teaser))
-
-    joined_article = "".join(article).replace("â€˜", "'").replace("â€™", "'")
-    joined_article = Markup(markdown.markdown(joined_article))
-    joined_article = joined_article.replace("img alt", "img class=img-thumbnail alt")
+    teaser = _prepare_markdown(article_text[0])
+    full_article = _prepare_markdown("".join(article_text))
 
     return {
         "filename": filename,
         "date": date,
-        "major_type": major_type,
-        "title": title,
-        "tags": tags,
         "year": year,
         "month": month,
         "day": day,
-        "period": period,
-        "filename": filename,
-        "filetype": filetype,
+        "major_type": major_type,
+        "title": title,
+        "tags": tags,
         "title_cap": title_cap,
         "url_helper": url_helper,
         "teaser": teaser,
-        "article": joined_article,
+        "article": full_article,
     }
 
 
@@ -82,7 +92,8 @@ def parse_all_articles() -> List[Dict[str, Any]]:
         List[Dict[str, Any]]: List of parsed articles.
     """
     exclude_list: List[str] = [".DS_Store", ".wh..wh..opq"]
-    return [parse_article(x) for x in os.listdir("local") if x not in exclude_list]
+    articles = [parse_article(x) for x in os.listdir("local") if x not in exclude_list]
+    return articles
 
 
 def get_all_tags() -> List[Tuple[str, int]]:
