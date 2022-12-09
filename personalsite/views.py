@@ -15,7 +15,7 @@ Helper functions for sitemap and jinja python enablement.
 
 from datetime import datetime as dt
 from datetime import timedelta, timezone
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 # coding: utf-8
 from flask import current_app, make_response, render_template, request
@@ -141,4 +141,8 @@ def get_master_details() -> Dict[Any, Any]:
         adjusted = time.replace(tzinfo=timezone.utc).astimezone(tz=tzoffset(offset_str))
         return adjusted.strftime("%Y-%m-%d at %H:%M:%S")
 
-    return dict(deci=deci, inti=inti, utc_to_local=utc_to_local)
+    def tag_years() -> List[str]:
+        """Get list of years from 2017."""
+        return list(range(2017, dt.now().year + 1))
+
+    return dict(deci=deci, inti=inti, utc_to_local=utc_to_local, tag_years=tag_years)
