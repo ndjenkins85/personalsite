@@ -64,9 +64,9 @@ def articles(path: str) -> str:
     """
     # Fill filters dict with what is in the URL; params
     filters: Dict[str, str] = {}
-    filters["tags"] = request.args.get("tags", None)
-    if request.args.get("year", None):
-        filters["year"] = request.args.get("year")
+    filters["tags"] = request.args.get("tags", "")
+    if request.args.get("year", ""):
+        filters["year"] = request.args.get("year", "")
 
     # Article URL always follows this structure
     # Add filters for each part that exists in path
@@ -117,7 +117,7 @@ def sitemap() -> Any:
 
     articles = article_parsing.parse_all_articles()
     for article in articles:
-        pages.append(["/articles/" + article["url_helper"], article["date"]])
+        pages.append(["/articles/" + article["url_helper"], article["date"]])  # type: ignore
 
     sitemap_xml = render_template("sitemap_template.xml", pages=pages, siteurl=app.config["SITEURL"])
     response = make_response(sitemap_xml)
@@ -152,12 +152,24 @@ def get_master_details() -> Dict[Any, Any]:
         adjusted = time.replace(tzinfo=timezone.utc).astimezone(tz=tzoffset(offset_str))
         return adjusted.strftime("%Y-%m-%d at %H:%M:%S")
 
-    def tag_years() -> List[str]:
-        """Get list of years from 2017."""
-        return list(range(2017, dt.now().year + 1))
+    def tag_years() -> List[int]:
+        """Get list of years from 2017.
+
+        Returns:
+            List[int]: List of years
+        """
+        years = list(range(2017, dt.now().year + 1))  # type: ignore
+        return years
 
     def years_months(date: str) -> str:
-        """Calculates years and months since date."""
+        """Calculates years and months since date.
+
+        Args:
+            date (str): yyyy-mm-dd
+
+        Returns:
+            str: formatted string
+        """
         days = (dt.now() - dt.strptime(date, "%Y-%m-%d")).days
         return f"{days // 365}y {(days % 365) // 30}m"
 

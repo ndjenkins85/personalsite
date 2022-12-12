@@ -11,19 +11,22 @@ Three main use cases
 
 # Copyright © 2023 by Nick Jenkins. All rights reserved
 
-import os
 from collections import defaultdict
 from operator import itemgetter
 from pathlib import Path
-from typing import Dict, Generator, List, Tuple, Union
+from typing import Dict, List, Mapping, Tuple, Union
 
 import markdown
 from flask import Markup
 
 
-def parse_all_articles() -> List[Dict[str, Union[List, str]]]:
-    """Parses all articles in the `local` directory"""
-    articles: List[Dict[str, Union[List, str]]] = []
+def parse_all_articles() -> List[Mapping[str, Union[List[str], str]]]:
+    """Parses all articles in the `local` directory.
+
+    Returns:
+        List[Mapping[str, Union[List, str]]]: All articles with metadata
+    """
+    articles: List[Mapping[str, Union[List, str]]] = []
     for article in Path("local").rglob("*.md"):
         _validate_filename(article)
         parsed_article = _parse_article(article)
@@ -31,14 +34,16 @@ def parse_all_articles() -> List[Dict[str, Union[List, str]]]:
     return articles
 
 
-def parse_all_articles_against_filters(filters: Dict[str, Union[List, str]]) -> List[Dict[str, Union[List, str]]]:
+def parse_all_articles_against_filters(
+    filters: Mapping[str, Union[List[str], str]]
+) -> List[Mapping[str, Union[List[str], str]]]:
     """Loads all articles into memory then filters to subset of articles.
 
     Args:
-        filters (Dict[str, Union[List, str]]): Filter conditions i.e. tag: [x, y], year: 2022
+        filters (Mapping[str, Union[List, str]]): Filter conditions i.e. tag: [x, y], year: 2022
 
     Returns:
-        List[Dict[str, Union[List, str]]]: List of articles post-filters
+        List[Mapping[str, Union[List, str]]]: List of articles post-filters
     """
     articles = parse_all_articles()
     if not articles:
@@ -49,7 +54,7 @@ def parse_all_articles_against_filters(filters: Dict[str, Union[List, str]]) -> 
         if not value:
             continue
         if key == "tags":
-            filtered_articles = [article for article in filtered_articles if value in article["tags"]]
+            filtered_articles = [article for article in filtered_articles if value in article["tags"]]  # type: ignore
         else:
             filtered_articles = [article for article in filtered_articles if article[key] == value]
 
@@ -58,7 +63,11 @@ def parse_all_articles_against_filters(filters: Dict[str, Union[List, str]]) -> 
 
 
 def get_all_tags() -> List[Tuple[str, int]]:
-    """Parses all articles to get tags sorted by tag counts."""
+    """Parses all articles to get tags sorted by tag counts.
+
+    Returns:
+        List[Tuple[str, int]]: Article tags and counts
+    """
     articles = parse_all_articles()
     tag_count: Dict[str, int] = defaultdict(int)
     for article in articles:
@@ -69,7 +78,14 @@ def get_all_tags() -> List[Tuple[str, int]]:
 
 
 def _validate_filename(filename: Path) -> None:
-    """Checks that a filename conforms to this project's standard for tagging."""
+    """Checks that a filename conforms to this project's standard for tagging.
+
+    Args:
+        filename (Path): filepath to article file
+
+    Raises:
+        ValueError: When article filename does not conform to standards
+    """
     if len(filename.name.split(".")) != 2:
         err = f"{filename} must contain one full stop only"
         raise ValueError(err)
@@ -90,7 +106,17 @@ def _validate_filename(filename: Path) -> None:
 
 
 def _prepare_markdown(raw: str) -> str:
-    """Takes raw markdown text and prepares html formatting."""
+    """Takes raw markdown text and prepares html formatting.
+
+    Args:
+        raw (str): Basic read of markdown from file
+
+    Raises:
+        ValueError: checks article text exists
+
+    Returns:
+        str: Prepared markdown html text
+    """
     cleaned = raw
     if len(cleaned) == 0:
         err = "Expected article text, none passed"
@@ -103,14 +129,14 @@ def _prepare_markdown(raw: str) -> str:
     return cleaned
 
 
-def _parse_article(filename: Path) -> Dict[str, Union[List, str]]:
+def _parse_article(filename: Path) -> Mapping[str, Union[List, str]]:
     """Parses a markdown article and metadata into python dictionary.
 
     Args:
-        filename (str): article filename
+        filename (Path): article filename
 
     Returns:
-        Dict[str, Union[List, str]]: Parsed article and metadata
+        Mapping[str, Union[List, str]]: Parsed article and metadata
     """
     date, major_type, title, tag_text = filename.stem.split("_")
     year, month, day = date.split("-")
@@ -139,8 +165,15 @@ def _parse_article(filename: Path) -> Dict[str, Union[List, str]]:
     }
 
 
-def get_related_articles(article: Dict[str, Union[List, str]]) -> List[Dict[str, Union[List, str]]]:
-    """Given a single article, get related articles by using tags."""
+def get_related_articles(article: Mapping[str, Union[List, str]]) -> List[Mapping[str, Union[List, str]]]:
+    """Given a single article, get related articles by using tags.
+
+    Args:
+        article (Mapping[str, Union[List, str]]): Article to find related ones using tags
+
+    Returns:
+        List[Mapping[str, Union[List, str]]]: Related articles with metadata
+    """
     related_articles = []
     for tag in article["tags"]:
         filter_part = {"tags": tag}
