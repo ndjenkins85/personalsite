@@ -1,4 +1,4 @@
-Often when guests visit us in the US we are asked about tipping culture. For those not accustomed to it, the ‘rules’ can be considered arcane and arbitrary. While I’m sure my approach will not be without contention, it has served me well to feel comfortable and reflect good service. 
+Often when guests visit us in the US we are asked about tipping culture. For those not accustomed to it, the ‘rules’ can be considered arcane and arbitrary. While I’m sure my approach will not be without contention, it has served me well to feel comfortable and reflect good service.
 
 Tipping is generally done on pre-tax amount, and most receipts will have suggested tipping % amounts displayed at the bottom. As an aside for those not familiar, usually the place of business will take your credit card to charge the total amount, and the tip is applied/updated later.
 

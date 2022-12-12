@@ -27,7 +27,7 @@ def parse_all_articles() -> List[Mapping[str, Union[List[str], str]]]:
         List[Mapping[str, Union[List, str]]]: All articles with metadata
     """
     articles: List[Mapping[str, Union[List, str]]] = []
-    for article in Path("local").rglob("*.md"):
+    for article in Path("articles").rglob("*.md"):
         _validate_filename(article)
         parsed_article = _parse_article(article)
         articles.append(parsed_article)
