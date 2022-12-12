@@ -9,123 +9,95 @@ And you can enter Iraj Safavi [here](https://oracleofbacon.org/) as an 'actor' l
 The following is the code you can use to replicate. BFS uses a linked list, which is commonly a dictionary of str: list indicating actor and co-stars. This was done as a str:set to speed things up.
 
 
-```python
-import os
-import json
-from collections import defaultdict
-from tqdm import tnrange
-import itertools
-from tqdm import tqdm
-import pandas as pd
-```
-
-```python
-# Load data (cant quite straight import)
-file = "data.txt"
-
-data = []
-with open(file, 'r') as f:
-    data = f.readlines()
-
-data = [json.loads(d) for d in data]
-
-```
+    import os
+    import json
+    from collections import defaultdict
+    from tqdm import tnrange
+    import itertools
+    from tqdm import tqdm
+    import pandas as pd
 
 
-```python
-# Get unique list of actors
-all_cast = []
+    # Load data (cant quite straight import)
+    file = "data.txt"
+    data = []
+    with open(file, 'r') as f:
+        data = f.readlines()
+    data = [json.loads(d) for d in data]
 
-for movie in data:
-    for actor in movie["cast"]:
-        all_cast.append(actor)
+    # Get unique list of actors
+    all_cast = []
 
-all_cast = list(set(all_cast))
-len(all_cast)
+    for movie in data:
+        for actor in movie["cast"]:
+            all_cast.append(actor)
 
-```
+    all_cast = list(set(all_cast))
+    len(all_cast)
 
+    # Get linked list of actor: [worked with, ...]
+    # Fast method. Not worried about self-duplication
+    cast_associations = defaultdict(set)
 
-```python
-# Get linked list of actor: [worked with, ...]
-# Fast method. Not worried about self-duplication
-cast_associations = defaultdict(set)
+    for m in tnrange(len(data)):
+        movie = data[m]
 
-for m in tnrange(len(data)):
-    movie = data[m]
+        for c1 in movie["cast"]:
+            for c2 in movie["cast"]:
+                cast_associations[c1].add(c2) # Add both ways
+                cast_associations[c2].add(c1)
 
-    for c1 in movie["cast"]:
-        for c2 in movie["cast"]:
-            cast_associations[c1].add(c2) # Add both ways
-            cast_associations[c2].add(c1)
+    # Remove self from cast associations to speed things up
+    for cast in cast_associations:
+        cast_associations[cast].remove(cast)
 
-# Remove self from cast associations to speed things up
-for cast in cast_associations:
-    cast_associations[cast].remove(cast)
+    # Check Mr Bacon's associations
+    cast_associations["Kevin Bacon"]
 
-```
+    # Grabbed a standard breadth first search off stackoverflow
+    # Credit https://stackoverflow.com/questions/46383493/python-implement-breadth-first-search
+    # With small modifications
 
+    # visits all the nodes of a graph (connected component) using BFS
+    def bfs_connected_component(graph, start):
+        # keep track of all visited nodes
+        explored = []
+        # keep track of nodes to be checked
+        queue = [start]
 
-```python
-# Check Mr Bacon's associations
-cast_associations["Kevin Bacon"]
+        levels = {}         # this dict keeps track of levels
+        levels[start]= 0    # depth of start node is 0
 
-```
+        visited= [start]     # to avoid inserting the same node twice into the queue
 
+        # keep looping until there are nodes still to be checked
+        with tqdm(total=len(graph)) as pbar: # Added a timing check
+            while queue:
+               # pop shallowest node (first node) from queue
+                node = queue.pop(0)
 
-```python
-# Grabbed a standard breadth first search off stackoverflow
-# Credit https://stackoverflow.com/questions/46383493/python-implement-breadth-first-search
-# With small modifications
+                explored.append(node)
+                neighbours = graph[node]
 
-# visits all the nodes of a graph (connected component) using BFS
-def bfs_connected_component(graph, start):
-    # keep track of all visited nodes
-    explored = []
-    # keep track of nodes to be checked
-    queue = [start]
-
-    levels = {}         # this dict keeps track of levels
-    levels[start]= 0    # depth of start node is 0
-
-    visited= [start]     # to avoid inserting the same node twice into the queue
-
-    # keep looping until there are nodes still to be checked
-    with tqdm(total=len(graph)) as pbar: # Added a timing check
-        while queue:
-           # pop shallowest node (first node) from queue
-            node = queue.pop(0)
-
-            explored.append(node)
-            neighbours = graph[node]
-
-            # Consider adding a set->list operation every 10,000 iterations or so to speed up search process
+                # Consider adding a set->list operation every 10,000 iterations or so to speed up search process
 
 
-            # add neighbours of node to queue
-            for neighbour in neighbours:
-                if neighbour not in visited:
-                    queue.append(neighbour)
-                    visited.append(neighbour)
-                    pbar.update(1)
+                # add neighbours of node to queue
+                for neighbour in neighbours:
+                    if neighbour not in visited:
+                        queue.append(neighbour)
+                        visited.append(neighbour)
+                        pbar.update(1)
 
-                    levels[neighbour] = levels[node]+1
-                    # print(neighbour, ">>", levels[neighbour])
-    return explored, levels
+                        levels[neighbour] = levels[node]+1
+                        # print(neighbour, ">>", levels[neighbour])
+        return explored, levels
 
-```
+    explored, levels = bfs_connected_component(cast_associations, "Kevin Bacon")
 
-```python
-explored, levels = bfs_connected_component(cast_associations, "Kevin Bacon")
+    # Print top 10 results
 
-```
-
-```python
-# Print top 10 results
-results = pd.DataFrame.from_dict(levels, orient='index')[0]
-results.name = "Actor"
-results.tail(10)
-
-#results.to_csv("bacon_number.csv")
-
-```
+    results = pd.DataFrame.from_dict(levels, orient='index')[0]
+    results.name = "Actor"
+    results.tail(10)
+    # results.to_csv("bacon_number.csv")
