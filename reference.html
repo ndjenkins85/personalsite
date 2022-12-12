@@ -93,7 +93,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-personalsite.file_parsing">personalsite.file_parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#personalsite-file-parsing">personalsite.file_parsing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-personalsite.views">personalsite.views</a></li>
 </ul>
 </li>
@@ -168,96 +168,23 @@
 <h1>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#module-personalsite.file_parsing" id="id1">personalsite.file_parsing</a></p></li>
-<li><p><a class="reference internal" href="#module-personalsite.views" id="id2">personalsite.views</a></p></li>
+<li><p><a class="reference internal" href="#personalsite-file-parsing" id="id3">personalsite.file_parsing</a></p></li>
+<li><p><a class="reference internal" href="#module-personalsite.views" id="id4">personalsite.views</a></p></li>
 </ul>
 </div>
-<div class="section" id="module-personalsite.file_parsing">
-<span id="personalsite-file-parsing"></span><h2>personalsite.file_parsing<a class="headerlink" href="#module-personalsite.file_parsing" title="Permalink to this headline">¶</a></h2>
-<p>Responsible for loading, validating, and filtering article text.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="personalsite.file_parsing.get_all_files">
-<span class="sig-prename descclassname"><span class="pre">personalsite.file_parsing.</span></span><span class="sig-name descname"><span class="pre">get_all_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.file_parsing.get_all_files" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets list of valid markdown articles.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>List of parsed articles.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>List[Dict[str, Any]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="personalsite.file_parsing.get_all_tags">
-<span class="sig-prename descclassname"><span class="pre">personalsite.file_parsing.</span></span><span class="sig-name descname"><span class="pre">get_all_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.file_parsing.get_all_tags" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates sorted container of article filter tags.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Returns collection of tags</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>List[Tuple[str, int]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="personalsite.file_parsing.get_file_details">
-<span class="sig-prename descclassname"><span class="pre">personalsite.file_parsing.</span></span><span class="sig-name descname"><span class="pre">get_file_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.file_parsing.get_file_details" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parses a markdown article into python dictionary.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – article filename</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Parsed article elements</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Dict[str, Any]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="personalsite.file_parsing.open_article">
-<span class="sig-prename descclassname"><span class="pre">personalsite.file_parsing.</span></span><span class="sig-name descname"><span class="pre">open_article</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.file_parsing.open_article" title="Permalink to this definition">¶</a></dt>
-<dd><p>Loads plain text article into memory.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – article filename</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>raw article text</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="personalsite.file_parsing.parse_files_and_filters">
-<span class="sig-prename descclassname"><span class="pre">personalsite.file_parsing.</span></span><span class="sig-name descname"><span class="pre">parse_files_and_filters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.file_parsing.parse_files_and_filters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Loads all articles into memory then filters to subset of articles.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>filters</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Collection of filters.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>List of articles post-filters</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>List[Dict[str, Any]]</p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="section" id="personalsite-file-parsing">
+<h2>personalsite.file_parsing<a class="headerlink" href="#personalsite-file-parsing" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-personalsite.views">
 <span id="personalsite-views"></span><h2>personalsite.views<a class="headerlink" href="#module-personalsite.views" title="Permalink to this headline">¶</a></h2>
-<p>Flask routes for personal site webserver.</p>
+<p>Contains main flask website routes and helper functions.</p>
+<p>Routes correspond to templates/<a href="#id1"><span class="problematic" id="id2">*</span></a>.html</p>
+<ul class="simple">
+<li><p>Home page (index.html)</p></li>
+<li><p>Resume</p></li>
+<li><p>Articles</p></li>
+</ul>
+<p>Helper functions for sitemap and jinja python enablement.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="personalsite.views.articles">
 <span class="sig-prename descclassname"><span class="pre">personalsite.views.</span></span><span class="sig-name descname"><span class="pre">articles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.views.articles" title="Permalink to this definition">¶</a></dt>
@@ -351,25 +278,7 @@ Displays article full text when only one article selected.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright Copyright © 2021 by Nick Jenkins. All rights reserved
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the &#34;Software&#34;),
-to deal in the Software without restriction, including without limitation
-the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and/or sell copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &#34;AS IS&#34;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-DEALINGS IN THE SOFTWARE.
+        &#169; Copyright Copyright © 2023 by Nick Jenkins. All rights reserved
 .
 
     </p>
