@@ -137,3 +137,15 @@ def _parse_article(filename: Path) -> Dict[str, Union[List, str]]:
         "teaser": teaser,
         "article": full_article,
     }
+
+
+def get_related_articles(article: Dict[str, Union[List, str]]) -> List[Dict[str, Union[List, str]]]:
+    """Given a single article, get related articles by using tags."""
+    related_articles = []
+    for tag in article["tags"]:
+        filter_part = {"tags": tag}
+        related_article_candidates = parse_all_articles_against_filters(filter_part)
+        for related_article_candidate in related_article_candidates:
+            if related_article_candidate not in related_articles and related_article_candidate != article:
+                related_articles.append(related_article_candidate)
+    return related_articles

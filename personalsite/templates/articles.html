@@ -66,7 +66,16 @@
     <div class="col-sm-3">
       {% if single %}
         <div class="shadow-sm p-2 bg-white rounded">
-          Related articles:
+          {% for related_article in related_articles %}
+            {% if loop.first %}
+              Related articles:
+            {% endif %}
+            <p>
+              <a href="{{url_for('articles')}}{{related_article['url_helper']}}" class="text-decoration-none">
+              {{related_article["title_cap"]}}
+              </a>
+            </p>
+          {% endfor %}
         </div>
       {% else %}
         <div class="shadow-sm p-2 bg-white rounded">

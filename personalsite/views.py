@@ -79,10 +79,21 @@ def articles(path: str) -> str:
     # Determines whether to display a single article or multiple summaries
     single = len(breadcrumbs) == 5 and len(articles) == 1
 
+    if single:
+        related_articles = article_parsing.get_related_articles(articles[0])
+    else:
+        related_articles = []
+
     tags = article_parsing.get_all_tags()
 
     return render_template(
-        "articles.html", articles=articles, routes=routes, breadcrumbs=breadcrumbs, single=single, tags=tags
+        "articles.html",
+        articles=articles,
+        routes=routes,
+        breadcrumbs=breadcrumbs,
+        single=single,
+        tags=tags,
+        related_articles=related_articles,
     )
 
 
