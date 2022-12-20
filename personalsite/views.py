@@ -15,6 +15,8 @@ Helper functions for sitemap and jinja python enablement.
 
 from datetime import datetime as dt
 from datetime import timedelta, timezone
+from pathlib import Path
+import random
 from typing import Any, Dict, List
 
 # coding: utf-8
@@ -173,4 +175,21 @@ def get_master_details() -> Dict[Any, Any]:
         days = (dt.now() - dt.strptime(date, "%Y-%m-%d")).days
         return f"{days // 365}y {(days % 365) // 30}m"
 
-    return dict(deci=deci, inti=inti, utc_to_local=utc_to_local, tag_years=tag_years, years_months=years_months)
+    def get_carousel_items() -> List[str]:
+        """Resolves the static carousel directory for valid JPEG links.
+
+        Returns:
+            List[str]: string path to files
+        """
+        items = ["carousel/" + str(x.name) for x in Path("personalsite", "static", "carousel").glob("*.jpeg")]
+        random.shuffle(items)
+        return items
+
+    return dict(
+        deci=deci,
+        inti=inti,
+        utc_to_local=utc_to_local,
+        tag_years=tag_years,
+        years_months=years_months,
+        get_carousel_items=get_carousel_items,
+    )
