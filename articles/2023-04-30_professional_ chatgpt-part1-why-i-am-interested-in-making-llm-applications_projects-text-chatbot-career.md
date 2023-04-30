@@ -1,5 +1,3 @@
-# ChatGPT Part 1: Why I am interested in making LLM applications
-
 In this article I discuss why I’m excited with ChatGPT, it’s relevance to my career and strengths, and my belief that this technology will be disruptive and in high demand.
 
 ## Introduction
