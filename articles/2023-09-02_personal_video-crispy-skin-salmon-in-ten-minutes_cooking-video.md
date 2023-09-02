@@ -1,0 +1,1 @@
+A fun video we took recently for a work team building exercise to show everyone how to make Crispy Skin Salmon in ten minutes at home. <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/vDgpNQ8h5oY?origin=https://www.ndjenkins.com/" frameborder="0"></iframe>
