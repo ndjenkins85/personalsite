@@ -21,7 +21,7 @@ RUN apt-get update \
         # deps for building python deps
         build-essential
 
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
+RUN curl -sSL https://install.python-poetry.org | python3 -
 
 WORKDIR $PYSETUP_PATH
 COPY poetry.lock pyproject.toml ./
