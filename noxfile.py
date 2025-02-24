@@ -3,7 +3,6 @@
 """Nox for python task automation."""
 
 import tempfile
-from typing import Any
 
 import nox
 from nox.sessions import Session
@@ -26,7 +25,7 @@ def lint(session: Session) -> None:
     * flake8 - code format and consistency checks
     """
     args = session.posargs or locations
-    session.install(".[lint]")
+    session.run_always("poetry", "install", external=True)
     session.run("black", *args)
     session.run("mypy", *args)
     session.run("flake8", *args)
@@ -35,7 +34,7 @@ def lint(session: Session) -> None:
 @session(python=["3.12"])
 def safety(session: Session) -> None:
     """Runs safety - security checks."""
-    session.install(".[dev,tests,lint,docs]")
+    session.run_always("poetry", "install", external=True)
     with tempfile.NamedTemporaryFile() as requirements:
         session.run(
             "poetry",
@@ -52,13 +51,13 @@ def safety(session: Session) -> None:
 def tests(session: Session) -> None:
     """Run the test suite, locally, and in CICD process."""
     args = session.posargs or ["-m", "not advanced"]
-    session.install(".[tests]")
+    session.run_always("poetry", "install", external=True)
     session.run("pytest", *args, "-W ignore::DeprecationWarning", external=True)
 
 
 @session(python=["3.12"])
 def docs(session: Session) -> None:
     """Build documentation and static files and push to codebase."""
-    session.install(".[docs]")
+    session.run_always("poetry", "install", external=True)
     session.run("rm", "-rf", "docs/_build", external=True)
     session.run("sphinx-build", "docs", "docs/_build", *session.posargs)

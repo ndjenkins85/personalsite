@@ -33,6 +33,12 @@ poetry self add poetry-plugin-shell
 poetry self add poetry-plugin-export
 ```
 
+Set preference for in-project virtual environment
+```bash
+poetry config virtualenvs.in-project true
+```
+
+
 Make sure you deactivate any existing virtual environments (i.e. conda).
 
 ```bash

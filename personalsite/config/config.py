@@ -1,4 +1,5 @@
 """Configurations for use across personal project."""
+
 # Copyright © 2023 by Nick Jenkins. All rights reserved
 
 
