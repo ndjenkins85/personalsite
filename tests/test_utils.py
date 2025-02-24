@@ -1,4 +1,6 @@
-# Copyright © 2023 by Nick Jenkins. All rights reserved
+# Copyright © 2025 by Nick Jenkins. All rights reserved
+
+"""Dummy tests setup."""
 
 
 def test_fail() -> None:
