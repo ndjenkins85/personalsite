@@ -1,32 +1,43 @@
 # Personal site
 
-This is the repo which generates my personal website.
+This repo generates my personal website and resume.
 It uses docker for hosting on Heroku.
 The site is open to public, and intended for colleagues, friends, family and recruiters.
 
 The site uses flask framework to serve markdown blog posts according to my custom scripts.
 
-* [Instructions for users](#instructions-for-users)
-* [Instructions for developers](#instructions-for-developers)
+* [Installation](#installation)
   * [Dependency and virtual environment management, library development and build with poetry](#dependency-and-virtual-environment-management-library-development-and-build-with-poetry)
   * [Code quality, testing, and generating documentation with Nox](#code-quality-testing-and-generating-documentation-with-nox)
   * [Code formatting with Pre-commit](#code-formatting-with-pre-commit)
 * [Running the webserver](#running-the-webserver)
 * [Contributors](#contributors)
 
-## Instructions for users
+## Installation
 
-Users interested in seeing the website can visit [on heroku here](https://www.ndjenkins.com).
-
-## Instructions for developers
-
-The following are the setup instructions for developers looking to improve this project.
-For information on current contributors and guidelines see the [contributors](#contributors) section.
+The following are the setup instructions for installing the codebase locally to continue development.
 Follow each step here and ensure tests are working.
+
+### Python
+
+This project uses Python 3.12
 
 ### Dependency and virtual environment management, library development and build with poetry
 
-Ensure you have and installation of Poetry 1.2.0a1 or above, along with poetry-version-plugin.
+Ensure you have and installation of Poetry `2.1.1` or above, along with poetry-version-plugin.
+
+Also add the following extras:
+
+```bash
+poetry self add poetry-plugin-shell
+poetry self add poetry-plugin-export
+```
+
+Set preference for in-project virtual environment
+```bash
+poetry config virtualenvs.in-project true
+```
+
 
 Make sure you deactivate any existing virtual environments (i.e. conda).
 

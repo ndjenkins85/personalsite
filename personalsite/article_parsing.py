@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Dict, List, Mapping, Tuple, Union
 
 import markdown
-from flask import Markup
+from markupsafe import Markup
 
 
 def parse_all_articles() -> List[Mapping[str, Union[List[str], str]]]:
@@ -35,7 +35,7 @@ def parse_all_articles() -> List[Mapping[str, Union[List[str], str]]]:
 
 
 def parse_all_articles_against_filters(
-    filters: Mapping[str, Union[List[str], str]]
+    filters: Mapping[str, Union[List[str], str]],
 ) -> List[Mapping[str, Union[List[str], str]]]:
     """Loads all articles into memory then filters to subset of articles.
 
@@ -69,7 +69,7 @@ def get_all_tags() -> List[Tuple[str, int]]:
         List[Tuple[str, int]]: Article tags and counts
     """
     articles = parse_all_articles()
-    tag_count: Dict[str, int] = defaultdict(int)
+    tag_count: Dict[str, int] = defaultdict(int)  # NOQA: B910
     for article in articles:
         for tag in article.get("tags", []):
             tag_count[tag] += 1
@@ -123,7 +123,7 @@ def _prepare_markdown(raw: str) -> str:
         raise ValueError(err)
 
     cleaned = cleaned.replace("â€˜", "'").replace("â€™", "'")
-    cleaned = Markup(markdown.markdown(cleaned))
+    cleaned = Markup(markdown.markdown(cleaned))  # NOQA: S704
     cleaned = cleaned.replace("img alt", "img class=img-thumbnail alt")
 
     return cleaned

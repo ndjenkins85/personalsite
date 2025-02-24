@@ -100,7 +100,7 @@ def articles(path: str) -> str:
 
 
 @app.route("/sitemap.xml", methods=["GET"])
-def sitemap() -> Any:
+def sitemap() -> Any:  # NOQA: ANN401
     """Generate sitemap.xml. Makes a list of urls and date modified.
 
     Returns:
@@ -110,12 +110,9 @@ def sitemap() -> Any:
     ten_days_ago = (dt.now() - timedelta(days=10)).date().isoformat()
     # static pages
     for rule in current_app.url_map.iter_rules():
-        if (
-            "GET" in rule.methods
-            and len(rule.arguments) == 0
-            and rule.rule.replace("/", "") not in app.config["SITEMAP_EXCLUDES"]
-        ):
-            pages.append([rule.rule, ten_days_ago])
+        if rule.methods and "GET" in rule.methods:
+            if len(rule.arguments) == 0:
+                pages.append([rule.rule, ten_days_ago])
 
     articles = article_parsing.parse_all_articles()
     for article in articles:
@@ -138,10 +135,10 @@ def get_master_details() -> Dict[Any, Any]:
     def deci(myfloat: float) -> str:
         return "{:.1%}".format(myfloat)
 
-    def inti(d: Any) -> int:
+    def inti(d: Any) -> int:  # NOQA: ANN401
         return int(d)
 
-    def utc_to_local(time: Any, offset_str: Any) -> Any:
+    def utc_to_local(time: Any, offset_str: Any) -> Any:  # NOQA: ANN401
         """Converts universal time to local.
 
         Args:
