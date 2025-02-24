@@ -4,15 +4,17 @@
 # Use nox before pushing code
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.0.1
+  rev: v5.0.0
   hooks: # Basic tools to check format of yaml, end of line and trailing whitespace ftw
   - id: check-yaml
   - id: end-of-file-fixer
   - id: trailing-whitespace
+
 - repo: https://github.com/psf/black
-  rev: 19.3b0
+  rev: "25.1.0"
   hooks: # Black code formatting
   - id: black
+
 - repo: https://github.com/roy-ht/pre-commit-jupyter
   rev: v1.2.1
   hooks: # Cleans up jupyter notebooks before committing
@@ -20,13 +22,15 @@ repos:
     args:
       - --pin-patterns
       - "[pin];[donotremove]"
+
 - repo: https://github.com/PyCQA/isort
-  rev: "5.9.2"
+  rev: "6.0.0"
   hooks: # Sorts imports
   - id: isort
     additional_dependencies: [toml]
+
 - repo: https://github.com/Lucas-C/pre-commit-hooks
-  rev: v1.1.10
+  rev: v1.5.5
   hooks: # Adds LICENSE notice to top of all python files, must have a LICENSE file
   - id: insert-license
     name: Add license for all python files

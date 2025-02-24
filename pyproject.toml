@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "personalsite"
-version = "0.2.1"
+version = "0.3.1"
 description = "My personal webpage."
 license = "MIT"
 authors = ["Nick Jenkins"]
@@ -23,36 +23,56 @@ classifiers = [
 include = ["LICENSE", "README.md"]
 
 [tool.poetry.dependencies]
-python = ">=3.7.1,<4"
-pip = "^21.1.2"
-sphinx = {version = "^4", optional = true}
-Flask = "^2.0.1"
-Flask-Cors = "^3.0.10"
-itsdangerous = "^2.0.1"
-Markdown = "^3.3.4"
-pyOpenSSL = "^20.0.1"
-pytz = "^2021.1"
+python = ">=3.12,<4"
+
+python-dotenv = "^1.0"
+pyyaml = "^6.0"
+tqdm = "^4.67"
+tenacity = "^9.0"
+requests = "^2.32"
+
+Flask = "^3.1"
+Flask-Cors = "^5.0"
 Flask-SSLify = "^0.1.5"
-eventlet = "^0.32.0"
-gevent = "^21.8.0"
-gunicorn = "^20.1.0"
-watchdog-gevent = "^0.1.1"
-MarkupSafe = "^2.0.1"
 
-[tool.poetry.dev-dependencies]
-autoflake = "^1.4"
-black = "^21.7b0"
-m2r2 = "^0.3.1"
-mypy = "^0.910"
-nox = "^2021.6.12"
-pytest = "^6.2.4"
-pytest-cov = "^2.12.1"
-pre-commit = "^2.14.0"
-sphinx-rtd-theme = "^0.5.2"
-sphinx-autodoc-typehints = "^1.12.0"
+Markdown = "^3.7"
+MarkupSafe = "^3.0"
+pytz = "^2025.1"
 
-[tool.poetry.extras]
-docs = ["sphinx"]
+eventlet = "^0.39"
+gevent = "^24.11"
+gunicorn = "^23.0"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.1"
+nox = "^2025.2"
+nox-poetry = "^1.1"
+pre-commit = "^4.1"
+
+[tool.poetry.group.tests.dependencies]
+pytest = "^7.4"
+
+[tool.poetry.group.lint.dependencies]
+black = "^25.1"
+darglint = "^1.8"
+flake8 = "^7.1"
+mypy = "^1.15"
+safety = "^3.2"
+xdoctest = "^1.2"
+flake8-annotations = "^3.1"
+flake8-bandit = "^4.1"
+flake8-bugbear = "^24.12"
+flake8-builtins = "^2.5"
+flake8-docstrings = "^1.7"
+types-pyyaml = "^6.0"
+types-requests = "^2.32.0"
+
+[tool.poetry.group.docs.dependencies]
+m2r2 = "^0.3"
+sphinx = "^8.2"
+sphinx-rtd-theme = "^3.0"
+sphinx-autodoc-typehints = "^3.1"
 
 [tool.poetry.scripts]
 personalsite = 'run:app'
@@ -62,7 +82,7 @@ source = "init"
 
 [build-system]
 # Keep poetry version same as in github actions and Dockerfile
-requires = ["setuptools", "poetry>=1.1.9"]
+requires = ["setuptools", "poetry>=1.8.4"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
