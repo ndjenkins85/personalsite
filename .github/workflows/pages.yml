@@ -15,14 +15,10 @@ jobs:
         python-version: '3.12'
         architecture: x64
 
-    - name: Install Nox
-      run: pip install nox==2025.2.9
-
-    - name: Install Poetry
-      run: pip install poetry==2.1.1
-
-    - name: Build docs
-      run: nox -s docs
+    - run: pip install nox==2025.2.9
+    - run: pip install poetry==2.1.1
+    - run: poetry install
+    - run: poetry run nox -s docs
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
