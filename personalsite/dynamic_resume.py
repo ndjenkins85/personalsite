@@ -49,10 +49,29 @@ def generate_dynamic_resume_prompt(job_name: str) -> None:
     }
 
     prompt = prompt_dynamic_resume_data.format(**replacements)
-    prompt_path = Path("data/jobs", job_name, "prompt.md")
+    prompt_path = Path("data/jobs", job_name, "prompt_resume.md")
     if not prompt_path.parent.exists():
         prompt_path.parent.mkdir()
     prompt_path.write_text(prompt)
+    print(f"Generated resume supplemental prompt saved to: {prompt_path}")
+
+
+def generate_dynamic_cover_letter_prompt(job_name: str) -> None:
+    prompt_dynamic_cover_letter_path = Path("personalsite/resume/prompt_dynamic_cover_letter.md")
+    prompt_dynamic_cover_letter_data = prompt_dynamic_cover_letter_path.read_text()
+
+    replacements = {
+        "current_resume": get_current_resume(),
+        "background_information": get_background_information(),
+        "job_description": get_job_description(job_name),
+    }
+
+    prompt = prompt_dynamic_cover_letter_data.format(**replacements)
+    prompt_path = Path("data/jobs", job_name, "prompt_cover.md")
+    if not prompt_path.parent.exists():
+        prompt_path.parent.mkdir()
+    prompt_path.write_text(prompt)
+    print(f"Generated cover letter prompt saved to: {prompt_path}")
 
 
 if __name__ == "__main__":
@@ -62,3 +81,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     generate_dynamic_resume_prompt(args.job_name)
+    generate_dynamic_cover_letter_prompt(args.job_name)

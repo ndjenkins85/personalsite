@@ -65,7 +65,6 @@ def resume() -> str:
 #     return render_template("resume_dynamic_form.html")
 
 
-@app.route("/resume/dynamic/")
 @app.route("/resume/dynamic/<path:path>")
 def resume_dynamic(path: str) -> str:
     """Flask route to display resume.
@@ -90,6 +89,21 @@ def resume_dynamic(path: str) -> str:
     resume_data = Markup(markdown.markdown(base_template))
 
     return render_template("resume_v2.html", resume_data=resume_data)
+
+
+@app.route("/cover/dynamic/<path:path>")
+def cover_dynamic(path: str) -> str:
+    """Flask route to display dynamic resume.
+
+    Returns:
+        str: rendered resume page
+    """
+    cover_letter_path = Path("data/jobs", path, "cover_letter.md")
+    cover_letter = cover_letter_path.read_text()
+
+    cover_letter = Markup(markdown.markdown(cover_letter))
+
+    return render_template("resume_v2.html", resume_data=cover_letter)
 
 
 @app.route("/articles/", defaults={"path": ""})

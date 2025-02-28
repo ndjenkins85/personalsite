@@ -3,17 +3,36 @@
 Your task is to draft a cover letter to introduce a candidate for a job role.
 
 You will be provided with the following information:
+
+- Output format instructions
 - Guidelines
 - Current resume
 - Relevant background information
 - Job description
 
-Your output must conform to the following:
+## Output format instructions
 
-- Your response should be drafted in letter format, i.e. Dear hiring manager, Sincerely Nick Jenkins
-- Limit the body of the response to two paragraphs
-- Limit the total number of sentences to eight
+Your output must conform to the following
+
+- Use the below template
 - Use language and terminology that closely match the job description.
+- Do not add any other introduction, context or justifications, only output the required template data
+- Use markdown formatting
+
+Template:
+
+Dear Hiring Manager
+
+RE: -JOB TYPE- with -COMPANY-
+
+Paragraph to introduction to my career and skills, maximum of five sentences.
+
+Paragraph to link my skills and experience to the job description, maximum of five sentences.
+
+Closing call to action.
+
+Regards,
+Nick Jenkins
 
 ## Guidelines
 
