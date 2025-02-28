@@ -1,6 +1,7 @@
 ### Nick Jenkins - Data Scientist
 
-Email: nick_jenkins@outlook.com | Phone: +1 (917) 815-7709
+Email: [nick_jenkins@outlook.com](mailto:nick_jenkins@outlook.com) | Phone: [+1-917-815-7709](tel:+19178157709) | Address: Brooklyn, NY, USA
+
 
 LinkedIn: [ndjenkins-au](https://www.linkedin.com/in/ndjenkins-au/) | GitHub: [ndjenkins85](https://github.com/ndjenkins85) | Website: [https://www.ndjenkins.com/](https://www.ndjenkins.com/)
 
