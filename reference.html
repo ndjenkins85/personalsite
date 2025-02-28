@@ -47,9 +47,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#personalsite-file-parsing">personalsite.file_parsing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-personalsite.views">personalsite.views</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#personalsite.views.articles"><code class="docutils literal notranslate"><span class="pre">articles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#personalsite.views.cover_dynamic"><code class="docutils literal notranslate"><span class="pre">cover_dynamic()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#personalsite.views.get_master_details"><code class="docutils literal notranslate"><span class="pre">get_master_details()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#personalsite.views.home"><code class="docutils literal notranslate"><span class="pre">home()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#personalsite.views.resume"><code class="docutils literal notranslate"><span class="pre">resume()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#personalsite.views.resume_dynamic"><code class="docutils literal notranslate"><span class="pre">resume_dynamic()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#personalsite.views.sitemap"><code class="docutils literal notranslate"><span class="pre">sitemap()</span></code></a></li>
 </ul>
 </li>
@@ -124,6 +126,23 @@ Displays article full text when only one article selected.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="personalsite.views.cover_dynamic">
+<span class="sig-prename descclassname"><span class="pre">personalsite.views.</span></span><span class="sig-name descname"><span class="pre">cover_dynamic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.views.cover_dynamic" title="Link to this definition"></a></dt>
+<dd><p>Flask route to display dynamic resume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – str job name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>rendered resume page</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="personalsite.views.get_master_details">
 <span class="sig-prename descclassname"><span class="pre">personalsite.views.</span></span><span class="sig-name descname"><span class="pre">get_master_details</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.views.get_master_details" title="Link to this definition"></a></dt>
 <dd><p>General calculation tools for use in Jinja pages.</p>
@@ -161,6 +180,23 @@ Displays article full text when only one article selected.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="personalsite.views.resume_dynamic">
+<span class="sig-prename descclassname"><span class="pre">personalsite.views.</span></span><span class="sig-name descname"><span class="pre">resume_dynamic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#personalsite.views.resume_dynamic" title="Link to this definition"></a></dt>
+<dd><p>Flask route to display resume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – str job name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>rendered resume page</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
