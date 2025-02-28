@@ -37,7 +37,6 @@ My career hit new heights by joining a massive, fast-growing tech company, where
 - **Data Disclosure Platform:** Centralized disclosure practices across entire business, reduced request handling time from 182 hours to 15 hours.
 - **Mentorship & Code Review Culture:** Established code quality and review processes towards 83% coverage, onboarded four new data scientists across multiple regions.
 - **LLM Analytics Product:** Deployed advanced generative AI analytics to enable 81% accurate misinformation detection, topics and trends during the US election
-
 {expansive_tiktok}
 
 ###### Jul 2019 - May 2022, Senior Data Scientist, [Boston Consulting Group](https://www.bcg.com/x/), New York
@@ -49,7 +48,6 @@ Joining the Boston Consulting Group in New York was a transformative leap in my 
 - **Payroll contract pricing**: Reduced churn and accelerated negotiation cycles by analyzing price sensitivity with advanced ML, boosting profitability for a global payroll provider.
 - **Best practice ringfence**: Strengthened risk governance across 20+ active engagements through stakeholder alignment and code quality leadership.
 - **Lighthouse**: Led a team of five to integrate data sources into BCG’s internal data enrichment platform, boosting analytics capabilities for global case teams.
-
 {expansive_bcg}
 
 {expansive_page_break}

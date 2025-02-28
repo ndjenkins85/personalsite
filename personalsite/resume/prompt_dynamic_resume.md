@@ -4,19 +4,30 @@ Your task is to draft additional information to make a resume more fit for a job
 
 You will be provided with the following information:
 
-- Guidelines
+- Output requirements
 - Current resume
 - Relevant background information
-- Target section
 - Job description
 
-Your output must conform to the following:
+## Output requirements
 
-- Limit your response to at least four bullet points and at most six bullet points
-- Ensure that the target section uses only relevant information from that specific job, or if it is requesting an overall summary, use all information
-- Your response should not just reiterate what already exists in the current resume, instead it should aim to supplement or show additional perspective or additional capabilities
-- Emphasize relevant skills, achievements, and responsibilities from my experience.
-- Use language and terminology that closely match the job description.
+Emphasize relevant skills, achievements, and responsibilities from my experience.
+Use language and terminology that closely match the job description.
+It is essential that you take factual information from my work experience and not make up material or capabilities.
+
+Your output must contain the following three sections
+
+Summary supplement
+
+Write an additional four sentences that specifically match the candidate's experience to the job role, do not reuse information already present in the resume summary.
+
+TikTok supplement
+
+Write an additional four dot points that specifically match the candidate's experience to the job role, do not reuse information already present in the TikTok work experience section.
+
+Boston Consulting Group supplement
+
+Write an additional four dot points that specifically match the candidate's experience to the job role, do not reuse information already present in the BCG work experience section.
 
 ## Guidelines
 
