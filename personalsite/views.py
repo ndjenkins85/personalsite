@@ -1,4 +1,4 @@
-# Copyright © 2023 by Nick Jenkins. All rights reserved
+# Copyright © 2025 by Nick Jenkins. All rights reserved
 
 """Contains main flask website routes and helper functions.
 
@@ -22,9 +22,11 @@ from typing import Any, Dict, List
 # coding: utf-8
 from flask import current_app, make_response, render_template, request
 from pytz import timezone as tzoffset
+import markdown
+from markupsafe import Markup
 
 from personalsite import app
-from personalsite import article_parsing
+from personalsite import article_parsing, resume_parsing
 
 
 @app.route("/")
@@ -44,7 +46,50 @@ def resume() -> str:
     Returns:
         str: rendered resume page
     """
-    return render_template("resume.html")
+    base_template_path = Path("personalsite/resume/base_template.md")
+    base_template = base_template_path.read_text()
+
+    base_template = resume_parsing.clear_expansions_for_one_pager(base_template)
+    resume_data = Markup(markdown.markdown(base_template))
+
+    return render_template("resume_v2.html", resume_data=resume_data)
+
+
+# @app.route("/resume/dynamic")
+# def resume_dynamic_form() -> str:
+#     """Flask route to display dynamic resume form.
+
+#     Returns:
+#         str: rendered resume page
+#     """
+#     return render_template("resume_dynamic_form.html")
+
+
+@app.route("/resume/dynamic/")
+@app.route("/resume/dynamic/<path:path>")
+def resume_dynamic(path: str) -> str:
+    """Flask route to display resume.
+
+    Returns:
+        str: rendered resume page
+    """
+    base_template_path = Path("personalsite/resume/base_template.md")
+    base_template = base_template_path.read_text()
+
+    expansions = {
+        r"{expansive_summary}": resume_parsing.get_expansive_summary(path),
+        r"{expansive_tiktok}": resume_parsing.get_expansive_tiktok(path),
+        r"{expansive_bcg}": resume_parsing.get_expansive_bcg(path),
+        r"{expansive_page_break}": resume_parsing.get_expansive_page_break(),
+        r"{expansive_additional}": resume_parsing.get_expansive_additional(),
+    }
+
+    for key, value in expansions.items():
+        base_template = base_template.replace(key, value)
+
+    resume_data = Markup(markdown.markdown(base_template))
+
+    return render_template("resume_v2.html", resume_data=resume_data)
 
 
 @app.route("/articles/", defaults={"path": ""})
