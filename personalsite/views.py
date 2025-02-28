@@ -50,7 +50,7 @@ def resume() -> str:
     base_template = base_template_path.read_text()
 
     base_template = resume_parsing.clear_expansions_for_one_pager(base_template)
-    resume_data = Markup(markdown.markdown(base_template))
+    resume_data = Markup(markdown.markdown(base_template))  # NOQA: S704
 
     return render_template("resume_v2.html", resume_data=resume_data)
 
@@ -69,6 +69,9 @@ def resume() -> str:
 def resume_dynamic(path: str) -> str:
     """Flask route to display resume.
 
+    Args:
+        path: str job name
+
     Returns:
         str: rendered resume page
     """
@@ -86,7 +89,7 @@ def resume_dynamic(path: str) -> str:
     for key, value in expansions.items():
         base_template = base_template.replace(key, value)
 
-    resume_data = Markup(markdown.markdown(base_template))
+    resume_data = Markup(markdown.markdown(base_template))  # NOQA: S704
 
     return render_template("resume_v2.html", resume_data=resume_data)
 
@@ -95,13 +98,16 @@ def resume_dynamic(path: str) -> str:
 def cover_dynamic(path: str) -> str:
     """Flask route to display dynamic resume.
 
+    Args:
+        path: str job name
+
     Returns:
         str: rendered resume page
     """
     cover_letter_path = Path("data/jobs", path, "cover_letter.md")
     cover_letter = cover_letter_path.read_text()
 
-    cover_letter = Markup(markdown.markdown(cover_letter))
+    cover_letter = Markup(markdown.markdown(cover_letter))  # NOQA: S704
 
     return render_template("resume_v2.html", resume_data=cover_letter)
 

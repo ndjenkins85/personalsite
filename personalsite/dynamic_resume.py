@@ -1,10 +1,17 @@
 # Copyright © 2025 by Nick Jenkins. All rights reserved
 
+"""Generate dynamic elements of resume and cover letter (offline)."""
+
 import argparse
 from pathlib import Path
 
 
 def get_background_information() -> str:
+    """Pull relevant articles and (local) letters.
+
+    Returns:
+        Background information
+    """
     back_bcg_path = Path(
         "articles/2022-01-09_professional_project-experience-and-impact_career-consulting-interviews.md"
     )
@@ -24,12 +31,28 @@ def get_background_information() -> str:
 
 
 def get_current_resume() -> str:
+    """Pull current resume.
+
+    Returns:
+        Resume information
+    """
     base_template_path = Path("personalsite/resume/base_template.md")
     base_template = base_template_path.read_text()
     return base_template
 
 
 def get_job_description(job_name: str) -> str:
+    """Get (local) job description.
+
+    Args:
+        job_name: reference for job name
+
+    Raises:
+        FileNotFoundError: no job exists
+
+    Returns:
+        Job description
+    """
     job_description_path = Path("data/jobs", job_name, "job_description.md")
     if not job_description_path.exists():
         raise FileNotFoundError(f"{job_description_path} does not exist")
@@ -39,6 +62,11 @@ def get_job_description(job_name: str) -> str:
 
 
 def generate_dynamic_resume_prompt(job_name: str) -> None:
+    """Generate fully formatted prompt for resume.
+
+    Args:
+        job_name: reference for job name
+    """
     prompt_dynamic_resume_path = Path("personalsite/resume/prompt_dynamic_resume.md")
     prompt_dynamic_resume_data = prompt_dynamic_resume_path.read_text()
 
@@ -57,6 +85,11 @@ def generate_dynamic_resume_prompt(job_name: str) -> None:
 
 
 def generate_dynamic_cover_letter_prompt(job_name: str) -> None:
+    """Generate fully formatted prompt for cover letter.
+
+    Args:
+        job_name: reference for job name
+    """
     prompt_dynamic_cover_letter_path = Path("personalsite/resume/prompt_dynamic_cover_letter.md")
     prompt_dynamic_cover_letter_data = prompt_dynamic_cover_letter_path.read_text()
 
