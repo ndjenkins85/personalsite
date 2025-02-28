@@ -10,9 +10,47 @@
     overflow-y: hidden;
 }
 
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #f8f9fa;
+    line-height: 1.2;
+    margin-bottom: 0.2rem; /* Reduce space below */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    color: #222;
+    font-weight: 700;
+}
+
+.resume-top-pad {
+  padding-top: 2rem;
+  /* Add any other padding or styling you want */
+}
+
+/* Reduce spacing before and after lists */
+ul, ol {
+    margin-top: 0.2rem;   /* Reduce space above */
+    margin-bottom: 1rem; /* Reduce space below */
+    padding-left: 2rem;  /* Keep indentation readable */
+}
+
+/* Reduce space between list items */
+ul li, ol li {
+    margin-bottom: 0.2rem; /* Adjust vertical spacing between bullet points */
+}
+
+
 /* Print styling */
 
 @media print {
+
+  .print-only {
+    display: block;
+  }
 
   [class*="col-sm-"] {
     float: left;
@@ -97,6 +135,10 @@
   float: left !important;
   }
 
+  .resume-page-break {
+    page-break-before: always; /* or use page-break-after if you prefer */
+  }
+
   body {
     margin: 0;
     padding: 0 !important;
@@ -110,14 +152,6 @@
 
   body {
     font-size: 13px;
-  }
-
-  a {
-    font-size: 8px;
-  }
-
-  a[href]:after {
-    content: " (" attr(alt) ")";
   }
 
   .noprint,
