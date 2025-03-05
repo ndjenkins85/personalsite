@@ -5,7 +5,7 @@
 import argparse
 import os
 from pathlib import Path
-from typing import List
+from typing import Any, List
 
 import dotenv
 import requests
@@ -150,6 +150,11 @@ def get_jobs() -> List[str]:
 
 
 def generate_placeholders(job_name: str) -> None:
+    """Generates blank text files for a job.
+
+    Args:
+        job_name: reference for job name
+    """
     templates = [
         "cover_letter.md",
         "expansive_summary.md",
@@ -163,7 +168,17 @@ def generate_placeholders(job_name: str) -> None:
             path.write_text("")
 
 
-def chat_with_openai(prompt, model="gpt-4o", **kwargs):
+def chat_with_openai(prompt: str, model: str = "gpt-4o", **kwargs: Any) -> str:  # NOQA: ANN401
+    """Basic request chat with ChatGPT.
+
+    Args:
+        prompt: formatted text to use as prompt
+        model: Model to use
+        **kwargs: anything else to pass to model
+
+    Returns:
+        Answer from ChatGPT
+    """
     url = "https://api.openai.com/v1/chat/completions"
     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}"}
 
@@ -178,7 +193,7 @@ def chat_with_openai(prompt, model="gpt-4o", **kwargs):
     # Merge additional keyword arguments into the request body
     data.update(kwargs)
 
-    response = requests.post(url, json=data, headers=headers)
+    response = requests.post(url, json=data, headers=headers, timeout=30)
     response_json = response.json()
 
     # Extract the assistant's response
@@ -186,7 +201,11 @@ def chat_with_openai(prompt, model="gpt-4o", **kwargs):
 
 
 def generate_answers(job_name: str) -> None:
-    """Generate responses from ChatGPT."""
+    """Generate responses from ChatGPT.
+
+    Args:
+        job_name: reference for job name
+    """
     base_path = Path("data/jobs", job_name)
     prompts = {
         "prompt_job_relevance.md": "rating.md",
