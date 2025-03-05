@@ -3,7 +3,12 @@
 """Generate dynamic elements of resume and cover letter (offline)."""
 
 import argparse
+import os
 from pathlib import Path
+from typing import List
+
+import dotenv
+import requests
 
 
 def get_background_information() -> str:
@@ -70,18 +75,22 @@ def generate_dynamic_resume_prompt(job_name: str) -> None:
     prompt_dynamic_resume_path = Path("personalsite/resume/prompt_dynamic_resume.md")
     prompt_dynamic_resume_data = prompt_dynamic_resume_path.read_text()
 
-    replacements = {
-        "current_resume": get_current_resume(),
-        "background_information": get_background_information(),
-        "job_description": get_job_description(job_name),
-    }
+    expansive_sections = ["bcg", "tiktok", "summary"]
 
-    prompt = prompt_dynamic_resume_data.format(**replacements)
-    prompt_path = Path("data/jobs", job_name, "prompt_resume.md")
-    if not prompt_path.parent.exists():
-        prompt_path.parent.mkdir()
-    prompt_path.write_text(prompt)
-    print(f"Generated resume supplemental prompt saved to: {prompt_path}")
+    for expansive_section in expansive_sections:
+        replacements = {
+            "expansive_section": expansive_section,
+            "current_resume": get_current_resume(),
+            "background_information": get_background_information(),
+            "job_description": get_job_description(job_name),
+        }
+
+        prompt = prompt_dynamic_resume_data.format(**replacements)
+        prompt_path = Path("data/jobs", job_name, f"prompt_resume_{expansive_section}.md")
+        if not prompt_path.parent.exists():
+            prompt_path.parent.mkdir()
+        prompt_path.write_text(prompt)
+        print(f"Generated resume supplemental prompt saved to: {prompt_path}")
 
 
 def generate_dynamic_cover_letter_prompt(job_name: str) -> None:
@@ -107,11 +116,120 @@ def generate_dynamic_cover_letter_prompt(job_name: str) -> None:
     print(f"Generated cover letter prompt saved to: {prompt_path}")
 
 
+def generate_job_relevance(job_name: str) -> None:
+    """Generate fully formatted prompt for job relevance test.
+
+    Args:
+        job_name: reference for job name
+    """
+    prompt_job_relevance_path = Path("personalsite/resume/prompt_job_relevance.md")
+    prompt_job_relevance_data = prompt_job_relevance_path.read_text()
+
+    replacements = {
+        "current_resume": get_current_resume(),
+        "job_description": get_job_description(job_name),
+    }
+
+    prompt = prompt_job_relevance_data.format(**replacements)
+    prompt_path = Path("data/jobs", job_name, "prompt_job_relevance.md")
+    if not prompt_path.parent.exists():
+        prompt_path.parent.mkdir()
+    prompt_path.write_text(prompt)
+    print(f"Generated job relevance prompt saved to: {prompt_path}")
+
+
+def get_jobs() -> List[str]:
+    """Parse folder for job names.
+
+    Returns:
+        List of job job_names
+    """
+    job_folders = list(Path("data/jobs").glob("*"))
+    job_names = [job_folder.name for job_folder in job_folders if job_folder.is_dir() and job_folder.name != "template"]
+    return job_names
+
+
+def generate_placeholders(job_name: str) -> None:
+    templates = [
+        "cover_letter.md",
+        "expansive_summary.md",
+        "expansive_tiktok.md",
+        "expansive_bcg.md",
+        "rating.md",
+    ]
+    for template in templates:
+        path = Path("data/jobs", job_name, template)
+        if not path.exists():
+            path.write_text("")
+
+
+def chat_with_openai(prompt, model="gpt-4o", **kwargs):
+    url = "https://api.openai.com/v1/chat/completions"
+    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}"}
+
+    data = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": prompt},
+        ],
+    }
+
+    # Merge additional keyword arguments into the request body
+    data.update(kwargs)
+
+    response = requests.post(url, json=data, headers=headers)
+    response_json = response.json()
+
+    # Extract the assistant's response
+    return response_json.get("choices", [{}])[0].get("message", {}).get("content", "")
+
+
+def generate_answers(job_name: str) -> None:
+    """Generate responses from ChatGPT."""
+    base_path = Path("data/jobs", job_name)
+    prompts = {
+        "prompt_job_relevance.md": "rating.md",
+        "prompt_resume_bcg.md": "expansive_bcg.md",
+        "prompt_resume_summary.md": "expansive_summary.md",
+        "prompt_resume_tiktok.md": "expansive_tiktok.md",
+        "prompt_cover.md": "cover_letter.md",
+    }
+    for prompt_name, answer_name in prompts.items():
+        prompt_path = Path(base_path, prompt_name)
+        answer_path = Path(base_path, answer_name)
+
+        prompt = prompt_path.read_text()
+        answer = answer_path.read_text()
+        if len(prompt) > 0 and len(answer) == 0:
+
+            print(f"Prompting from {prompt_path}")
+            answer = chat_with_openai(prompt)
+
+            print(f"Saving to {answer_path}")
+            answer_path.write_text(answer)
+
+
 if __name__ == "__main__":
     # Usage: python -m personalsite.dynamic_resume dummy
     parser = argparse.ArgumentParser(description="Generate a dynamic resume prompt based on a job name.")
-    parser.add_argument("job_name", type=str, help="The name of the job to generate a resume prompt for")
+    parser.add_argument(
+        "job_name", type=str, nargs="?", default="", help="The name of the job to generate a resume prompt for"
+    )
 
     args = parser.parse_args()
-    generate_dynamic_resume_prompt(args.job_name)
-    generate_dynamic_cover_letter_prompt(args.job_name)
+
+    dotenv.load_dotenv()
+
+    if not args.job_name:
+        jobs = get_jobs()
+    else:
+        jobs = [args.job_name]
+
+    for job in jobs:
+        print(job)
+        generate_placeholders(job)
+        generate_job_relevance(job)
+        generate_dynamic_resume_prompt(job)
+        generate_dynamic_cover_letter_prompt(job)
+        generate_answers(job)

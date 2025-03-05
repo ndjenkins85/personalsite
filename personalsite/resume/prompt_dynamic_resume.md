@@ -5,6 +5,7 @@ Your task is to draft additional information to make a resume more fit for a job
 You will be provided with the following information:
 
 - Output requirements
+- Expansive section
 - Current resume
 - Relevant background information
 - Job description
@@ -14,20 +15,7 @@ You will be provided with the following information:
 Emphasize relevant skills, achievements, and responsibilities from my experience.
 Use language and terminology that closely match the job description.
 It is essential that you take factual information from my work experience and not make up material or capabilities.
-
-Your output must contain the following three sections
-
-Summary supplement
-
-Write an additional four sentences that specifically match the candidate's experience to the job role, do not reuse information already present in the resume summary.
-
-TikTok supplement
-
-Write an additional four dot points that specifically match the candidate's experience to the job role, do not reuse information already present in the TikTok work experience section.
-
-Boston Consulting Group supplement
-
-Write an additional four dot points that specifically match the candidate's experience to the job role, do not reuse information already present in the BCG work experience section.
+Do not add any additional headings or commentary, only provide the format requested in the 'expansive section'
 
 ## Guidelines
 
@@ -65,6 +53,24 @@ A “less intelligent” AI might include filler or repeat points. Guide it to f
 Whenever possible, connect responsibilities to outcomes:
 “Led a marketing campaign” vs. “Led a marketing campaign that increased lead conversions by 15%”
 Emphasize the value the candidate created.
+
+## Expansive section
+
+Your task is to only provide an expansive section for the following area:
+
+Expansive section: {expansive_section}
+
+If the above is BCG: Use Boston Consulting Group experience only
+
+Write an additional four dot points that specifically match the candidate's experience to the job role, do not reuse information already present in the BCG work experience section.
+
+If the above is TikTok: Use TikTok experience only
+
+Write an additional four dot points that specifically match the candidate's experience to the job role, do not reuse information already present in the TikTok work experience section.
+
+If the above is Summary: Use all available work experience
+
+Write an additional four sentences that specifically match the candidate's experience to the job role, do not reuse information already present in the resume summary.
 
 ## Current resume
 
