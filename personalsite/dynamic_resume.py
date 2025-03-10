@@ -60,7 +60,9 @@ def get_job_description(job_name: str) -> str:
     """
     job_description_path = Path("data/jobs", job_name, "job_description.md")
     if not job_description_path.exists():
-        raise FileNotFoundError(f"{job_description_path} does not exist")
+        job_description_path = Path("data/jobs", job_name, "jd.md")
+        if not job_description_path.exists():
+            raise FileNotFoundError(f"{job_description_path} does not exist")
 
     job_description_data = job_description_path.read_text()
     return job_description_data

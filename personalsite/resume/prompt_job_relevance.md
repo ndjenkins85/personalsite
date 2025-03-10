@@ -7,6 +7,7 @@ You will be provided with the following information:
 - Output format instructions
 - Candidate's stated goals
 - Example output
+- Reaching too high
 - Candidate resume
 - Job description
 
@@ -135,7 +136,6 @@ Each job should be evaluated on a **0-10 scale** across the following:
 
 This structured approach will make **your job search significantly more efficient**, allowing you to **focus only on high-value opportunities**.
 
-
 ## Example output
 
 * ML/LLM Depth: 9
@@ -146,17 +146,31 @@ This structured approach will make **your job search significantly more efficien
 * Business Influence: 9
 * Engineering/Analytics Balance: 5
 
-## Pros:
+### Pros:
 
 1. Direct hands-on work with GenAI, LLMs, and cloud-based AI solutions.
 2. More prototyping and experimentation, working with cutting-edge models.
 3. Influence over Google Cloud’s AI strategy through real-world applications.
 
-## Cons:
+### Cons:
 
 1. Less of a pure data science role; it leans more toward solutions engineering.
 2. Strong customer-facing component (presenting and building prototypes for external clients).
 3. Might involve less technical depth and more enablement (i.e., helping others use the models).
+
+## Reaching too high
+
+It is certainly possible for a job to be beyond my reasonable abilities and capabilities.
+
+If a job appears to be too hard or a huge step away from my skills and experience, explicitly call this out in the cons section, and give it a lower skill set match score.
+
+We have to consider that I want to apply for jobs that are a good match and I do not want to waste time reviewing jobs that I am unlikely to get.
+
+Furthermore, it may require much too much interview preparations for some job types.
+
+Anytime encountering jobs that expect PhD level or research publication, this is a good sign that I'm reaching too high.
+
+Likewise, high end leadership and management beyond staff data scientist or lead data scientist would be potentially reaching.
 
 ## Candidate resume
 

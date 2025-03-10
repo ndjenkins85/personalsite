@@ -11,7 +11,7 @@ LinkedIn: [ndjenkins-au](https://www.linkedin.com/in/ndjenkins-au/) | GitHub: [n
 
 I combine a strategic consulting mindset with advanced data science expertise, delivering solutions that align analytics with real business impact.
 
-Over my 15-year career, I have accumulated 10 years of data science experience, 12 years in consulting, and 8 years in market research. I have risen to the top of my field through my successful work experience at TikTok and the Boston Consulting Group. I have been entrusted to drive transformative data solutions for Fortune 500 companies. Moving into tech, I delivered high-impact results and earned recognition for leadership in AI, data quality, and cross-functional collaboration. Today, I continue to champion best practices and technical leadership, while embracing the cutting edge of generative AI to solve complex challenges at scale.
+Over my 15-year career, I have accumulated 10 years of data science experience, 12 years in consulting, and 8 years in market research. I have risen to the top of my field through my successful work experience and promotion at TikTok and the Boston Consulting Group. I have been entrusted to drive transformative data solutions for Fortune 500 companies. Moving into tech, I delivered high-impact results and earned recognition for leadership in AI, data quality, and cross-functional collaboration. Today, I continue to champion best practices and technical leadership, while embracing the cutting edge of generative AI to solve complex challenges at scale.
 
 {expansive_summary}
 
@@ -29,9 +29,9 @@ Over my 15-year career, I have accumulated 10 years of data science experience, 
 
 ##### Experience
 
-###### May 2022 - Present, Data Scientist, [TikTok](https://www.tiktok.com/transparency/en-us/), New York
+###### May 2022 - Present, Lead Data Scientist, [TikTok](https://www.tiktok.com/transparency/en-us/), New York
 
-My career hit new heights by joining a massive, fast-growing tech company, where I could focus my efforts on **long-term, high-impact data science initiatives**. I built robust data pipelines and frameworks that combine **large-scale engineering, rigorous quality standards, and advanced ML** to address real-time regulatory challenges. My dedication to stakeholder alignment, mentorship, and cross-regional collaboration has **elevated TikTok’s transparency function to being an industry leader**. By implementing generative AI workflows and a best-in-class reporting platform, I transformed the speed and accuracy of critical data insights throughout the organization. Overall, this experience sharpened my technical leadership skills, bridging emerging technologies with mission-critical business goals.
+My career hit new heights by joining a massive, fast-growing tech company, where I could focus my efforts on **long-term, high-impact data science initiatives**. I built robust data pipelines and frameworks that combine **large-scale engineering, rigorous quality standards, and advanced ML** to address real-time regulatory challenges. My dedication to stakeholder alignment, mentorship, and cross-regional collaboration has **elevated TikTok’s transparency function to being an industry leader**. By implementing generative AI workflows and a best-in-class reporting platform, I transformed the speed and accuracy of critical data insights throughout the organization. This experience sharpened my technical leadership skills, bridging emerging technologies with mission-critical business goals, and was recognized with promotion to Lead Data Scientist in early 2025.
 
 - **Aggregated Metric Database (AMD):** Introduced a single source of truth for regulatory data, scaling external disclosures from ~25 to 130 annually and cutting  ad-hoc reporting requirements by 44%, recognized with two spot bonuses and further business investment.
 - **SOPs & Data Quality:** Defined team mission, vision, and north star metrics. Our quality processes earnt industry-leading results from KPMG DSA audit.
