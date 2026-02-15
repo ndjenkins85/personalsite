@@ -112,15 +112,33 @@
           </div>
 
           <div class="sidebar-section">
-            <h6>Tags</h6>
-            <div class="article-tags">
+            <h6>Tags 
+              <span style="font-weight: 400; font-size: 0.75rem; text-transform: none; letter-spacing: 0;">
+                <a href="#" id="sort-size" onclick="sortTags('size'); return false;" style="color: var(--accent-primary);">by count</a> | 
+                <a href="#" id="sort-alpha" onclick="sortTags('alpha'); return false;" style="color: var(--text-tertiary);">A-Z</a>
+              </span>
+            </h6>
+            <div class="article-tags" id="tag-container">
               {% for tag in tags %}
-                <a href="{{ url_for('articles', tags=tag[0]) }}" class="tag">
+                <a href="{{ url_for('articles', tags=tag[0]) }}" class="tag" data-count="{{ tag[1] }}" data-name="{{ tag[0] }}">
                   {{ tag[0] }}<span class="tag-count">{{ tag[1] }}</span>
                 </a>
               {% endfor %}
             </div>
           </div>
+          <script>
+            function sortTags(mode) {
+              const container = document.getElementById('tag-container');
+              const tags = Array.from(container.children);
+              tags.sort((a, b) => {
+                if (mode === 'alpha') return a.dataset.name.localeCompare(b.dataset.name);
+                return parseInt(b.dataset.count) - parseInt(a.dataset.count);
+              });
+              tags.forEach(t => container.appendChild(t));
+              document.getElementById('sort-size').style.color = mode === 'size' ? 'var(--accent-primary)' : 'var(--text-tertiary)';
+              document.getElementById('sort-alpha').style.color = mode === 'alpha' ? 'var(--accent-primary)' : 'var(--text-tertiary)';
+            }
+          </script>
         {% endif %}
       </div>
     </aside>

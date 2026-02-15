@@ -143,7 +143,7 @@ def _parse_article(filename: Path) -> Mapping[str, Union[List, str]]:
     tags: List[str] = tag_text.split("-")
 
     url_helper = f"{major_type}/{year}/{month}/{day}/{title}"
-    title_cap = title.replace("-", " ").capitalize()
+    title_cap = title.replace("-", " ").title()
 
     article_text = filename.open().readlines()
     teaser = _prepare_markdown(article_text[0])
