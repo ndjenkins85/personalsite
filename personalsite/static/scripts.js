@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   let mouseX = 0, mouseY = 0;
   let hoveredNode = null, draggedNode = null, isDragging = false;
+  let dragStartX = 0, dragStartY = 0, didDrag = false;
   
   // Clamp helper to prevent NaN/Infinity
   function clamp(val, min, max) {
@@ -147,6 +148,9 @@ document.addEventListener('DOMContentLoaded', () => {
       draggedNode.fy = mouseY;
       draggedNode.vx = 0;
       draggedNode.vy = 0;
+      // Track if we actually moved (not just a click)
+      const dist = Math.sqrt((mouseX - dragStartX) ** 2 + (mouseY - dragStartY) ** 2);
+      if (dist > 5) didDrag = true;
     } else {
       updateHover(mouseX, mouseY);
     }
@@ -156,7 +160,10 @@ document.addEventListener('DOMContentLoaded', () => {
   canvas.addEventListener('mousedown', (e) => {
     if (hoveredNode) {
       isDragging = true;
+      didDrag = false;
       draggedNode = hoveredNode;
+      dragStartX = mouseX;
+      dragStartY = mouseY;
       draggedNode.fx = mouseX;
       draggedNode.fy = mouseY;
       e.preventDefault();
@@ -183,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   canvas.addEventListener('click', (e) => {
-    if (!isDragging && hoveredNode) {
+    if (!didDrag && hoveredNode) {
       window.location.href = `/articles/?tags=${hoveredNode.id}`;
     }
   });
