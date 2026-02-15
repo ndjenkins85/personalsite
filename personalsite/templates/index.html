@@ -66,34 +66,39 @@
   </div>
 </section>
 
+<!-- Tag Visualization Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Article Topics</h2>
+    
+    <div class="card">
+      <div id="tag-visualization" style="width: 100%; height: 500px; position: relative;">
+        <canvas id="tag-canvas"></canvas>
+      </div>
+      <p class="text-muted text-center" style="margin-top: var(--spacing-md); margin-bottom: 0; font-size: 0.875rem;">
+        Interactive visualization of article tags and their connections. Larger circles = more articles. Click a tag to filter.
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- Writing Section -->
 <section class="section">
   <div class="container">
-    <h2 class="section-title">Recent Writing</h2>
+    <h2 class="section-title">Writing</h2>
     
-    <div class="article-list">
-      {% set recent_articles = [] %}
-      {% for tag in tags %}
-        {% if loop.index <= 5 %}
-          {# This is a placeholder - we'll show the filters as a preview #}
-        {% endif %}
-      {% endfor %}
-      
+    <div class="card-grid">
+      <!-- Professional Writing -->
       <div class="card">
-        <h3 class="card-title">Explore Articles</h3>
+        <h3 class="card-title">Professional Writing</h3>
         <p class="card-description">
-          Thoughts on data science, software engineering, AI/LLM analytics, and technical leadership.
+          Technical deep-dives on data science, AI/LLM engineering, software architecture, 
+          and lessons from building production systems.
         </p>
         
         <div class="article-tags">
-          <a href="{{ url_for('articles', path='professional') }}" class="tag">
-            Professional
-          </a>
-          <a href="{{ url_for('articles', path='personal') }}" class="tag">
-            Personal
-          </a>
           {% for tag in tags %}
-            {% if loop.index <= 8 %}
+            {% if tag[0] in ['llm', 'ai', 'data-science', 'engineering', 'analysis', 'career', 'research'] and loop.index <= 10 %}
               <a href="{{ url_for('articles', tags=tag[0]) }}" class="tag">
                 {{ tag[0] }}<span class="tag-count">{{ tag[1] }}</span>
               </a>
@@ -101,10 +106,40 @@
           {% endfor %}
         </div>
         
-        <a href="{{ url_for('articles', path='') }}" class="card-link">View all articles</a>
+        <a href="{{ url_for('articles', path='professional') }}" class="card-link">View professional articles</a>
       </div>
+      
+      <!-- Personal Writing -->
+      <div class="card">
+        <h3 class="card-title">Personal Writing</h3>
+        <p class="card-description">
+          Project journals, experiments, travels, life updates, and personal reflections 
+          on technology and creativity.
+        </p>
+        
+        <div class="article-tags">
+          {% for tag in tags %}
+            {% if tag[0] in ['petprojects', 'travel', 'organising', 'life', 'creative', 'photography'] and loop.index <= 10 %}
+              <a href="{{ url_for('articles', tags=tag[0]) }}" class="tag">
+                {{ tag[0] }}<span class="tag-count">{{ tag[1] }}</span>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        
+        <a href="{{ url_for('articles', path='personal') }}" class="card-link">View personal articles</a>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: var(--spacing-xl);">
+      <a href="{{ url_for('articles', path='') }}" class="btn btn-outline">View all articles</a>
     </div>
   </div>
 </section>
+
+<script>
+  // Tag visualization data from Flask
+  const tagData = {{ tag_data|safe }};
+</script>
 
 {% endblock %}

@@ -25,7 +25,7 @@
     <!-- Main content -->
     <div class="main-column">
       {% for article in articles %}
-        <article class="article-card">
+        <article class="article-card" style="{% if article['major_type'] == 'professional' %}border-left: 3px solid var(--accent-primary);{% else %}border-left: 3px solid var(--success);{% endif %}">
           <div class="article-header">
             <h2 class="article-title">
               <a href="{{ url_for('articles') }}{{ article['url_helper'] }}">
@@ -34,6 +34,10 @@
             </h2>
             <div class="article-meta">
               <span>{{ article["date"] }}</span>
+              <span>•</span>
+              <span style="{% if article['major_type'] == 'professional' %}color: var(--accent-primary);{% else %}color: var(--success);{% endif %}">
+                {{ article["major_type"]|capitalize }}
+              </span>
             </div>
           </div>
 

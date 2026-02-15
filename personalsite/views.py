@@ -36,7 +36,41 @@ def home() -> str:
     Returns:
         str: rendered home page as text
     """
-    return render_template("index.html", tags=article_parsing.get_all_tags())
+    import json
+    from collections import defaultdict
+    
+    # Get all articles
+    articles = article_parsing.parse_all_articles()
+    
+    # Build tag co-occurrence data
+    tag_freq = defaultdict(int)
+    tag_cooccurrence = defaultdict(lambda: defaultdict(int))
+    
+    for article in articles:
+        tags = article.get("tags", [])
+        for tag in tags:
+            tag_freq[tag] += 1
+        
+        # Record co-occurrences
+        for i, tag1 in enumerate(tags):
+            for tag2 in tags[i+1:]:
+                tag_cooccurrence[tag1][tag2] += 1
+                tag_cooccurrence[tag2][tag1] += 1
+    
+    # Build nodes and links for visualization
+    nodes = [{"id": tag, "count": count} for tag, count in tag_freq.items()]
+    links = []
+    seen = set()
+    for tag1, connections in tag_cooccurrence.items():
+        for tag2, weight in connections.items():
+            pair = tuple(sorted([tag1, tag2]))
+            if pair not in seen:
+                links.append({"source": tag1, "target": tag2, "weight": weight})
+                seen.add(pair)
+    
+    tag_data = json.dumps({"nodes": nodes, "links": links})
+    
+    return render_template("index.html", tags=article_parsing.get_all_tags(), tag_data=tag_data)
 
 
 @app.route("/resume")
@@ -53,6 +87,16 @@ def resume() -> str:
     resume_data = Markup(markdown.markdown(base_template))  # NOQA: S704
 
     return render_template("resume_v2.html", resume_data=resume_data)
+
+
+@app.route("/consulting")
+def consulting() -> str:
+    """Flask route to display consulting page.
+
+    Returns:
+        str: rendered consulting page
+    """
+    return render_template("consulting.html")
 
 
 # @app.route("/resume/dynamic")

@@ -1,0 +1,216 @@
+{% extends "template.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container-narrow">
+    <h1 class="hero-title">AI Engineering & Data Science Consulting</h1>
+    <p class="hero-subtitle">Forward-Deployed AI Engineer</p>
+    <p class="hero-tagline">
+      Hands-on technical leader deploying AI solutions that drive measurable business impact. 
+      15+ years building intelligent systems for Fortune 500 clients, TikTok, and BCG.
+    </p>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Services & Expertise</h2>
+    
+    <div class="card-grid">
+      <!-- AI & LLM Engineering -->
+      <div class="card">
+        <h3 class="card-title">AI & LLM Engineering</h3>
+        <p class="card-description">
+          RAG systems, AI agents, prompt engineering, LLM-powered analytics, multi-GPU inference, 
+          and production deployment of large language models.
+        </p>
+      </div>
+      
+      <!-- Data Pipeline Architecture -->
+      <div class="card">
+        <h3 class="card-title">Data Pipeline Architecture</h3>
+        <p class="card-description">
+          PySpark, Airflow, AWS, large-scale data engineering, quality frameworks, 
+          and building robust infrastructure for data-driven products.
+        </p>
+      </div>
+      
+      <!-- ML & Analytics -->
+      <div class="card">
+        <h3 class="card-title">ML & Analytics</h3>
+        <p class="card-description">
+          A/B testing, price elasticity modeling, personalization engines, trend detection, 
+          time series forecasting, and statistical analysis at scale.
+        </p>
+      </div>
+      
+      <!-- Technical Leadership -->
+      <div class="card">
+        <h3 class="card-title">Technical Leadership</h3>
+        <p class="card-description">
+          Team building, code review culture, SOPs, mentoring, cross-functional collaboration, 
+          and establishing engineering best practices.
+        </p>
+      </div>
+      
+      <!-- Strategic Consulting -->
+      <div class="card">
+        <h3 class="card-title">Strategic Consulting</h3>
+        <p class="card-description">
+          Roadmap development, stakeholder alignment, product development strategy, 
+          white papers, and translating technical capabilities into business value.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Track Record Section -->
+<section class="section" style="background: var(--bg-secondary); margin: 0 -100vw; padding-left: calc((100vw - 1200px) / 2 + var(--spacing-lg)); padding-right: calc((100vw - 1200px) / 2 + var(--spacing-lg));">
+  <div class="container">
+    <h2 class="section-title">Track Record</h2>
+    
+    <div class="card-grid">
+      <div class="card" style="background: var(--bg-tertiary);">
+        <h4 style="color: var(--accent-primary); font-size: 2rem; margin-bottom: var(--spacing-sm);">Fortune 500</h4>
+        <p class="card-description" style="margin-bottom: 0;">
+          Delivered data science solutions for Fortune 500 clients at Boston Consulting Group
+        </p>
+      </div>
+      
+      <div class="card" style="background: var(--bg-tertiary);">
+        <h4 style="color: var(--accent-primary); font-size: 2rem; margin-bottom: var(--spacing-sm);">$52M Pilot</h4>
+        <p class="card-description" style="margin-bottom: 0;">
+          Personalization system achieving 25% sales lift in pilot phase
+        </p>
+      </div>
+      
+      <div class="card" style="background: var(--bg-tertiary);">
+        <h4 style="color: var(--accent-primary); font-size: 2rem; margin-bottom: var(--spacing-sm);">$1B Optimization</h4>
+        <p class="card-description" style="margin-bottom: 0;">
+          Promotional spend optimization across billion-dollar portfolio
+        </p>
+      </div>
+      
+      <div class="card" style="background: var(--bg-tertiary);">
+        <h4 style="color: var(--accent-primary); font-size: 2rem; margin-bottom: var(--spacing-sm);">TikTok Platform</h4>
+        <p class="card-description" style="margin-bottom: 0;">
+          Built transparency data platform processing millions of records
+        </p>
+      </div>
+      
+      <div class="card" style="background: var(--bg-tertiary);">
+        <h4 style="color: var(--accent-primary); font-size: 2rem; margin-bottom: var(--spacing-sm);">130+ Disclosures</h4>
+        <p class="card-description" style="margin-bottom: 0;">
+          Scaled regulatory reporting from 25 to 130+ disclosures
+        </p>
+      </div>
+      
+      <div class="card" style="background: var(--bg-tertiary);">
+        <h4 style="color: var(--accent-primary); font-size: 2rem; margin-bottom: var(--spacing-sm);">Industry-Leading</h4>
+        <p class="card-description" style="margin-bottom: 0;">
+          Achieved top-tier KPMG audit results for data quality
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Selected Writing Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Selected Writing</h2>
+    
+    <div class="article-list">
+      <div class="article-card">
+        <h3 class="article-title">
+          <a href="{{ url_for('articles', path='professional/2023/01/08/chatgpt-1-why-llm-apps') }}">
+            ChatGPT Part 1: Why I Am Interested in Making LLM Applications
+          </a>
+        </h3>
+        <div class="article-meta">
+          <span>2023-01-08</span>
+          <span>•</span>
+          <span>Professional</span>
+        </div>
+        <p class="card-description">
+          My journey into LLM application development and why I believe these tools will transform how we work.
+        </p>
+      </div>
+      
+      <div class="article-card">
+        <h3 class="article-title">
+          <a href="{{ url_for('articles', path='professional/2022/10/03/market-research-overview') }}">
+            An Overview of My Market Research Experience
+          </a>
+        </h3>
+        <div class="article-meta">
+          <span>2022-10-03</span>
+          <span>•</span>
+          <span>Professional</span>
+        </div>
+        <p class="card-description">
+          Deep dive into market research methodologies and insights from years of client work.
+        </p>
+      </div>
+      
+      <div class="article-card">
+        <h3 class="article-title">
+          <a href="{{ url_for('articles', path='professional/2022/10/08/project-experience-impact') }}">
+            Project Experience and Impact
+          </a>
+        </h3>
+        <div class="article-meta">
+          <span>2022-10-08</span>
+          <span>•</span>
+          <span>Professional</span>
+        </div>
+        <p class="card-description">
+          Highlights from major projects spanning data science, ML systems, and technical leadership.
+        </p>
+      </div>
+      
+      <div class="article-card">
+        <h3 class="article-title">
+          <a href="{{ url_for('articles', path='professional/2018/01/31/nlp-review-2018') }}">
+            Natural Language Processing Review 2018
+          </a>
+        </h3>
+        <div class="article-meta">
+          <span>2018-01-31</span>
+          <span>•</span>
+          <span>Professional</span>
+        </div>
+        <p class="card-description">
+          State of NLP technology in 2018 and practical applications for business problems.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section">
+  <div class="container-narrow" style="text-align: center;">
+    <h2 class="section-title">Let's Work Together</h2>
+    <p class="hero-tagline" style="margin-bottom: var(--spacing-xl);">
+      Available for consulting, contracting, and technical advisory roles.
+    </p>
+    
+    <div class="hero-links">
+      <a href="mailto:nick_jenkins@outlook.com" class="btn btn-primary">
+        Email Me
+      </a>
+      <a href="https://www.linkedin.com/in/nick-jenkins-56a65533" target="_blank" class="btn btn-outline" rel="noopener">
+        LinkedIn
+      </a>
+      <a href="{{ url_for('resume') }}" class="btn btn-outline">
+        View Resume
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
