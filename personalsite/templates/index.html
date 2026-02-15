@@ -1,81 +1,110 @@
 {% extends "template.html" %}
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4">
-      <div class="shadow-sm p-1 bg-white rounded">
-        <h2>Nick Jenkins</h2>
-        <div class="row">
-          <div class="col-sm-6">
-            <i class="fa fa-area-chart"></i>&nbsp;Data Scientist</li>
-          </div>
-          <div class="col-sm-6">
-            <i class="fa fa-exchange"></i>&nbsp;Software Dev.</li>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <i class="fa fa-group"></i>&nbsp;LLM analytics</li>
-          </div>
-          <div class="col-sm-6">
-            <i class="fa fa-commenting-o"></i>&nbsp;Technical Writing</li>
-          </div>
-        </div>
-        <p></p>
-        <p><a href="{{ url_for('resume') }}" class="text-decoration-none">Resume</a></p>
-        <p><a href="#" class="text-decoration-none" onclick="togglehide('contact')">Contact</a></p>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container-narrow">
+    <h1 class="hero-title">Nick Jenkins</h1>
+    <p class="hero-subtitle">Data Scientist & Technical Leader</p>
+    <p class="hero-tagline">
+      Building intelligent systems and leading teams to solve complex problems with data, AI, and modern software engineering.
+    </p>
+    
+    <div class="hero-links">
+      <a href="https://www.linkedin.com/in/nick-jenkins-56a65533" target="_blank" class="hero-link" rel="noopener">
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://github.com/ndjenkins85" target="_blank" class="hero-link" rel="noopener">
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:nick_jenkins@outlook.com" class="hero-link">
+        <span>Email</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-        <div id="contact" style="display: none">
-          <div class="row">
-            <div class="col-sm-6">
-              <a href="https://api.whatsapp.com/send?phone=61448329110" alt="+61 448 329 110">Whatsapp / Phone</a>
-            </div>
-            <div class="col-sm-6">
-              <a href="mailto:nick_jenkins@outlook.com" alt="nick_jenkins@outlook.com">Email</a>
-            </div>
+<!-- Photo Gallery -->
+<section class="section">
+  <div class="container">
+    <div class="gallery">
+      <div class="gallery-grid">
+        {% for item in get_carousel_items() %}
+          <div class="gallery-item">
+            <img src="{{ url_for('static', filename=item) }}" alt="Photo" loading="lazy">
           </div>
-          <div class="row">
-            <div class="col-sm-6">
-              <a href="https://www.linkedin.com/in/nick-jenkins-56a65533" target="_blank" alt="https://www.linkedin.com/in/nick-jenkins-56a65533">Linked-in</a>
-            </div>
-            <div class="col-sm-6">
-              <a href="https://www.ndjenkins.com" target="_blank" alt="https://www.ndjenkins.com">Personal Website</a>
-            </div>
-          </div>
-        </div>
-        <p></p>
-
-        <p><a href="{{ url_for('articles') + 'professional' }}" class="text-decoration-none">Professional Writing</a></p>
-        <p><a href="{{ url_for('articles') + 'personal' }}" class="text-decoration-none">Personal Writing</a></p>
-        <h6>Article tags:</h6>
-        {% for tag in tags %}
-          <a href="{{ url_for('articles', tags=tag[0])}}">
-            <span class="badge badge-pill badge-info">{{ tag[0] }}<span class="badge badge-pill badge-info">({{ tag[1] }})</span>
-            </span>
-          </a>
         {% endfor %}
       </div>
     </div>
-    <div class="col-lg-8">
-      <div id="carouselExampleSlidesOnly" class="carousel slide modal-body" data-ride="carousel">
-        <div class="carousel-inner">
-          {% for item in get_carousel_items() %}
-            {% if loop.first %}
-              <div class="carousel-item active">
-            {% else %}
-              <div class="carousel-item">
-            {% endif %}
-            <img src="{{ url_for('static', filename=item) }}" class="d-block w-100 imagefade" alt="...">
-          </div>
-          {% endfor %}
-        </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section class="section" id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    
+    <div class="card-grid">
+      <!-- Storymaker -->
+      <div class="card">
+        <h3 class="card-title">Storymaker</h3>
+        <p class="card-description">
+          AI-powered children's book creator. Write stories, generate illustrations, and create personalized picture books.
+        </p>
+        <a href="/projects/storymaker/" class="card-link">Try it</a>
+      </div>
+      
+      <!-- Chiki's Adventure -->
+      <div class="card">
+        <h3 class="card-title">Chiki's Adventure</h3>
+        <p class="card-description">
+          An educational letter and word recognition game starring Leo's favorite plush duck.
+        </p>
+        <a href="/projects/adventure/" class="card-link">Try it</a>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<script src="{{ url_for('static', filename='scripts.js') }}"></script>
-
+<!-- Writing Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Recent Writing</h2>
+    
+    <div class="article-list">
+      {% set recent_articles = [] %}
+      {% for tag in tags %}
+        {% if loop.index <= 5 %}
+          {# This is a placeholder - we'll show the filters as a preview #}
+        {% endif %}
+      {% endfor %}
+      
+      <div class="card">
+        <h3 class="card-title">Explore Articles</h3>
+        <p class="card-description">
+          Thoughts on data science, software engineering, AI/LLM analytics, and technical leadership.
+        </p>
+        
+        <div class="article-tags">
+          <a href="{{ url_for('articles', path='professional') }}" class="tag">
+            Professional
+          </a>
+          <a href="{{ url_for('articles', path='personal') }}" class="tag">
+            Personal
+          </a>
+          {% for tag in tags %}
+            {% if loop.index <= 8 %}
+              <a href="{{ url_for('articles', tags=tag[0]) }}" class="tag">
+                {{ tag[0] }}<span class="tag-count">{{ tag[1] }}</span>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        
+        <a href="{{ url_for('articles', path='') }}" class="card-link">View all articles</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}

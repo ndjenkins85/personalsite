@@ -2,116 +2,125 @@
 {% block content %}
 
 <div class="container">
-  <!-- Breadcrumb header -->
-  <div class="row m-2">
-    <div class="col">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{url_for('home')}}">Home</a></li>
-          {% for crumb in breadcrumbs %}
-            {% if not loop.last %}
-              <li class="breadcrumb-item">
-              <a href="{{url_for('articles')}}{% for i in range(loop.index) %}{{breadcrumbs[i]}}/{% endfor %}">
-              {{crumb}}
-              </a>
-              </li>
-            {% else %}
-              <li class="breadcrumb-item active" aria-current="page">{{crumb}}</li>
-            {% endif %}
-          {% endfor %}
-        </ol>
-      </nav>
-    </div>
-  </div>
-  <!-- Main page -->
-  <div class="row m-2">
-    <!-- Article/s housing -->
-    <div class="col-sm-9">
-      {% for article in articles %}
-        <div class="row m-2">
-          <div class="col">
-            <div class="shadow-sm p-2 bg-white rounded">
-              <div class="row">
-                <div class="col">
-                  <a href="{{url_for('articles')}}{{article['url_helper']}}" class="text-decoration-none">
-                    <h4>{{article["title_cap"]}} - <small class="text-muted">{{article["date"]}}</small></h4>
-                  </a>
-                  {% for tag in article["tags"] %}
-                    {% if loop.first %}
-                      Tags:
-                    {% endif %}
-                    <span class="badge badge-pill badge-info">{{tag}}</span>
-                    {% if loop.last %}
-                      <br>
-                    {% endif %}
-                  {% endfor %}
-                  <div class="row">
-                    <div class="col m-3">
-                      <!-- Article text or teaser -->
-                      {% if single %}
-                        {{article["article"]}}
-                      {% else %}
-                        {{article["teaser"]}}
-                      {% endif %}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-    <!-- Tags and related column -->
-    <div class="col-sm-3">
-      {% if single %}
-        <div class="shadow-sm p-2 bg-white rounded">
-          {% for related_article in related_articles %}
-            {% if loop.first %}
-              Related articles:
-            {% endif %}
-            <p>
-              <a href="{{url_for('articles')}}{{related_article['url_helper']}}" class="text-decoration-none">
-              {{related_article["title_cap"]}}
-              </a>
-            </p>
-          {% endfor %}
-        </div>
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <span class="breadcrumb-item">
+      <a href="{{ url_for('home') }}">Home</a>
+    </span>
+    {% for crumb in breadcrumbs %}
+      {% if not loop.last %}
+        <span class="breadcrumb-item">
+          <a href="{{ url_for('articles') }}{% for i in range(loop.index) %}{{ breadcrumbs[i] }}/{% endfor %}">
+            {{ crumb }}
+          </a>
+        </span>
       {% else %}
-        <div class="shadow-sm p-2 bg-white rounded">
-          <strong>Filters</strong>
-          <div class="row">
-            <div class="col">
-              <h6>Area:</h6>
-              <a href="{{url_for('articles')}}professional">
-                <span class="badge badge-pill badge-success">Professional
-                </span>
+        <span class="breadcrumb-item active">{{ crumb }}</span>
+      {% endif %}
+    {% endfor %}
+  </nav>
+
+  <!-- Two-column layout -->
+  <div class="two-column">
+    <!-- Main content -->
+    <div class="main-column">
+      {% for article in articles %}
+        <article class="article-card">
+          <div class="article-header">
+            <h2 class="article-title">
+              <a href="{{ url_for('articles') }}{{ article['url_helper'] }}">
+                {{ article["title_cap"] }}
               </a>
-              <a href="{{url_for('articles')}}personal">
-                <span class="badge badge-pill badge-success">Personal
-                </span>
-              </a>
-              <p></p>
-              <h6>Year:</h6>
-              {% for year in tag_years() %}
-                <a href="{{url_for('articles', year=year)}}">
-                  <span class="badge badge-pill badge-dark">{{year}}
-                  </span>
-                </a>
-              {% endfor %}
-              <p></p>
-              <h6>Tags:</h6>
-              {% for tag in tags %}
-                <a href="{{url_for('articles', tags=tag[0])}}">
-                  <span class="badge badge-pill badge-info">{{tag[0]}}<span class="badge badge-pill badge-info">({{tag[1]}})</span>
-                  </span>
-                </a>
-              {% endfor %}
+            </h2>
+            <div class="article-meta">
+              <span>{{ article["date"] }}</span>
             </div>
           </div>
+
+          {% if article["tags"] %}
+            <div class="article-tags">
+              {% for tag in article["tags"] %}
+                <a href="{{ url_for('articles', tags=tag) }}" class="tag">{{ tag }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          <div class="article-content">
+            {% if single %}
+              {{ article["article"] }}
+            {% else %}
+              {{ article["teaser"] }}
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+
+      {% if articles|length == 0 %}
+        <div class="article-card">
+          <p class="text-muted">No articles found matching your filters.</p>
+          <a href="{{ url_for('articles', path='') }}" class="card-link">View all articles</a>
         </div>
       {% endif %}
     </div>
+
+    <!-- Sidebar -->
+    <aside class="side-column">
+      <div class="sidebar">
+        {% if single %}
+          <!-- Related articles for single article view -->
+          <h3 class="sidebar-title">Related Articles</h3>
+          {% if related_articles %}
+            {% for related_article in related_articles %}
+              <div class="sidebar-section">
+                <a href="{{ url_for('articles') }}{{ related_article['url_helper'] }}" class="card-link">
+                  {{ related_article["title_cap"] }}
+                </a>
+              </div>
+            {% endfor %}
+          {% else %}
+            <p class="text-muted" style="font-size: 0.875rem;">No related articles found.</p>
+          {% endif %}
+        {% else %}
+          <!-- Filters for article list view -->
+          <h3 class="sidebar-title">Filters</h3>
+          
+          <div class="sidebar-section">
+            <h6>Area</h6>
+            <div class="article-tags">
+              <a href="{{ url_for('articles', path='professional') }}" class="tag">
+                Professional
+              </a>
+              <a href="{{ url_for('articles', path='personal') }}" class="tag">
+                Personal
+              </a>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h6>Year</h6>
+            <div class="article-tags">
+              {% for year in tag_years() %}
+                <a href="{{ url_for('articles', year=year) }}" class="tag">
+                  {{ year }}
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h6>Tags</h6>
+            <div class="article-tags">
+              {% for tag in tags %}
+                <a href="{{ url_for('articles', tags=tag[0]) }}" class="tag">
+                  {{ tag[0] }}<span class="tag-count">{{ tag[1] }}</span>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </aside>
   </div>
 </div>
+
 {% endblock %}

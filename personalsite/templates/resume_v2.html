@@ -1,30 +1,33 @@
 {% extends "template.html" %}
 {% block content %}
 
-<div class="container">
+<div class="container-narrow">
+  <!-- Breadcrumb and print button (hidden when printing) -->
   <div class="noprint">
-    <div class="row my-2">
-      <div class="col-sm-10">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{url_for('home')}}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Resume</li>
-          </ol>
-        </nav>
-      </div>
-      <div class="col-sm-2">
-        <button type="button" class="btn btn-outline-primary" role="button" onclick="document.title='nick_jenkins_data_scientist';window.print();">Print</button>
-      </div>
+    <nav class="breadcrumb">
+      <span class="breadcrumb-item">
+        <a href="{{ url_for('home') }}">Home</a>
+      </span>
+      <span class="breadcrumb-item active">Resume</span>
+    </nav>
+    
+    <div style="text-align: right; margin-bottom: var(--spacing-lg);">
+      <button 
+        type="button" 
+        class="btn btn-outline" 
+        onclick="document.title='nick_jenkins_data_scientist'; window.print();"
+      >
+        Print / Download PDF
+      </button>
     </div>
   </div>
-  <div class="row my-2">
-    <div class="col-sm-12">
-      <div class="shadow-sm p-2 bg-white rounded">
-        <div class="resume-top-pad">
-        </div>
-        {{resume_data}}
-      </div>
+
+  <!-- Resume content -->
+  <div class="article-card">
+    <div style="padding: var(--spacing-lg);">
+      {{ resume_data }}
     </div>
   </div>
 </div>
+
 {% endblock %}
