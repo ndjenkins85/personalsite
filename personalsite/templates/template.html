@@ -26,23 +26,11 @@
           <a href="{{ url_for('home') }}" class="nav-logo">Nick Jenkins</a>
           <div class="nav-links">
             <a href="{{ url_for('home') }}" class="nav-link">Home</a>
-            
-            <div class="nav-dropdown">
-              <a href="#" class="nav-link">Professional ▾</a>
-              <div class="nav-dropdown-menu">
-                <a href="{{ url_for('resume') }}" class="nav-dropdown-item">Resume</a>
-                <a href="{{ url_for('consulting') }}" class="nav-dropdown-item">Consulting</a>
-                <a href="{{ url_for('articles', path='professional') }}" class="nav-dropdown-item">Writing</a>
-              </div>
-            </div>
-            
-            <div class="nav-dropdown">
-              <a href="#" class="nav-link">Personal ▾</a>
-              <div class="nav-dropdown-menu">
-                <a href="{{ url_for('home') }}#projects" class="nav-dropdown-item">Projects</a>
-                <a href="{{ url_for('articles', path='personal') }}" class="nav-dropdown-item">Writing</a>
-              </div>
-            </div>
+            <a href="{{ url_for('consulting') }}" class="nav-link">Consulting</a>
+            <a href="{{ url_for('articles', path='professional') }}" class="nav-link">Articles</a>
+            <a href="{{ url_for('resume') }}" class="nav-link">Resume</a>
+            <a href="{{ url_for('home') }}#projects" class="nav-link">Projects</a>
+            <a href="{{ url_for('articles', path='personal') }}" class="nav-link">Musings</a>
           </div>
         </div>
       </div>
