@@ -165,16 +165,7 @@
       </div>
     </div>
     
-    <!-- Remaining photos as a final accent -->
-    {% if photos[12:] %}
-    <div class="photo-strip photo-strip-centered" style="margin-top: var(--spacing-2xl);">
-      {% for item in photos[12:] %}
-        <div class="photo-strip-item">
-          <img src="{{ url_for('static', filename=item) }}" alt="Photo" loading="lazy">
-        </div>
-      {% endfor %}
-    </div>
-    {% endif %}
+    <!-- 3 rows of 4 photos only -->
     
     <div style="text-align: center; margin-top: var(--spacing-xl);">
       <a href="{{ url_for('articles', path='') }}" class="btn btn-outline">View all articles</a>
