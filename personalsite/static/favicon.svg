@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#1a1a2e"/>
+  
+  <!-- Hair -->
+  <path d="M16 26c0-10 7-18 16-18s16 8 16 18v2c0 1-1 2-2 2h-2c0-8-5-14-12-14s-12 6-12 14h-2c-1 0-2-1-2-2v-2z" fill="#4a3728"/>
+  
+  <!-- Face -->
+  <ellipse cx="32" cy="32" rx="13" ry="15" fill="#e8c39e"/>
+  
+  <!-- Hair sides -->
+  <path d="M19 26c0-2 0.5-5 2-7v10c-1.3-0.5-2-1.8-2-3z" fill="#4a3728"/>
+  <path d="M45 26c0-2-0.5-5-2-7v10c1.3-0.5 2-1.8 2-3z" fill="#4a3728"/>
+  
+  <!-- Eyebrows -->
+  <path d="M24 27h5" stroke="#3d2b1f" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M35 27h5" stroke="#3d2b1f" stroke-width="1.2" stroke-linecap="round"/>
+  
+  <!-- Eyes -->
+  <circle cx="26.5" cy="30" r="1.5" fill="#3d2b1f"/>
+  <circle cx="37.5" cy="30" r="1.5" fill="#3d2b1f"/>
+  
+  <!-- Nose -->
+  <path d="M32 31v4" stroke="#d4a574" stroke-width="1.2" stroke-linecap="round"/>
+  
+  <!-- Beard -->
+  <path d="M22 36c0 0 1 10 10 12 9-2 10-12 10-12" fill="#4a3728" opacity="0.9"/>
+  <path d="M22 36c2 1 6 2 10 2s8-1 10-2" fill="none" stroke="#3d2b1f" stroke-width="0.5"/>
+  
+  <!-- Mustache -->
+  <path d="M26 36c2-1 3-1.5 6-1.5s4 0.5 6 1.5c-2 1-3 1.5-6 1.5s-4-0.5-6-1.5z" fill="#3d2b1f"/>
+  
+  <!-- Mouth (hidden by stache, slight smile visible) -->
+  <path d="M29 38.5c1.5 1 4.5 1 6 0" fill="none" stroke="#c4956e" stroke-width="0.8" stroke-linecap="round"/>
+  
+  <!-- Ears -->
+  <ellipse cx="19" cy="31" rx="2" ry="3" fill="#e8c39e"/>
+  <ellipse cx="45" cy="31" rx="2" ry="3" fill="#e8c39e"/>
+  
+  <!-- Glasses (optional tech vibe) -->
+  <circle cx="26.5" cy="30" r="4" fill="none" stroke="#555" stroke-width="1"/>
+  <circle cx="37.5" cy="30" r="4" fill="none" stroke="#555" stroke-width="1"/>
+  <path d="M30.5 30h3" stroke="#555" stroke-width="1"/>
+  <path d="M19 30h3.5" stroke="#555" stroke-width="1"/>
+  <path d="M41.5 30h3.5" stroke="#555" stroke-width="1"/>
+</svg>
