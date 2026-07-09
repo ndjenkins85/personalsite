@@ -11,7 +11,7 @@
     <p class="hero-tagline">
       Building intelligent systems and leading teams to solve complex problems with data, AI, and modern software engineering.
     </p>
-    
+
     <div class="hero-links">
       <a href="https://www.linkedin.com/in/nick-jenkins-56a65533" target="_blank" class="hero-link" rel="noopener">
         <span>LinkedIn</span>
@@ -39,8 +39,25 @@
 <section class="section" id="projects">
   <div class="container">
     <h2 class="section-title">Projects</h2>
-    
+
     <div class="card-grid">
+      <div class="card">
+        <h3 class="card-title">Melue AI</h3>
+        <p class="card-description">
+          A personal AI harness — a fleet of specialist agents reachable by voice and
+          WhatsApp, running real-life admin with production discipline.
+        </p>
+        <a href="/projects/melue/" class="card-link">Meet Melue</a>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">Bluemania</h3>
+        <p class="card-description">
+          Genre-fluid, mood-driven music project. Sounds from the deep.
+        </p>
+        <a href="/projects/bluemania/" class="card-link">Listen</a>
+      </div>
+
       <div class="card">
         <h3 class="card-title">Storymaker</h3>
         <p class="card-description">
@@ -48,7 +65,7 @@
         </p>
         <a href="/projects/storymaker/" class="card-link">Try it</a>
       </div>
-      
+
       <div class="card">
         <h3 class="card-title">Chiki's Adventure</h3>
         <p class="card-description">
@@ -58,11 +75,20 @@
       </div>
 
       <div class="card">
-        <h3 class="card-title">Bluemania</h3>
+        <h3 class="card-title">de_milano</h3>
         <p class="card-description">
-          Genre-fluid, mood-driven music project. Sounds from the deep.
+          A Counter-Strike map I built as “BlueMania” in 2003, rebuilt from the original
+          game files into a walkable 3D world in the browser.
         </p>
-        <a href="/projects/bluemania/" class="card-link">Listen</a>
+        <a href="/projects/de-milano/" class="card-link">Walk it</a>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">Otsukare</h3>
+        <p class="card-description">
+          Japanese language learning app with spaced-repetition for mastering hiragana, katakana, and vocabulary.
+        </p>
+        <a href="/projects/otsukare/" class="card-link">Study</a>
       </div>
 
       <div class="card">
@@ -79,23 +105,6 @@
           Interactive apartment comparison tool using conjoint analysis to score and rank options.
         </p>
         <a href="/projects/apartment-sim/" class="card-link">Try it</a>
-      </div>
-
-      <div class="card">
-        <h3 class="card-title">Otsukare</h3>
-        <p class="card-description">
-          Japanese language learning app with spaced-repetition for mastering hiragana, katakana, and vocabulary.
-        </p>
-        <a href="/projects/otsukare/" class="card-link">Study</a>
-      </div>
-
-      <div class="card">
-        <h3 class="card-title">de_milano</h3>
-        <p class="card-description">
-          A Counter-Strike map I built as “BlueMania” in 2003, rebuilt from the original
-          game files into a walkable 3D world in the browser.
-        </p>
-        <a href="/projects/de-milano/" class="card-link">Walk it</a>
       </div>
     </div>
   </div>
@@ -114,7 +123,7 @@
 <section class="section">
   <div class="container">
     <h2 class="section-title">Topics</h2>
-    
+
     <div class="card">
       <div id="tag-visualization" style="width: 100%; height: 500px; position: relative;">
         <canvas id="tag-canvas"></canvas>
@@ -139,15 +148,15 @@
 <section class="section">
   <div class="container">
     <h2 class="section-title">Writing</h2>
-    
+
     <div class="card-grid">
       <div class="card">
         <h3 class="card-title">Articles</h3>
         <p class="card-description">
-          Technical deep-dives on data science, AI/LLM engineering, software architecture, 
+          Technical deep-dives on data science, AI/LLM engineering, software architecture,
           and lessons from building production systems.
         </p>
-        
+
         <div class="article-tags">
           {% for tag in tags %}
             {% if tag[0] in ['llm', 'ai', 'data-science', 'engineering', 'analysis', 'career', 'research'] and loop.index <= 10 %}
@@ -157,17 +166,17 @@
             {% endif %}
           {% endfor %}
         </div>
-        
+
         <a href="{{ url_for('articles', path='professional') }}" class="card-link">View articles</a>
       </div>
-      
+
       <div class="card">
         <h3 class="card-title">Musings</h3>
         <p class="card-description">
-          Personal reflections, project journals, travel stories, life updates, and creative experiments 
+          Personal reflections, project journals, travel stories, life updates, and creative experiments
           exploring technology and the world.
         </p>
-        
+
         <div class="article-tags">
           {% for tag in tags %}
             {% if tag[0] in ['petprojects', 'travel', 'organising', 'life', 'creative', 'photography'] and loop.index <= 10 %}
@@ -177,13 +186,13 @@
             {% endif %}
           {% endfor %}
         </div>
-        
+
         <a href="{{ url_for('articles', path='personal') }}" class="card-link">View musings</a>
       </div>
     </div>
-    
+
     <!-- 3 rows of 4 photos only -->
-    
+
     <div style="text-align: center; margin-top: var(--spacing-xl);">
       <a href="{{ url_for('articles', path='') }}" class="btn btn-outline">View all articles</a>
     </div>
