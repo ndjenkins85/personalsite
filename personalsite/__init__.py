@@ -3,6 +3,7 @@
 from flask import Flask
 from flask_cors import CORS
 from flask_sslify import SSLify
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 
 def create_app() -> Flask:
@@ -17,7 +18,8 @@ def create_app() -> Flask:
 
 
 app = create_app()
-CORS(app)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1)  # type: ignore[method-assign]
+CORS(app, origins=["https://www.ndjenkins.com", "https://ndjenkins.com"])
 sslify = SSLify(app)
 
 import personalsite.views  # noqa: E402
