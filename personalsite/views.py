@@ -17,16 +17,30 @@ from datetime import datetime as dt
 from datetime import timedelta, timezone
 from pathlib import Path
 import random
+import re
 from typing import Any, Dict, List
 
 # coding: utf-8
-from flask import current_app, make_response, render_template, request
+from flask import abort, current_app, make_response, render_template, request
 from pytz import timezone as tzoffset
 import markdown
 from markupsafe import Markup
 
 from personalsite import app
 from personalsite import article_parsing, resume_parsing
+
+
+DYNAMIC_DOCUMENT_PATH = re.compile(r"^[A-Za-z0-9_-]+$")
+
+
+def _validate_dynamic_document_path(path: str) -> None:
+    """Reject nested or traversal-like private document paths.
+
+    Args:
+        path: Dynamic document identifier from the request URL.
+    """
+    if "/" in path or ".." in path or DYNAMIC_DOCUMENT_PATH.fullmatch(path) is None:
+        abort(404)
 
 
 @app.route("/")
@@ -37,26 +51,26 @@ def home() -> str:
         str: rendered home page as text
     """
     import json
-    from collections import defaultdict
-    
+    from collections import Counter, defaultdict
+
     # Get all articles
     articles = article_parsing.parse_all_articles()
-    
+
     # Build tag co-occurrence data
-    tag_freq = defaultdict(int)
-    tag_cooccurrence = defaultdict(lambda: defaultdict(int))
-    
+    tag_freq: Dict[str, int] = Counter()
+    tag_cooccurrence: Dict[str, Dict[str, int]] = defaultdict(Counter)
+
     for article in articles:
         tags = article.get("tags", [])
         for tag in tags:
             tag_freq[tag] += 1
-        
+
         # Record co-occurrences
         for i, tag1 in enumerate(tags):
-            for tag2 in tags[i+1:]:
+            for tag2 in tags[i + 1 :]:
                 tag_cooccurrence[tag1][tag2] += 1
                 tag_cooccurrence[tag2][tag1] += 1
-    
+
     # Build nodes and links for visualization
     nodes = [{"id": tag, "count": count} for tag, count in tag_freq.items()]
     links = []
@@ -67,9 +81,9 @@ def home() -> str:
             if pair not in seen:
                 links.append({"source": tag1, "target": tag2, "weight": weight})
                 seen.add(pair)
-    
+
     tag_data = json.dumps({"nodes": nodes, "links": links})
-    
+
     return render_template("index.html", tags=article_parsing.get_all_tags(), tag_data=tag_data)
 
 
@@ -119,6 +133,8 @@ def resume_dynamic(path: str) -> str:
     Returns:
         str: rendered resume page
     """
+    _validate_dynamic_document_path(path)
+
     base_template_path = Path("personalsite/resume/base_template.md")
     base_template = base_template_path.read_text()
 
@@ -148,6 +164,8 @@ def cover_dynamic(path: str) -> str:
     Returns:
         str: rendered resume page
     """
+    _validate_dynamic_document_path(path)
+
     cover_letter_path = Path("data/jobs", path, "cover_letter.md")
     cover_letter = cover_letter_path.read_text()
 
