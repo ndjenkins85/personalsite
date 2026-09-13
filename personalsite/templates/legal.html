@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="container-narrow">
+  <nav class="breadcrumb">
+    <span class="breadcrumb-item"><a href="{{ url_for('home') }}">Home</a></span>
+    <span class="breadcrumb-item active">{{ page_title }}</span>
+  </nav>
+
+  <article class="article-card">
+    <div class="article-content">
+      {{ legal_content }}
+    </div>
+  </article>
+</div>
+
+{% endblock %}

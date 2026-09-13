@@ -46,5 +46,9 @@ class Config:
     SECRET_KEY = _get_secret_key()
     SECURITY_PASSWORD_SALT = os.getenv("SECURITY_PASSWORD_SALT")
 
+    SESSION_COOKIE_NAME = "personalsite_session"
+    SESSION_COOKIE_SECURE = True
+    SESSION_COOKIE_SAMESITE = "Lax"
+
     SITEMAP_EXCLUDES = ["dropzoneredirect", "login", "logout", "version"]
     SITEURL = "https://www.ndjenkins.com"

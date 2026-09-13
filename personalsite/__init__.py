@@ -22,6 +22,10 @@ app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1)  # type: ign
 CORS(app, origins=["https://www.ndjenkins.com", "https://ndjenkins.com"])
 sslify = SSLify(app)
 
+from personalsite.gateway_identity import init_app as init_gateway_identity  # noqa: E402
+
+init_gateway_identity(app)
+
 import personalsite.views  # noqa: E402
 
 # Program version and changelog. __version__ is used in setup.py

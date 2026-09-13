@@ -113,6 +113,41 @@ def consulting() -> str:
     return render_template("consulting.html")
 
 
+def _render_legal_page(filename: str, title: str) -> str:
+    """Render a trusted local Markdown legal page.
+
+    Args:
+        filename: Markdown filename within the legal content directory.
+        title: Page title shown above the rendered content.
+
+    Returns:
+        Rendered legal page.
+    """
+    markdown_path = Path(__file__).with_name("legal") / filename
+    content = Markup(markdown.markdown(markdown_path.read_text(encoding="utf-8")))  # NOQA: S704
+    return render_template("legal.html", page_title=title, legal_content=content)
+
+
+@app.route("/privacy")
+def privacy() -> str:
+    """Display the site's privacy notice.
+
+    Returns:
+        Rendered privacy page.
+    """
+    return _render_legal_page("privacy.md", "Privacy")
+
+
+@app.route("/terms")
+def terms() -> str:
+    """Display the site's terms of use.
+
+    Returns:
+        Rendered terms page.
+    """
+    return _render_legal_page("terms.md", "Terms")
+
+
 # @app.route("/resume/dynamic")
 # def resume_dynamic_form() -> str:
 #     """Flask route to display dynamic resume form.

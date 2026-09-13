@@ -116,7 +116,8 @@ Visit [localhost](http://127.0.0.1:5000) on browser.
 
 Webserver can be started using docker-compose or Dockerfile. The Heroku publishing via github actions uses Dockerfile.
 
-Production requires `SECRET_KEY` and `SECURITY_PASSWORD_SALT`. Set `FLASK_DEBUG=false`
+Production requires `SECRET_KEY`, `SECURITY_PASSWORD_SALT`, and `GATEWAY_AUTH_SECRET`.
+`GATEWAY_AUTH_SECRET` must match the identity helper's value. Set `FLASK_DEBUG=false`
 (the default) unless explicitly debugging; never enable debug mode in production.
 
 ``` bash

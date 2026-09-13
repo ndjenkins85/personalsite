@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nick Jenkins - Data Scientist & Technical Leader</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
-    
+
     <!-- Modern fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
+
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    
+
     <!-- Highlight.js for code blocks -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -34,6 +34,12 @@
             <a href="{{ url_for('resume') }}" class="nav-link">Resume</a>
             <a href="{{ url_for('home') }}#projects" class="nav-link">Projects</a>
             <a href="{{ url_for('articles', path='personal') }}" class="nav-link">Musings</a>
+            {% if identity %}
+              <span class="nav-link">Hi, {{ identity['name'] }}</span>
+              <a href="/auth/logout?rd=/" class="nav-link">Sign out</a>
+            {% else %}
+              <a href="/auth/login?rd={{ request.path|urlencode }}" class="nav-link">Sign in</a>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -49,6 +55,7 @@
     <footer class="footer">
       <div class="container">
         <p>&copy; 2026 Nick Jenkins. All rights reserved.</p>
+        <p><a href="{{ url_for('privacy') }}">Privacy</a> &middot; <a href="{{ url_for('terms') }}">Terms</a></p>
       </div>
     </footer>
 
