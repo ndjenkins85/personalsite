@@ -13,6 +13,20 @@ GATEWAY_AUTH_HEADER = "X-Gateway-Auth"
 REQUIRED_CLAIMS = {"sub", "email", "name", "iat", "exp", "prefix"}
 
 
+def _display_name(claims: Dict[str, Any]) -> str:
+    """Choose a friendly identity label from trusted gateway claims."""
+    name = claims.get("name")
+    if isinstance(name, str) and name.strip():
+        return name
+
+    email = claims.get("email")
+    if isinstance(email, str):
+        local_part, separator, _ = email.strip().partition("@")
+        if separator and local_part:
+            return local_part
+    return "there"
+
+
 def gateway_identity(expected_prefix: str = EXPECTED_PREFIX) -> Optional[Dict[str, Any]]:
     """Verify the gateway token, treating every failure as anonymous.
 
@@ -34,7 +48,7 @@ def gateway_identity(expected_prefix: str = EXPECTED_PREFIX) -> Optional[Dict[st
 
     if claims.get("prefix") != expected_prefix or not REQUIRED_CLAIMS <= claims.keys():
         return None
-    return claims
+    return {**claims, "display_name": _display_name(claims)}
 
 
 def init_app(app: Flask) -> None:

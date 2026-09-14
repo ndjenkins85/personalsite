@@ -35,7 +35,7 @@
             <a href="{{ url_for('home') }}#projects" class="nav-link">Projects</a>
             <a href="{{ url_for('articles', path='personal') }}" class="nav-link">Musings</a>
             {% if identity %}
-              <span class="nav-link">Hi, {{ identity['name'] }}</span>
+              <span class="nav-link">Hi, {{ identity['display_name'] }}</span>
               <a href="/auth/logout?rd=/" class="nav-link">Sign out</a>
             {% else %}
               <a href="/auth/login?rd={{ request.path|urlencode }}" class="nav-link">Sign in</a>

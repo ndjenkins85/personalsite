@@ -15,12 +15,19 @@ TEST_SECRET = secrets.token_hex(32)
 DEFAULT_TOKEN_LIFETIME = timedelta(minutes=5)
 
 
-def _token(prefix: str = "/", expires_in: timedelta = DEFAULT_TOKEN_LIFETIME) -> str:
+def _token(
+    prefix: str = "/",
+    expires_in: timedelta = DEFAULT_TOKEN_LIFETIME,
+    name: str = "Nick",
+    email: str = "nick@example.com",
+) -> str:
     """Mint a representative gateway token for a test request.
 
     Args:
         prefix: Prefix claim placed in the token.
         expires_in: Time until the token expires.
+        name: Name claim placed in the token.
+        email: Email claim placed in the token.
 
     Returns:
         Encoded HS256 gateway token.
@@ -28,8 +35,8 @@ def _token(prefix: str = "/", expires_in: timedelta = DEFAULT_TOKEN_LIFETIME) ->
     now = datetime.now(timezone.utc)
     claims: Dict[str, Any] = {
         "sub": "logto-user-123",
-        "email": "nick@example.com",
-        "name": "Nick",
+        "email": email,
+        "name": name,
         "iat": int(now.timestamp()),
         "exp": int((now + expires_in).timestamp()),
         "prefix": prefix,
@@ -69,18 +76,35 @@ def test_anonymous_navigation(monkeypatch: pytest.MonkeyPatch) -> None:
     assert b"Sign out" not in response.data
 
 
-def test_signed_in_navigation(monkeypatch: pytest.MonkeyPatch) -> None:
-    """A valid gateway token displays the account name and sign-out link.
+@pytest.mark.parametrize(
+    ("name", "email", "expected_display_name"),
+    [
+        ("Nick", "nick@example.com", "Nick"),
+        ("", "bri.leo.nick.jenkins@gmail.com", "bri.leo.nick.jenkins"),
+        ("", "", "there"),
+    ],
+    ids=["name", "email-local-part", "friendly-default"],
+)
+def test_signed_in_navigation_name_fallback(
+    monkeypatch: pytest.MonkeyPatch,
+    name: str,
+    email: str,
+    expected_display_name: str,
+) -> None:
+    """Signed-in navigation always displays a friendly account label.
 
     Args:
         monkeypatch: Pytest environment patching fixture.
+        name: Gateway name claim under test.
+        email: Gateway email claim under test.
+        expected_display_name: Expected navigation label.
     """
     monkeypatch.setenv("GATEWAY_AUTH_SECRET", TEST_SECRET)
 
-    response = _get(token=_token())
+    response = _get(token=_token(name=name, email=email))
 
     assert response.status_code == 200
-    assert b"Hi, Nick" in response.data
+    assert f"Hi, {expected_display_name}".encode() in response.data
     assert b'href="/auth/logout?rd=/"' in response.data
     assert b"Sign in" not in response.data
 
