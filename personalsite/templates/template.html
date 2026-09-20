@@ -33,7 +33,7 @@
             <a href="{{ url_for('articles', path='professional') }}" class="nav-link">Articles</a>
             <a href="{{ url_for('resume') }}" class="nav-link">Resume</a>
             <a href="{{ url_for('home') }}#projects" class="nav-link">Projects</a>
-            <a href="{{ url_for('articles', path='personal') }}" class="nav-link">Musings</a>
+            <a href="/news/" class="nav-link">News</a>
             {% if identity %}
               <span class="nav-link">Hi, {{ identity['display_name'] }}</span>
               <a href="/auth/logout?rd=/" class="nav-link">Sign out</a>
