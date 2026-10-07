@@ -89,18 +89,15 @@ def home() -> str:
 
 @app.route("/resume")
 def resume() -> str:
-    """Flask route to display resume.
+    """Flask route to display the canonical one-page resume (v6, 2026-10-07).
+
+    The copy is a verbatim, Nick-approved one-pager that prints to exactly one page at Letter and A4.
+    The phone number is deliberately omitted from the public page until Nick confirms it may be shown.
 
     Returns:
         str: rendered resume page
     """
-    base_template_path = Path("personalsite/resume/base_template.md")
-    base_template = base_template_path.read_text()
-
-    base_template = resume_parsing.clear_expansions_for_one_pager(base_template)
-    resume_data = Markup(markdown.markdown(base_template))  # NOQA: S704
-
-    return render_template("resume_v2.html", resume_data=resume_data)
+    return render_template("resume_v6.html")
 
 
 @app.route("/consulting")

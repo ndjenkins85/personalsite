@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nick Jenkins Resume</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+{% raw %}
+<style>
+  :root{--ground:#ECEEF1;--sheet:#FBFBF8;--ink:#1B1D21;--muted:#5B6470;--accent:#2B4C7E;--rule:#D9DCE1;--shadow:0 1px 2px rgba(20,28,40,.06),0 12px 32px rgba(20,28,40,.08)}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--ground:#0F1114;--sheet:#181B20;--ink:#E8EAED;--muted:#9AA3AE;--accent:#8FB0E0;--rule:#2B3038;--shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35)}}
+  :root[data-theme="dark"]{color-scheme:dark;--ground:#0F1114;--sheet:#181B20;--ink:#E8EAED;--muted:#9AA3AE;--accent:#8FB0E0;--rule:#2B3038;--shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35)}
+  body{background:var(--ground);color:var(--ink);font-family:"Source Sans 3","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:1.4;padding-block:28px;padding-inline:16px;-webkit-font-smoothing:antialiased}
+  .sheet{background:var(--sheet);max-width:800px;margin:0 auto;padding:40px 48px 36px;box-shadow:var(--shadow);border-radius:2px}
+  header{padding-bottom:10px;border-bottom:2px solid var(--ink)}
+  .top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 24px}
+  h1{font-family:"Inter Tight",Georgia,"Times New Roman",serif;font-weight:600;font-size:30px;letter-spacing:-0.01em;line-height:1.05;margin:0;text-wrap:balance}
+  .headline{margin:2px 0 0;color:var(--ink);font-size:14.5px;font-weight:600}
+  .site{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px}.contact{margin:4px 0 0;color:var(--muted);font-size:13px;display:flex;flex-wrap:wrap;gap:2px 14px}
+  .contact a{color:var(--accent);text-decoration:none;font-weight:600}
+  .contact a:hover,.contact a:focus-visible{text-decoration:underline;outline:none}
+  .summary{margin:10px 0 0;font-size:14px;text-wrap:pretty}
+  .section-label{margin:14px 0 7px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
+  .section-label::after{content:"";flex:1;height:1px;background:var(--rule)}
+  .roles{display:grid;gap:13px}
+  .role-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 16px}
+  .org{margin:0;font-family:"Inter Tight",Georgia,serif;font-weight:600;font-size:16.5px;letter-spacing:-0.005em}
+  .org span{font-family:"Source Sans 3","Helvetica Neue",Arial,sans-serif;font-weight:400;font-size:14px;color:var(--muted)}
+  .when{margin:0;color:var(--muted);font-size:13.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .promo{margin:1px 0 0;font-size:13px;font-style:italic;color:var(--muted)}
+  ul{margin:5px 0 0;padding-left:16px;display:grid;gap:3px}
+  li{padding-left:2px;text-wrap:pretty}
+  li::marker{color:var(--accent)}
+  .earlier{margin:0;font-size:13.5px;color:var(--muted)}
+  .earlier b{color:var(--ink);font-weight:600}
+  .edu{margin:0;font-size:13.5px}.edu+.edu{margin-top:2px}.edu b{font-weight:600}.skills{display:grid;gap:2px}.skills p{margin:0;font-size:13.5px;text-wrap:pretty}.skills b{font-weight:600;color:var(--accent);margin-right:6px}.foot{display:grid;grid-template-columns:1fr 1.55fr;gap:12px 28px}
+  .foot h3{margin:0 0 3px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent)}
+  .foot p{margin:0;font-size:13.5px;color:var(--ink);text-wrap:pretty}
+  .foot p+p{margin-top:3px}
+  .foot p b{font-weight:600}
+  @media (max-width:560px){body{padding-block:16px}.sheet{padding:26px 18px}h1{font-size:26px}.when{white-space:normal}.foot{grid-template-columns:1fr}}
+  @page{size:auto;margin:0}
+  @media print{
+    :root:not([data-theme="light"]),:root:not([data-theme="dark"]){color-scheme:light;--ground:#fff;--sheet:#fff;--ink:#111318;--muted:#555C66;--accent:#2B4C7E;--rule:#CFD3D9;--shadow:none}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    body{background:#fff;padding:0;font-size:10.5pt;line-height:1.33}
+    .sheet{max-width:none;padding:0.55in 0.7in;box-shadow:none;border-radius:0;background:#fff}
+    header,section,.foot{break-inside:avoid}
+    li{break-inside:avoid}
+  }
+</style>
+{% endraw %}
+</head>
+<body>
+{% raw %}
+<main class="sheet">
+  <header>
+    <div class="top">
+      <h1>Nicholas Jenkins</h1>
+      <a class="site" href="https://ndjenkins.com">ndjenkins.com</a>
+    </div>
+    <p class="headline">Lead Data Scientist at TikTok · ex-BCG · Production AI and evaluation for regulatory reporting</p>
+    <p class="contact">
+      <span>Melbourne, Australia · Australian citizen</span>
+      <a href="mailto:nick_jenkins@outlook.com">nick_jenkins@outlook.com</a>
+      <a href="https://www.linkedin.com/in/ndjenkins-au/">linkedin.com/in/ndjenkins-au</a>
+    </p>
+  </header>
+
+  <h2 class="section-label">Experience</h2>
+
+  <div class="roles">
+    <section>
+      <div class="role-head">
+        <h3 class="org">TikTok (ByteDance) <span>· Lead Data Scientist, Trust &amp; Safety Transparency</span></h3>
+        <p class="when">New York · May 2022 – Present</p>
+      </div>
+      <ul>
+        <li>Built the regulatory metrics platform behind TikTok's transparency reporting: reporting time down 75%, ~45% of disclosures self-served without data science, 150+ external disclosures in 2024.</li>
+        <li>Built 16 of 23 metric queries behind TikTok's first EU DSA transparency report, published three days early.</li>
+        <li>Designed the quality checks behind our independently audited reports, then evolved them into an agentic launch gate: 90% hold recall in backtest and 90% less manual effort.</li>
+        <li>Built an in-house LLM inference platform from scratch, load-balanced across up to 300 preemptible GPUs with automatic retries: 4x fleet throughput, 10M inferences.</li>
+        <li>Created a statistically weighted LLM insights product used for seven national elections, three breaking-news crises and AI scam classification for TikTok's Frauds and Scams Prevention Hub.</li>
+        <li>Built a support-ticket AI classifier with rulebook retrieval (RAG), A/B-tested model versions and an evaluator against QA's 23,000-label golden set.</li>
+        <li>Built the data contract behind TikTok's disclosure intake; request handling fell from 182 to 15 hours.</li>
+        <li>Designed T&amp;S AI-adoption measurement; founded my pillar's 1,000+ PR monorepo and set its code and AI standards (approval-before-merge 37% → 80%); mentored five data scientists; seeded a 49-skill agent library.</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="role-head">
+        <h3 class="org">Boston Consulting Group <span>· Senior Data Scientist</span></h3>
+        <p class="when">New York · Jul 2019 – May 2022</p>
+      </div>
+      <ul>
+        <li>Optimized a B2B distributor's $1B promotional spend through SKU-level price-elasticity modeling.</li>
+        <li>Built a $52M personalization pilot for a fashion retailer, lifting sales about 25% above baseline.</li>
+        <li>Built an explainable pricing model for a payroll provider, cutting pricing cycles and churn.</li>
+        <li>Led a five-person team building BCG's internal feature store, doubling its data assets from 20 to 40.</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="role-head">
+        <h3 class="org">Evolve Research <span>· Head of Data Science</span></h3>
+        <p class="when">Melbourne · Feb 2014 – Apr 2019</p>
+      </div>
+      <ul>
+        <li>Led analysts and engineers delivering analytics for a national broadband provider, supermarket and insurer.</li>
+        <li>Built a text-classification and sentiment capability that saved a client $30K a year and sold for up to $300K.</li>
+        <li>Built an NLP survey chatbot that lifted respondent engagement and insight quality.</li>
+      </ul>
+    </section>
+
+    <p class="earlier"><b>Earlier</b> · Research Associate, Klein Partnership (2011–14) · Account Coordinator, Ross Partnership, advertising (2010)</p>
+  </div>
+
+  <h2 class="section-label">Education</h2>
+  <p class="edu"><b>MS Computer Science, Machine Learning</b> · Georgia Institute of Technology, 2019 · GPA 3.9</p>
+  <p class="edu"><b>BA Psychology &amp; Political Science</b> · University of Melbourne, 2009</p>
+
+  <h2 class="section-label">Skills</h2>
+  <div class="skills">
+    <p><b>AI &amp; LLMs</b> LLM evaluation, golden sets, A/B model versioning, RAG, agentic workflows, open-weight serving (Ollama, Llama, Gemma), GPU inference, context and prompt engineering, Claude Code</p>
+    <p><b>Production</b> Python, SQL, PySpark, Docker, AWS, Git, CI/CD, data observability, drift monitoring, backtesting</p>
+    <p><b>ML &amp; statistics</b> scikit-learn, TensorFlow, classification, time series, stratified sampling, experimental design</p>
+    <p><b>Leadership</b> technical leadership, architecture, code review, mentoring, regulatory stakeholders (DSA)</p>
+  </div>
+</main>
+{% endraw %}
+</body>
+</html>
