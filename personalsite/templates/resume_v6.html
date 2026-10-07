@@ -20,6 +20,7 @@
   .site{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px}.contact{margin:4px 0 0;color:var(--muted);font-size:13px;display:flex;flex-wrap:wrap;gap:2px 14px}
   .contact a{color:var(--accent);text-decoration:none;font-weight:600}
   .contact a:hover,.contact a:focus-visible{text-decoration:underline;outline:none}
+  .contact .pc{color:var(--accent);font-weight:600}
   .summary{margin:10px 0 0;font-size:14px;text-wrap:pretty}
   .section-label{margin:14px 0 7px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
   .section-label::after{content:"";flex:1;height:1px;background:var(--rule)}
@@ -49,6 +50,7 @@
     header,section,.foot{break-inside:avoid}
     li{break-inside:avoid}
   }
+  @media print{.contact{font-size:12px;column-gap:12px;flex-wrap:nowrap}}
 </style>
 {% endraw %}
 </head>
@@ -63,7 +65,6 @@
     <p class="headline">Lead Data Scientist at TikTok · ex-BCG · Production AI and evaluation for regulatory reporting</p>
     <p class="contact">
       <span>Melbourne, Australia · Australian citizen</span>
-      <a href="mailto:nick_jenkins@outlook.com">nick_jenkins@outlook.com</a>
       <a href="https://www.linkedin.com/in/ndjenkins-au/">linkedin.com/in/ndjenkins-au</a>
     </p>
   </header>
@@ -128,6 +129,40 @@
     <p><b>Leadership</b> technical leadership, architecture, code review, mentoring, regulatory stakeholders (DSA)</p>
   </div>
 </main>
+<script>
+(function () {
+  var contact = document.querySelector(".contact");
+  if (!contact) return;
+  var parts = [
+    ["+61", "448", "329", "110"].join(" "),
+    ["nick_jenkins", "outlook.com"].join("@")
+  ];
+  var added = [];
+  function add() {
+    if (added.length) return;
+    var anchor = contact.querySelector("a");
+    parts.forEach(function (t) {
+      var s = document.createElement("span");
+      s.className = "pc";
+      s.textContent = t;
+      contact.insertBefore(s, anchor);
+      added.push(s);
+    });
+  }
+  function remove() {
+    added.forEach(function (s) { if (s.parentNode) s.parentNode.removeChild(s); });
+    added = [];
+  }
+  window.addEventListener("beforeprint", add);
+  window.addEventListener("afterprint", remove);
+  if (window.matchMedia) {
+    var mq = window.matchMedia("print");
+    var h = function (e) { if (e.matches) add(); else remove(); };
+    if (mq.addEventListener) mq.addEventListener("change", h);
+    else if (mq.addListener) mq.addListener(h);
+  }
+})();
+</script>
 {% endraw %}
 </body>
 </html>
